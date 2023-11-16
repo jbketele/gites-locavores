@@ -1,31 +1,21 @@
 /* Page accueil */
 
-.container {
-  border: solid black 1px;
-}
 
-.container-fluid {
-  border: solid;
-}
 
 .logo {
   width: 200px;
 }
 
-h1{
+h1 {
   color: #0b5909;
 }
 
-.bg-success {
-  background-color: #0b5909;
-}
-  
- 
-  img {
-    width: 20%;
-  }
 
-  
+img {
+  width: 20%;
+}
+
+
 .sous-nav {
   list-style: none;
   display: none;
@@ -35,9 +25,9 @@ h1{
   background-color: #fff;
   width: max-content;
 }
-  
+
 input[type="submit"] {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 h2 {
@@ -48,14 +38,14 @@ h2 {
 .box1 img {
   width: 30px;
   height: 30px;
-  
-}  
 
-.vente input{
+}
+
+.vente input {
   margin: 1%;
 }
 
-h3{
+h3 {
   margin: 0 0 10px 0;
   padding: 0 0 0 20px;
 }
@@ -76,7 +66,7 @@ h3{
   margin-top: 10px;
 }
 
-#products{
+#products {
   width: 250px;
   height: 26px;
   margin-top: 10px;
@@ -89,7 +79,9 @@ h3{
 
 /* Page contact */
 
-label, input, textarea {
+label,
+input,
+textarea {
   display: block;
   width: auto;
   margin-bottom: 10px;

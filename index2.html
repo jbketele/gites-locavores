@@ -1,122 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gites Locavores 2</title>
-     <link rel="stylesheet" href="bootstrap.min.css">
+
+    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
-   
-     
+    <link rel="stylesheet" href="bootstrap.min.js">
+
 </head>
+
 <body>
     <div class="container-fluid">
-        
-        <img src="imgs/logo_gites_locavores.png" class="container row logo" alt="logo_gites_locavores" style="float:left">
-            <h1 class="container mt-5 row ">Bienvenue</h1>
-            <div class="container mt-5">
-        <div class="container row">
-        <nav class="navbar navbar-expand-md navbar-light bg-light">
-            <div class="container-fluid">
-                <ul class="navbar-nav">
-                    <li class="nav-item mt-1">
-                        <a class="navbar-brand" href="#">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Présentation</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Nos Gites</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Calvados</a></li>
-                            <li><a class="dropdown-item" href="#">Eure</a></li>
-                            <li><a class="dropdown-item" href="#">Manche</a></li>
-                            <li><a class="dropdown-item" href="#">Orne</a></li>
-                            <li><a class="dropdown-item" href="#">Seine-maritime</a></li>
+        <img src="imgs/logo_gites_locavores.png" class="container row logo" alt="logo_gites_locavores"
+            style="float:left">
+        <h1 class="container mt-5 row ">Bienvenue</h1>
+        <div class="container mt-5">
+            <div class="container row">
+                <nav class="navbar navbar-expand-md navbar-light bg-light">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav">
+                            <li class="nav-item mt-1">
+                                <a class="navbar-brand" href="#">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Présentation</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false"
+                                    data-bs-toggle="dropdown">Nos Gites</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Calvados</a></li>
+                                    <li><a class="dropdown-item" href="#">Eure</a></li>
+                                    <li><a class="dropdown-item" href="#">Manche</a></li>
+                                    <li><a class="dropdown-item" href="#">Orne</a></li>
+                                    <li><a class="dropdown-item" href="#">Seine-maritime</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Conatct</a>
+                            </li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Conatct</a>
-                    </li>
-                </ul>
+                    </div>
+                </nav>
             </div>
-        </nav>
         </div>
     </div>
-    </div>
-   
-  
-  <form>
-    
-      <div class="container box1">
-        <div class="row">
-          <div class="title-box">
-              <img src="imgs/loupe.png" alt="loupe" style="float:left;">
-              <h2>Trouvez nos produits et découvrez nos expériences</h2>
-          </div>
-          <div class="container d-flex align-items-center place-products">
-              <div class="container row search-container">
-                  <label class="item" for="place">Localisez-vous</label>
-                  <input type="text" id="place" name="localisation" placeholder="Localisation">
-              </div>
-              <div class="container products">
-                  <label class="item" for="products">Type de produits</label>
-                  <select name="products" id="products">
-                      <option value="">Choisir</option>
-                      <option value="">Fruits & Légumes</option>
-                      <option value="">Viande & Poisson</option>
-                      <option value="">Produits laitiers</option>
-                      <option value="">Boissons</option>
-                  </select>
+    <form>
+
+        <div class="container box1">
+            <div class="row">
+                <div class="title-box">
+                    <img src="imgs/loupe.png" alt="loupe" style="float:left;">
+                    <h2>Trouvez nos produits et découvrez nos expériences</h2>
                 </div>
-                <div>
-                  <input class="item" type="submit" value="Suivant">
+                <div class="container row place-products">
+                    <div class="container row col-md-5 search-container">
+                        <label class="item" for="place">Localisez-vous</label>
+                        <input type="text" id="place" name="localisation" placeholder="Localisation">
+                    </div>
+                    <div class="container row col-md-5 products">
+                        <label class="item" for="products">Type de produits</label>
+                        <select name="products" id="products">
+                            <option value="">Choisir</option>
+                            <option value="">Fruits & Légumes</option>
+                            <option value="">Viande & Poisson</option>
+                            <option value="">Produits laitiers</option>
+                            <option value="">Boissons</option>
+                        </select>
+                    </div>
+                    <div class="container row col-md-2 suivant">
+                        <input class="item" type="submit" value="Suivant">
+                    </div>
                 </div>
-              </div>
-          </div>
-          <div class="shop">
-              <h3>Nos points de vente</h3>
-          </div>
-              <div class="container d-flex vente">
-              <label class="item" for="option1">Chez le producteur</label>
-              <input type="checkbox" id="option1" name="option1" value="option1">
-              
-              <label class="item" for="option2">Magasin de producteur</label>
-              <input type="checkbox" id="option2" name="option2" value="option2">
-
-              <label class="item" for="option3">Drive fermier</label>
-              <input type="checkbox" id="option3" name="option3" value="option3">
-
-              <input type="submit" value="Suivant">
-              </div>
-        </div> 
-  </form>
-
-  <div class="container">
-    <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="2"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="1000">
-                <img src="imgs/15121093-5C89-4AA9-B558-5929A391148A.png" alt="gites ruraux" class="d-block w-100">
             </div>
-            <div class="carousel-item" data-bs-interval="200">
-                <img src="imgs/produits-locaux.png" alt="" class="d-block w-100">
+            <div class="shop">
+                <h3>Nos points de vente</h3>
             </div>
-            <div class="carousel-item" data-bs-interval="4000">
-                <img src="imgs/image.png" alt="" class="d-block w-100">
+            <div class="container d-flex vente">
+                <label class="item" for="option1">Chez le producteur</label>
+                <input type="checkbox" id="option1" name="option1" value="option1">
+
+                <label class="item" for="option2">Magasin de producteur</label>
+                <input type="checkbox" id="option2" name="option2" value="option2">
+
+                <label class="item" for="option3">Drive fermier</label>
+                <input type="checkbox" id="option3" name="option3" value="option3">
+
+                <input type="submit" value="Suivant">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
+    </form>
+
+    <div class="container">
+        <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carousel1" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="1000">
+                    <img src="imgs/15121093-5C89-4AA9-B558-5929A391148A.png" alt="gites ruraux" class="d-block w-100">
+                </div>
+                <div class="carousel-item" data-bs-interval="200">
+                    <img src="imgs/produits-locaux.png" alt="" class="d-block w-100">
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="imgs/image.png" alt="" class="d-block w-100">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
     </div>
-  </div>
+    <br>
+    <section class="container cards">
+        <div class="container row row-cols-1 row-cols-md-3 cards">
+
+            <div class="container card border-light shadow-lg col-md-4">
+                <img src="imgs/654a33fe1116a512729429.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Chaque avis compte ! N'hésitez pas à nous partagez le vôtre !</h5>
+                    <p class="card-text">Chaque avis est important ! Voici un exemple d'avis reçu cette semaine ...
+                    </p>
+                    <a href="#" class="btn btn-success">En savoir plus</a>
+                </div>
+            </div>
+
+
+
+            <div class="container card border-light shadow-lg col-md-4">
+                <img src="imgs/pexels-zen-chung-5529540.jpg" class="card-img" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">La pomme, un fruit aux multiples saveurs !</h5>
+                    <p class="card-text">Découvrez les différentes variétés de pommes cultivées chez nos
+                        agriculteurs, et des recettes savoureuses ...</p>
+                    <a href="#" class="btn btn-success">En savoir plus</a>
+                </div>
+            </div>
+
+            <div class="container card border-light shadow-lg col-md-4">
+                <img src="imgs/60c32bd1cae0e003878780.jpg" class="card-img" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Gnocchis de pommes de terre aux blettes</h5>
+                    <p class="card-text">Plus besoin de chercher à combiner féculents et légumes, voici une recette qui
+                        le fait pour vous ! Goûtez à ces délicieux gnocchis de pomme de terre aux ...</p>
+                    <a href="#" class="btn btn-success">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
 </body>
+
 </html>
