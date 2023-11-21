@@ -1,7 +1,5 @@
 /* Page accueil */
 
-
-
 .logo {
   width: 200px;
 }
@@ -10,11 +8,9 @@ h1 {
   color: #0b5909;
 }
 
-
 img {
   width: 20%;
 }
-
 
 .sous-nav {
   list-style: none;
@@ -75,6 +71,10 @@ h3 {
 
 .slide1 img {
   width: 100%;
+}
+
+.portrait {
+  margin-left: 25%;
 }
 
 /* Page contact */
