@@ -106,5 +106,12 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+#contact {
+  background-image: url(img/sunny-day-field.jpg);
+  background-position: center;
+  background-size: 100vw;
+  background-repeat: no-repeat;
+}
+
 
 /* Fin de la Page contact */
