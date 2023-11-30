@@ -91,6 +91,10 @@ textarea {
   margin-bottom: 10px;
 }
 
+input[type="text"] {
+  background-color: #fff;
+}
+
 input[type="submit"] {
   width: auto;
   display: block;
