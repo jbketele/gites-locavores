@@ -113,5 +113,12 @@ input[type="submit"] {
   background-repeat: no-repeat;
 }
 
-
 /* Fin de la Page contact */
+
+.filter {
+  padding-right: 3vh;
+}
+
+#region {
+  width: 50rem;
+}
