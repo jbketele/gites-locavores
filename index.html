@@ -16,58 +16,59 @@
 <body>
     <!--NAVBAR-->
     <header>
-        <div class="container-fluid ">
+        <div class="row ">
             <div class="logo-titre">
                 <img src="img/logo_gites_locavores.png" class="container row logo" alt="logo_gites_locavores"
                     style="float:left">
                 <h1 class="container mt-5 row ms-3">Bienvenue</h1>
             </div>
-            <div class="container mt-5">
-                <div class="container row">
-                    <nav class="navbar navbar-expand-md navbar-light bg-light">
-                        <div class="container-fluid">
-                            <ul class="navbar-nav">
-                                <li class="nav-item mt-1">
-                                    <a class="navbar-brand" href="index.html">Accueil</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="presentation.html">Présentation</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false"
-                                        data-bs-toggle="dropdown">Nos Gites</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="hdf.html">Hauts de France</a></li>
-                                        <li><a class="dropdown-item" href="normandie.html">Normandie</a></li>
-                                        <li><a class="dropdown-item" href="gites.html">Tous</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false"
-                                        data-bs-toggle="dropdown">Nos idées</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="event.html">Évènements</a></li>
-                                        <li><a class="dropdown-item" href="actus.html">Actualités</a></li>
-                                        <li><a class="dropdown-item" href="recettes.html">Recettes</a></li>
-                                        <li><a class="dropdown-item" href="produits-saison.html">Prdouits de saison</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="idees.html">Tous</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
+
+            <div class="menu pt-3">
+                <nav class="navbar navbar-expand-md navbar-light ps-4 bg-light">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav">
+                            <li class="nav-item mt-1">
+                                <a class="navbar-brand" href="index.html">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="presentation.html">Présentation</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false"
+                                    data-bs-toggle="dropdown">Nos Gites</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="hdf.html">Hauts de France</a></li>
+                                    <li><a class="dropdown-item" href="normandie.html">Normandie</a></li>
+                                    <li><a class="dropdown-item" href="gites.html">Tous</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false"
+                                    data-bs-toggle="dropdown">Nos idées</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="event.html">Évènements</a></li>
+                                    <li><a class="dropdown-item" href="actus.html">Actualités</a></li>
+                                    <li><a class="dropdown-item" href="recettes.html">Recettes</a></li>
+                                    <li><a class="dropdown-item" href="produits-saison.html">Prdouits de saison</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="idees.html">Tous</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
+
         </div>
     </header>
 
-    <!--SEARCH-->
     <main>
-        <form>
+
+        <!--SEARCH-->
+        <form class="search">
             <div class="container box1">
                 <div class="row">
                     <div class="title-box">
@@ -79,16 +80,7 @@
                             <label class="item" for="place">Localisez-vous</label>
                             <input type="text" id="place" name="localisation" placeholder="Localisation">
                         </div>
-                        <div class="container row col-md-5 products">
-                            <label class="item" for="products">Type de produits</label>
-                            <select name="products" id="products">
-                                <option value="">Choisir</option>
-                                <option value="">Fruits & Légumes</option>
-                                <option value="">Viande & Poisson</option>
-                                <option value="">Produits laitiers</option>
-                                <option value="">Boissons</option>
-                            </select>
-                        </div>
+
                         <div class="container row col-md-2 suivant">
                             <input class="item" type="submit" value="Suivant">
                         </div>
@@ -98,13 +90,13 @@
                     <h3>Nos points de vente</h3>
                 </div>
                 <div class="container d-flex vente">
-                    <label class="item" for="option1">Chez le producteur</label>
+                    <label class="item" for="option1">Chambres d'hôtes</label>
                     <input type="checkbox" id="option1" name="option1" value="option1">
 
-                    <label class="item" for="option2">Magasin de producteur</label>
+                    <label class="item" for="option2">Gîtes ruraux</label>
                     <input type="checkbox" id="option2" name="option2" value="option2">
 
-                    <label class="item" for="option3">Drive fermier</label>
+                    <label class="item" for="option3">Gîtes de groupe</label>
                     <input type="checkbox" id="option3" name="option3" value="option3">
 
                     <input type="submit" value="Suivant">
@@ -113,37 +105,40 @@
         </form>
 
         <!--CAROUSSEL-->
-        <div class="container">
-            <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#carousel1" data-bs-slide-to="2"></button>
+        <section class="top">
+            <div class="container" style="padding: 0%;">
+                <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#carousel1" data-bs-slide-to="2"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="4000">
+                            <img src="img/gites-local.png" alt="gites ruraux" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="4000">
+                            <img src="img/produits-locaux.png" alt="" class="d-block portrait w-50">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="4000">
+                            <img src="img/image.png" alt="" class="d-block portrait w-50">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel1"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel1"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
                 </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="4000">
-                        <img src="img/gites-local.png" alt="gites ruraux" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="4000">
-                        <img src="img/produits-locaux.png" alt="" class="d-block portrait w-50">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="4000">
-                        <img src="img/image.png" alt="" class="d-block portrait w-50">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
             </div>
-        </div>
-        <br>
-        <!--CARDS BLOG-->
-        <section class="container cards">
-            <div class="container row row-cols-1 row-cols-md-3 cards">
+        </section>
 
+        <!--CARDS BLOG-->
+        <section class="cards">
+            <div class="container row row-cols-1 row-cols-md-3 cards">
                 <div class="container card border-light shadow-lg col-md-4">
                     <img src="img/654a33fe1116a512729429.png" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -154,7 +149,35 @@
                     </div>
                 </div>
 
+                <div class="container card border-light shadow-lg col-md-4">
+                    <img src="img/pexels-zen-chung-5529540.jpg" class="card-img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">La pomme, un fruit aux multiples saveurs !</h5>
+                        <p class="card-text">Découvrez les différentes variétés de pommes cultivées chez nos
+                            agriculteurs, et des recettes savoureuses ...</p>
+                        <a href="#" class="btn btn-success">En savoir plus</a>
+                    </div>
+                </div>
 
+                <div class="container card border-light shadow-lg col-md-4">
+                    <img src="img/60c32bd1cae0e003878780.jpg" class="card-img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Gnocchis de pommes de terre aux blettes</h5>
+                        <p class="card-text">Plus besoin de chercher à combiner féculents et légumes, voici une recette
+                            qui
+                            le fait pour vous ! Goûtez à ces délicieux gnocchis de pomme de terre aux ...</p>
+                        <a href="#" class="btn btn-success">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="container card border-light shadow-lg col-md-4">
+                    <img src="img/654a33fe1116a512729429.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Chaque avis compte ! N'hésitez pas à nous partagez le vôtre !</h5>
+                        <p class="card-text">Chaque avis est important ! Voici un exemple d'avis reçu cette semaine ...
+                        </p>
+                        <a href="#" class="btn btn-success">En savoir plus</a>
+                    </div>
+                </div>
 
                 <div class="container card border-light shadow-lg col-md-4">
                     <img src="img/pexels-zen-chung-5529540.jpg" class="card-img" alt="...">
@@ -189,10 +212,9 @@
 
     <!--FOOTER-->
     <footer>
-        <div class="container d-flex justify-content-center bg-light border-light shadow py-3">
+        <div class="bg-light border-light shadow py-3">
             <div class="row">
                 <p class="container" style="font-size: 2rem;">Suivez-nous :
-                    <i class="bi bi-twitter-x" style="font-size: 2rem;"></i>
                     <i class="bi bi-facebook" style="font-size: 2rem;"></i>
                     <i class="bi bi-instagram" style="font-size: 2rem;"></i>
                     <i class="bi bi-youtube" style="font-size: 2rem;"></i>
@@ -200,10 +222,10 @@
                 </p>
             </div>
         </div>
-        <br>
-        <div class="container bg-dark text-white">
 
-            <div class="container" style="height: 50px;">
+        <div class="bg-dark text-white">
+
+            <div style="margin-left: 2rem; height: 50px;">
                 <img src="img/logo gites detoure.png" class="container col-md-2 row logo" alt="logo_gites_locavores"
                     style="width: 150px; float: left;">
             </div>
@@ -214,7 +236,7 @@
 
 
             <div class="container d-flex  row-cols-md-3">
-                <div class="container row offset-2 col-md-2">
+                <div class="container row offset-1 col-md-2">
                     <p>RECHERCHE</p>
                     <ul>
                         <li>Produits locaux</li>

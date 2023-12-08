@@ -15,57 +15,62 @@
 
 <body>
     <header>
-        <div class="container-fluid ">
+        <div class="row ">
             <div class="logo-titre">
                 <img src="img/logo_gites_locavores.png" class="container row logo" alt="logo_gites_locavores"
                     style="float:left">
                 <h1 class="container mt-5 row ms-3">Bienvenue</h1>
             </div>
-            <div class="container mt-5">
-                <div class="container row">
-                    <nav class="navbar navbar-expand-md navbar-light bg-light">
-                        <div class="container-fluid">
-                            <ul class="navbar-nav">
-                                <li class="nav-item mt-1">
-                                    <a class="navbar-brand" href="index.html">Accueil</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="presentation.html">Présentation</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false"
-                                        data-bs-toggle="dropdown">Nos Gites</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Calvados</a></li>
-                                        <li><a class="dropdown-item" href="#">Eure</a></li>
-                                        <li><a class="dropdown-item" href="#">Manche</a></li>
-                                        <li><a class="dropdown-item" href="#">Orne</a></li>
-                                        <li><a class="dropdown-item" href="#">Seine-maritime</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
-                                </li>
-                            </ul>
-                            <form class="form-inline my-2 my-lg-0">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search"
-                                    aria-label="Search">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                            </form>
-                        </div>
-                    </nav>
-                </div>
+
+            <div class="menu pt-3">
+                <nav class="navbar navbar-expand-md navbar-light ps-4 bg-light">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav">
+                            <li class="nav-item mt-1">
+                                <a class="navbar-brand" href="index.html">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="presentation.html">Présentation</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false"
+                                    data-bs-toggle="dropdown">Nos Gites</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="hdf.html">Hauts de France</a></li>
+                                    <li><a class="dropdown-item" href="normandie.html">Normandie</a></li>
+                                    <li><a class="dropdown-item" href="gites.html">Tous</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false"
+                                    data-bs-toggle="dropdown">Nos idées</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="event.html">Évènements</a></li>
+                                    <li><a class="dropdown-item" href="actus.html">Actualités</a></li>
+                                    <li><a class="dropdown-item" href="recettes.html">Recettes</a></li>
+                                    <li><a class="dropdown-item" href="produits-saison.html">Prdouits de saison</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="idees.html">Tous</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
+
         </div>
     </header>
     <br>
-    <section>
-        <div class="container">
-            <div class="container">
-                <img style="float: left;margin-right: 3vh;"
-                    src="img/vertical-shot-kommern-open-air-museum-mechernich-germany.jpg" alt="">
-            </div>
-            <div class="container">
+    <section style="background-image:url(img/fond-nature.png) ;">
+        <div class="container d-flex">
+
+            <img style="margin-right: 3vh;" src="img/vertical-shot-kommern-open-air-museum-mechernich-germany.jpg"
+                alt="">
+
+            <div>
                 <h2 class="text-center">QUI SOMMES-NOUS</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum repellat consectetur ipsam nobis,
                     quam accusamus voluptatem, facere quas magnam quia maiores commodi, dignissimos expedita consequatur
@@ -73,9 +78,9 @@
             </div>
         </div>
     </section>
-
+    <br>
     <footer>
-        <div class="container d-flex justify-content-center bg-light border-light shadow py-3">
+        <div class=" d-flex justify-content-center bg-light border-light shadow py-3">
             <div class="row">
                 <p class="container" style="font-size: 2rem;">Suivez-nous :
                     <i class="bi bi-twitter-x" style="font-size: 2rem;"></i>
@@ -86,8 +91,7 @@
                 </p>
             </div>
         </div>
-        <br>
-        <div class="container bg-dark text-white">
+        <div class=" bg-dark text-white">
 
             <div class="container" style="height: 50px;">
                 <img src="img/logo gites detoure.png" class="container col-md-2 row logo" alt="logo_gites_locavores"

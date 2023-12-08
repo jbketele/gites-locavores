@@ -15,71 +15,89 @@
 
 <body>
     <header>
-        <div class="container-fluid ">
+        <div class="row ">
             <div class="logo-titre">
                 <img src="img/logo_gites_locavores.png" class="container row logo" alt="logo_gites_locavores"
                     style="float:left">
                 <h1 class="container mt-5 row ms-3">Bienvenue</h1>
             </div>
-            <div class="container mt-5">
-                <div class="container row">
-                    <nav class="navbar navbar-expand-md navbar-light bg-light">
-                        <div class="container-fluid">
-                            <ul class="navbar-nav">
-                                <li class="nav-item mt-1">
-                                    <a class="navbar-brand" href="#">Accueil</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#">Présentation</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false"
-                                        data-bs-toggle="dropdown">Nos Gites</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Hauts de France</a></li>
-                                        <li><a class="dropdown-item" href="#">Normandie</a></li>
-                                        <li><a class="dropdown-item" href="#">Tous</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Conatct</a>
-                                </li>
-                            </ul>
-                            <form class="form-inline my-2 my-lg-0">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search"
-                                    aria-label="Search">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                            </form>
-                        </div>
-                    </nav>
-                </div>
+
+            <div class="menu pt-3">
+                <nav class="navbar navbar-expand-md navbar-light ps-4 bg-light">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav">
+                            <li class="nav-item mt-1">
+                                <a class="navbar-brand" href="index.html">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="presentation.html">Présentation</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false"
+                                    data-bs-toggle="dropdown">Nos Gites</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="hdf.html">Hauts de France</a></li>
+                                    <li><a class="dropdown-item" href="normandie.html">Normandie</a></li>
+                                    <li><a class="dropdown-item" href="gites.html">Tous</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false"
+                                    data-bs-toggle="dropdown">Nos idées</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="event.html">Évènements</a></li>
+                                    <li><a class="dropdown-item" href="actus.html">Actualités</a></li>
+                                    <li><a class="dropdown-item" href="recettes.html">Recettes</a></li>
+                                    <li><a class="dropdown-item" href="produits-saison.html">Prdouits de saison</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="idees.html">Tous</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
+
         </div>
     </header>
     <section>
-        <div class="container d-flex justify-content-around">
-            <a href="hdf.html"><img src="img/hauts-de-france_1487333152.jpg" id="region" alt=""></a>
-            <a href="hdf.html"><img src="img/hauts-de-france_1487333152.jpg" id="region" alt=""></a>
-            <a href="hdf.html"><img src="img/hauts-de-france_1487333152.jpg" id="region" alt=""></a>
-            <a href="hdf.html"><img src="img/hauts-de-france_1487333152.jpg" id="region" alt=""></a>
+        <div class="row row-cols-1 row-cols-md-2 g-2 mx-5">
+            <div class="col">
+                <div class="card">
+                    <a href="hdf.html"><img src="img/h_25.842330.jpg" style="width: 100%;" class="card-img-top"
+                            alt="..."></a>
+                    <div class="card-body">
+                        <h5 class="text-center">Hauts de France</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <a href="normandie.html"><img src="img/Normandie-France.jpg" class="card-img-top" alt="..."></a>
+                    <div class="card-body">
+                        <h5 class="text-center">Normandie</h5>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>
 
     <footer>
-        <div class="container d-flex justify-content-center bg-light border-light shadow py-3">
-            <div class="row">
-                <p class="container" style="font-size: 2rem;">Suivez-nous :
-                    <i class="bi bi-twitter-x" style="font-size: 2rem;"></i>
-                    <i class="bi bi-facebook" style="font-size: 2rem;"></i>
-                    <i class="bi bi-instagram" style="font-size: 2rem;"></i>
-                    <i class="bi bi-youtube" style="font-size: 2rem;"></i>
-                    <i class="bi bi-linkedin" style="font-size: 2rem;"></i>
-                </p>
-            </div>
+        <div class=" bg-light border-light shadow py-3">
+            <p class="d-flex justify-content-centercontainer" style="font-size: 2rem;">Suivez-nous :
+                <i class="bi bi-facebook" style="font-size: 2rem;"></i>
+                <i class="bi bi-instagram" style="font-size: 2rem;"></i>
+                <i class="bi bi-youtube" style="font-size: 2rem;"></i>
+                <i class="bi bi-linkedin" style="font-size: 2rem;"></i>
+            </p>
         </div>
-        <br>
-        <div class="container bg-dark text-white">
+        </div>
+
+        <div class=" bg-dark text-white">
 
             <div class="container" style="height: 50px;">
                 <img src="img/logo gites detoure.png" class="container col-md-2 row logo" alt="logo_gites_locavores"
