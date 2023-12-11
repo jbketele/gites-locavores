@@ -1,12 +1,39 @@
 /* Page accueil */
 @media screen {
+
   body {
     width: 100%;
   }
+
+  main {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .line {
+    margin: 0%;
+  }
+
+  .follow {
+    padding: 0%;
+    margin: 0%;
+  }
+}
+
+.logo-titre {
+  padding: 0%;
 }
 
 .logo {
   width: 200px;
+}
+
+.welcome {
+  padding: 0%;
+  margin-left: 1rem;
+  margin-right: auto;
+  margin-top: 4rem;
 }
 
 h1 {
@@ -21,7 +48,10 @@ img {
   width: 20%;
 }
 
-
+.menu {
+  padding-top: 1rem;
+  padding-right: 0%;
+}
 
 main {
   background-color: #FCF6EE;
