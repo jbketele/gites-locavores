@@ -1,4 +1,9 @@
 /* Page accueil */
+@media screen {
+  body {
+    width: 100%;
+  }
+}
 
 .logo {
   width: 200px;
