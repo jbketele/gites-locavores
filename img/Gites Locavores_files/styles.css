@@ -20,26 +20,12 @@
     margin: 0%;
   }
 
-  .cards {
-    padding: 0%;
-  }
-
-  .card {
-    width: 80vw;
-  }
+  .cards {}
 }
 
-@media screen and (min-width:767px) {
+@media and (min-width:767px) {
   .cards {
-    width: 80vw;
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .card {
-    width: 30%;
+    padding-left: 1rem;
   }
 }
 
@@ -143,13 +129,13 @@ h3 {
   margin-top: 10px;
 }
 
-
+.cards {
+  padding-left: 4rem;
+}
 
 .card {
   margin-bottom: 3rem;
   margin-top: 3rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .slide1 img {
