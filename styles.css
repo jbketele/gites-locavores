@@ -27,6 +27,7 @@
   .card {
     width: 80vw;
   }
+
 }
 
 @media screen and (min-width:767px) {
@@ -172,6 +173,18 @@ h3 {
 
 #input_q {
   width: 100%;
+}
+
+#idea {
+  border: none;
+}
+
+.cards-blog {
+  margin-top: 2rem;
+}
+
+.card-blog {
+  margin-bottom: 2rem;
 }
 
 /* Page contact */
