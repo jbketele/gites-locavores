@@ -10,6 +10,7 @@
   }
 }
 
+/*MOBILE*/
 @media (max-width:767px) {
   .line {
     margin: 0%;
@@ -28,8 +29,10 @@
     width: 80vw;
   }
 
+
 }
 
+/*DESKTOP*/
 @media screen and (min-width:767px) {
 
   .cards-blog {
@@ -153,8 +156,6 @@ h3 {
 }
 
 .card {
-  margin-bottom: 3rem;
-  margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -177,10 +178,11 @@ h3 {
 
 #idea {
   border: none;
+  background: none;
 }
 
 .cards-blog {
-  margin-top: 2rem;
+  padding-top: 2rem;
 }
 
 .card-blog {
