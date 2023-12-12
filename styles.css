@@ -189,6 +189,16 @@ h3 {
   margin-bottom: 2rem;
 }
 
+.btn-warning {
+  background-color: #E08F3E;
+  border: none
+}
+
+.btn-success {
+  background-color: #45a049;
+  border: none;
+}
+
 /* Page contact */
 
 label,
