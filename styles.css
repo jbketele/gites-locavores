@@ -10,7 +10,7 @@
   }
 }
 
-@media screen and (max-width:767px) {
+@media (max-width:767px) {
   .line {
     margin: 0%;
   }
@@ -30,6 +30,7 @@
 }
 
 @media screen and (min-width:767px) {
+
   .cards {
     width: 80vw;
     display: flex;
@@ -41,7 +42,14 @@
   .card {
     width: 30%;
   }
+
+  #icons {
+    cursor: pointer;
+    display: none;
+  }
 }
+
+
 
 .logo-titre {
   padding: 0%;
