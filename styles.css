@@ -156,7 +156,7 @@ h3 {
 }
 
 .card {
-  margin-left: auto;
+  margin-left: 15vw;
   margin-right: auto;
 }
 
@@ -170,6 +170,7 @@ h3 {
 
 .filter {
   margin: 0%;
+  background-color: #E08F3E;
 }
 
 #input_q {
@@ -197,6 +198,33 @@ h3 {
 .btn-success {
   background-color: #45a049;
   border: none;
+}
+
+.list-gites {
+  padding-bottom: 3rem;
+}
+
+.sign {
+  border: solid;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #0b5909;
+  border-color: black;
+}
+
+#connexion {
+  background-image: url(img/sunny-day-field.jpg);
+  background-position: center;
+  background-size: 100vw;
+  background-repeat: no-repeat;
+}
+
+.connect {
+  margin-top: 6rem;
 }
 
 /* Page contact */
