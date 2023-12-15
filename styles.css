@@ -227,6 +227,27 @@ h3 {
   margin-top: 6rem;
 }
 
+.nav2 {
+  background-color: darkgray;
+}
+
+.description {
+  background-color: #45a049;
+}
+
+.texte-description {
+  padding: 1rem;
+  width: 50%;
+}
+
+.chambres-gites {
+  background-color: #884809;
+}
+
+.coordonnees {
+  background-color: darkgrey;
+}
+
 /* Page contact */
 
 label,
