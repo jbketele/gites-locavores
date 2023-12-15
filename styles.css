@@ -30,6 +30,7 @@
   }
 
 
+
 }
 
 /*DESKTOP*/
@@ -57,25 +58,23 @@
 
 .logo-titre {
   padding: 0%;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
   width: 200px;
-}
-
-.welcome {
+  float: left;
   padding: 0%;
   margin-left: 1rem;
-  margin-right: auto;
-  margin-top: 4rem;
+  margin-right: 1rem;
+  flex-wrap: wrap;
 }
+
+
 
 h1 {
   color: #0b5909;
-}
-
-.logo-titre {
-  display: flex;
 }
 
 img {
@@ -209,11 +208,13 @@ h3 {
   background-color: #fff;
   display: flex;
   align-items: center;
+  width: fit-content;
   height: fit-content;
   margin-top: auto;
   margin-bottom: auto;
   color: #0b5909;
   border-color: black;
+  float: right;
 }
 
 #connexion {
