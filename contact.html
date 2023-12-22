@@ -80,39 +80,30 @@
         <div class="row">
             <div class="container" id="contact">
                 <div>
-                    <form>
-                        <div class="container mt-5">
-                            <div class="row justify-content-center">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="first name"
-                                            id="floatingTextarea"></textarea>
-                                        <label for="floatingTextarea">Prénom</label>
-                                    </div>
-                                    <br>
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="last name"
-                                            id="floatingTextarea"></textarea>
-                                        <label for="floatingTextarea">Nom</label>
-                                    </div>
-                                    <br>
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="floatingInputGrid"
-                                            placeholder="name@example.com">
-                                        <label for="floatingInputGrid">Email</label>
-                                    </div>
-                                    <br>
-                                    <div class="form-floating">
-                                        <input class="form-control" placeholder="Votre message" id="floatingTextarea2"
-                                            style="height: 100px"></input>
-                                        <label for="floatingTextarea2">Message</label>
-                                    </div>
-                                </div>
+
+                    <div class="container mt-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 d-flex justify-content-center">
+                                <form class="contact" name="contact" method="POST" netlify>
+                                    <p>
+                                        <label>Nom : <input type="text" name="lastname" /></label>
+                                    </p>
+                                    <p>
+                                        <label>Prénom : <input type="text" name="firstname" /></label>
+                                    </p>
+                                    <p>
+                                        <label>Email : <input type="email" name="email" /></label>
+                                    </p>
+
+                                    <p>
+                                        <label class="message">Message : <textarea name="message"></textarea></label>
+                                    </p>
+                                    <p class="envoyer" style="text-align: center;">
+                                        <button type="submit">Envoyer</button>
+                                    </p>
+                                </form>
                             </div>
                         </div>
-                    </form>
-                    <div class="container-fluid d-flex justify-content-center">
-                        <a class="btn btn-primary btn-lg mt-5 mb-5" href="#" target="_blank">Valider</a>
                     </div>
                 </div>
             </div>
