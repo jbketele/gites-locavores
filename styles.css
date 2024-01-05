@@ -295,3 +295,21 @@ footer {
 #region {
   width: 20rem;
 }
+
+/* Ajoutez du style pour l'animation de survol dans votre fichier CSS */
+.hover-card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hover-card:hover {
+  background-color: #4CAF50;
+  /* Modifiez la valeur selon vos préférences */
+}
+
+#gite_card {
+  background-color: #198754;
+}
+
+#idea {
+  margin: 0%;
+}
