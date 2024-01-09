@@ -338,3 +338,21 @@ footer {
   text-decoration: none;
   transition: color 0.3s;
 }
+
+.book {
+  border: solid;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #0b5909;
+  border-color: black;
+}
+
+.sign:hover,
+.book:hover {
+  background-color: #E08F3E;
+}
