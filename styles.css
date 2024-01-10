@@ -351,6 +351,7 @@ footer {
   color: inherit;
   text-decoration: none;
   transition: color 0.3s;
+  margin-left: 5%;
 }
 
 .book {
