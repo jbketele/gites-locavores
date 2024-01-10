@@ -371,6 +371,6 @@ footer {
   background-color: #E08F3E;
 }
 
-.hovered {
+.map path:active {
   background-color: #E08F3E;
 }
