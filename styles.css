@@ -29,8 +29,13 @@
     width: 80vw;
   }
 
+  .map {
+    width: 100vw;
+  }
 
-
+  .map path:hover {
+    fill: #E08F3E;
+  }
 }
 
 /*DESKTOP*/
@@ -51,6 +56,21 @@
   #icons {
     cursor: pointer;
     display: none;
+  }
+
+  .regions {
+    display: flex;
+    justify-content: center;
+  }
+
+  .map {
+    width: 55%;
+    height: 60%;
+    float: left;
+  }
+
+  .map path:hover {
+    fill: #E08F3E;
   }
 }
 
@@ -314,11 +334,7 @@ footer {
   margin: 0%;
 }
 
-.map {
-  width: 55%;
-  height: 60%;
-  float: left;
-}
+
 
 .map path {
   fill: #198754;
@@ -328,9 +344,7 @@ footer {
   margin-right: 20px;
 }
 
-.map path:hover {
-  fill: #E08F3E;
-}
+
 
 .map_regions {
   width: 50%;
@@ -354,5 +368,9 @@ footer {
 
 .sign:hover,
 .book:hover {
+  background-color: #E08F3E;
+}
+
+.hovered {
   background-color: #E08F3E;
 }
