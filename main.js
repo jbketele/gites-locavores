@@ -12,8 +12,11 @@ function filterCards() {
 
         if (cardText.includes(inputText)) {
             card.classList.remove('hidden')
+            card.style.order = 0
+
         } else {
             card.classList.add('hidden')
+            card.style.order = 1
         }
     }
 }

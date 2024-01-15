@@ -377,10 +377,19 @@ footer {
   background-color: #E08F3E;
 }
 
+#gitesList {
+  display: grid;
+}
+
+#gitesCard {
+  margin-left: 0;
+}
+
 #filterInput {
   width: 90%;
 }
 
 .card.hidden {
   visibility: hidden;
+  order: 1;
 }
