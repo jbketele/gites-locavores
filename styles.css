@@ -36,6 +36,7 @@
   .map path:hover {
     fill: #E08F3E;
   }
+
 }
 
 /*DESKTOP*/
@@ -374,4 +375,12 @@ footer {
 
 .map path:active {
   background-color: #E08F3E;
+}
+
+#filterInput {
+  width: 90%;
+}
+
+.card.hidden {
+  visibility: hidden;
 }
