@@ -376,14 +376,21 @@ footer {
   background-color: #E08F3E;
 }
 
-
-
 .description {
   display: grid;
   grid-template-columns: 50% 25%;
   gap: 15%;
 }
 
+.produits-locaux {
+  background-color: #e8c49f;
+}
+
+.produits-locaux-content {
+  display: grid;
+  grid-template-columns: 1% 30% 50%;
+  column-gap: 5%;
+}
 
 #gitesList {
   display: grid;
