@@ -469,7 +469,11 @@ footer {
 .mail label,
 .tel label,
 .message label {
-  width: 10%;
+  width: 11%;
+}
+
+.rating label {
+  width: 14%;
 }
 
 .lastname input,
@@ -478,4 +482,30 @@ footer {
 .tel input,
 .message textarea {
   width: 50%;
+}
+
+.avis {
+  background-color: #aaa;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.rating label {
+  margin: 0;
+}
+
+.stars {
+  font-size: 24px;
+}
+
+.stars:hover .fa-star {
+  color: #ffdc0f;
+}
+
+.stars .fa-star:hover~.fa-star {
+  color: gray;
 }
