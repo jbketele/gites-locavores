@@ -259,7 +259,6 @@ h3 {
 
 .texte-description {
   padding: 1rem;
-  width: 50%;
 }
 
 .chambres-gites {
@@ -377,6 +376,15 @@ footer {
   background-color: #E08F3E;
 }
 
+
+
+.description {
+  display: grid;
+  grid-template-columns: 50% 25%;
+  gap: 15%;
+}
+
+
 #gitesList {
   display: grid;
 }
@@ -392,4 +400,75 @@ footer {
 .card.hidden {
   visibility: hidden;
   order: 1;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
+
+#buttonContact {
+  height: fit-content;
+  width: 100%;
+}
+
+.head-modal {
+  height: 10%;
+  background-color: #4CAF50;
+}
+
+.civilite,
+.lastname,
+.firstname,
+.mail,
+.tel,
+.message {
+  display: flex;
+  gap: 2rem;
+}
+
+.civilite label,
+.lastname label,
+.firstname label,
+.mail label,
+.tel label,
+.message label {
+  width: 10%;
+}
+
+.lastname input,
+.firstname input,
+.mail input,
+.tel input,
+.message textarea {
+  width: 50%;
 }

@@ -112,7 +112,7 @@
         </div>
 
         <section id="description">
-            <div class=" text-white description d-flex justify-content-between">
+            <div class=" text-white description">
                 <div class="texte-description">
                     <h3>La Ferme de M. Seguin</h3>
                     <h4>Éric DUPONT</h4>
@@ -132,8 +132,58 @@
                         neque omnis excepturi aspernatur? Ipsa optio eaque placeat obcaecati? Dolores distinctio facere
                         velit excepturi, ullam tempora!</p>
                 </div>
-                <img style="height: fit-content; margin: 2rem;" src="img/rural-life-concept-with-farm-animals.jpg"
-                    alt="">
+                <div>
+                    <img style="height: fit-content; width: 100%; margin: 2rem 0;"
+                        src="img/rural-life-concept-with-farm-animals.jpg" alt="">
+                    <br>
+                    <button class="btn btn-light" id="buttonContact">Contactez-nous</button>
+
+                    <div id="contactModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <div class="head-modal">
+                                <h1 style="color: white; margin-left: 2rem;">Contactez-nous</h1>
+                            </div>
+                            <br>
+                            <h5 style="color: black;">Une question pour le producteur/hôte ? N'hésitez pas à le
+                                contacter via ce formulaire
+                            </h5>
+                            <br>
+                            <form class="modal-form">
+                                <div class="civilite">
+                                    <label for="civilite">Civilité</label>
+                                    <input type="radio" name="civilite" id="civil">
+                                    <label for="civilite">Monsieur</label>
+                                    <input type="radio" name="civilite" id="civil">
+                                    <label for="civilite">Madame</label>
+                                </div>
+                                <div class="lastname">
+                                    <label for="lastname">Nom</label>
+                                    <input type="text" name="name" id="name">
+                                </div>
+                                <div class="firstname">
+                                    <label for="firstname">Prénom</label>
+                                    <input type="text" name="firstname" id="firstname">
+                                </div>
+                                <div class="mail">
+                                    <label for="mail">Email</label>
+                                    <input type="text" name="mail" id="mail">
+                                </div>
+                                <div class="tel">
+                                    <label for="tel">Téléphone</label>
+                                    <input type="text" name="tel" id="tel">
+                                </div>
+                                <div class="message">
+                                    <label class="message">Message</label>
+                                    <textarea name="message"></textarea>
+                                </div>
+                                <button class="btn btn-success" type="submit">Envoyer</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
         <br>
@@ -233,6 +283,30 @@
 
         </div>
     </footer>
+    <script src="main.js"></script>
+    <script>
+        // Sélectionnez le bouton et le modal
+        var button = document.getElementById('buttonContact');
+        var modal = document.getElementById('contactModal');
+
+        // Lorsque l'utilisateur clique sur le bouton, affichez le modal
+        button.onclick = function () {
+            modal.style.display = 'block';
+        }
+
+        // Lorsque l'utilisateur clique sur × (fermer), fermez le modal
+        modal.getElementsByClassName('close')[0].onclick = function () {
+            modal.style.display = 'none';
+        }
+
+        // Lorsque l'utilisateur clique en dehors du modal, fermez-le également
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+    </script>
 </body>
 
 </html>
