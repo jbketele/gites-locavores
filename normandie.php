@@ -25,73 +25,8 @@
 </head>
 
 <body>
-    <header>
-        <div>
-            <div class="logo-titre">
-                <a href="index.html"><img src="img/logo_gites_locavores.png" class="container row logo"
-                        alt="logo_gites_locavores"></a>
-                <h1 class="welcome row">Bienvenue</h1>
-            </div>
+<?php require_once(__DIR__ . '/header.php'); ?>
 
-            <div class="menu">
-                <div class="menu">
-                    <nav class="navbar navbar-expand-md navbar-light ps-4 bg-light">
-                        <div class="container-fluid">
-                            <button class="navbar-toggler fixed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                                aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarNav">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="index.html">Accueil</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="presentation.html">Présentation</a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            Nos Gites
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="hdf.html">Hauts de France</a></li>
-                                            <li><a class="dropdown-item" href="normandie.html">Normandie</a></li>
-                                            <li><a class="dropdown-item" href="regions.html">Tous</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            Nos idées
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="event.html">Évènements</a></li>
-                                            <li><a class="dropdown-item" href="actus.html">Actualités</a></li>
-                                            <li><a class="dropdown-item" href="recettes.html">Recettes</a></li>
-                                            <li><a class="dropdown-item" href="produits-saison.html">Prdouits de
-                                                    saison</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="idees.html">Tous</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="contact.html">Contact</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                        <div><a href="regions.html" class="book btn">Réserver</a></div>
-                        <div><a href="connexion.html" class="sign btn">Inscription/Connexion</a></div>
-                    </nav>
-
-                </div>
-            </div>
-
-        </div>
-    </header>
 
     <main>
         <section>
@@ -208,61 +143,8 @@
         </section>
     </main>
 
-    <footer>
-        <div class="bg-light border-light shadow py-3">
-            <div class=" follow row">
-                <p class="follow container text-center" style=font-size:2rem;>Suivez-nous :
-                    <i class="bi bi-facebook" style="font-size: 2rem;"></i>
-                    <i class="bi bi-instagram" style="font-size: 2rem;"></i>
-                    <i class="bi bi-youtube" style="font-size: 2rem;"></i>
-                    <i class="bi bi-linkedin" style="font-size: 2rem;"></i>
+    <?php require_once(__DIR__ . '/footer.php'); ?>
 
-                </p>
-            </div>
-        </div>
-
-        <div class="bg-dark text-white">
-
-            <div style="margin-left: 2rem; height: 50px;">
-                <img src="img/logo gites detoure.png" class="container col-md-2 row logo" alt="logo_gites_locavores"
-                    style="width: 150px; float: left;">
-            </div>
-            <div class="line container row offset-2 col-md-7">
-                <hr class="border mt-3 border-white">
-            </div>
-
-
-
-            <div class="container d-flex flex-wrap row-cols-md-3">
-                <div class="container row offset-1 col-md-2">
-                    <p>RECHERCHE</p>
-                    <ul>
-                        <li>Produits locaux</li>
-                        <li>Gîtes ruraux</li>
-                        <li>Nos régions</li>
-                    </ul>
-                </div>
-                <div class="container row ms-5 col-md-2">
-                    <p>INSPIREZ-VOUS</p>
-                    <ul>
-                        <li>Actualités</li>
-                        <li>Idées de recettes</li>
-                        <li>Produits de saison</li>
-                    </ul>
-                </div>
-                <div class="container row ms-5 col-md-2">
-                    <p>QUI SOMMES-NOUS</p>
-                    <ul>
-                        <li>Nos activités</li>
-                        <li>Nos valeurs</li>
-                        <li>Nos partenaires</li>
-                        <li>Contactez-nous</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </footer>
 
     </script>
 </body>
