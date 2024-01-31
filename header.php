@@ -55,7 +55,7 @@
 
                     </div>
                     <div><a href="regions.php" class="book btn">Réserver</a></div>
-                    <div><a href="connexion.php" class="sign btn">Inscription/Connexion</a></div>
+                    <div><a href="inscription.php" class="sign btn">Inscription/Connexion</a></div>
                 </nav>
 
             </div>

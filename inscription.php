@@ -19,7 +19,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" type="image/x-icon" href="img/logo gites detoure.png">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <style>
     h3{
@@ -27,6 +27,12 @@
         text-align: center;
         backdrop-filter: brightness(0.5);
         color: white;
+    }
+    select{
+        padding: 5%;
+        width: 100%;
+        border-radius: 5%;
+        border: none;
     }
 </style>
 <body>
@@ -36,9 +42,45 @@
     <main>
         <div class="row">
             <div class="d-flex justify-content-around" id="connexion">
-              
                 <div>
-                    <h3 class="mt-3" style="padding: 0">Connexion</h3>
+                    <h3 class="mt-3">Inscription</h3>
+                    <form action="connexion.php">
+                        <div class="mt-5">
+                            <div class="row justify-content-center">
+                                <div>
+                                <div class="form-floating">
+                                        <select name="user" id="user">
+                                            <option value="">Type de compte</option>
+                                            <option value="visiteur">Visiteur</option>
+                                            <option value="hôte">Hôte</option>
+                                    </select>
+                                    </div>
+                                    <br>
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="last name"
+                                            id="floatingTextarea"></textarea>
+                                        <label for="floatingTextarea">Nom</label>
+                                    </div>
+                                    <br>
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="floatingInputGrid"
+                                            placeholder="name@example.com">
+                                        <label for="floatingInputGrid">Email</label>
+                                    </div>
+                                    <br>
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" id="floatingInputGrid"
+                                            placeholder="mdp">
+                                        <label for="floatingInputGrid">Mot de passe</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-lg mt-5 mb-5" type="submit">Valider</button>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <h3 class="mt-3">Connexion</h3>
                     <form>
                         <div class="connect">
                             <div class="row justify-content-center">
@@ -58,9 +100,8 @@
                                 </div>
                             </div>
                         </div>
+                        <button class="btn btn-primary btn-lg mt-5 mb-5" type="submit">Valider</button>
                     </form>
-                    <div class="container-fluid d-flex justify-content-center">
-                        <a class="btn btn-primary btn-lg mt-5 mb-5" href="#" target="_blank">Valider</a>
                     </div>
                 </div>
             </div>

@@ -46,7 +46,7 @@
                                     </p>
 
                                     <p>
-                                        <label class="message">Message : <textarea name="message"></textarea></label>
+                                        <label>Message : <textarea name="message"></textarea></label>
                                     </p>
                                     <p class="envoyer">
                                         <button type="submit">Envoyer</button>
@@ -62,5 +62,4 @@
     <?php require_once(__DIR__ . '/footer.php'); ?>
 
 </body>
-
 </html>
