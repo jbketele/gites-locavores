@@ -65,9 +65,8 @@
   }
 
   .map {
-    width: 55%;
+    width: 25%;
     height: 60%;
-    float: left;
   }
 
   .map path:hover {

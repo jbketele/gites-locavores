@@ -31,7 +31,7 @@
             <div class="row row-cols-1 row-cols-md-2 g-2 mx-5" id="ideas">
                 <div class="col">
                     <div class="card" id="idea">
-                        <a class="d-flex justify-content-center" href="event.html"><img src="img/calendar_591567.png"
+                        <a class="d-flex justify-content-center" href="event.php"><img src="img/calendar_591567.png"
                                 style="width: 25%" class="card-img-top" alt="..."></a>
                         <div class="mt-3">
                             <h5 class="text-center">Évènements</h5>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col">
                     <div class="card" id="idea">
-                        <a class="d-flex justify-content-center" href="actus.html"><img src="img/newspaper_2965879.png"
+                        <a class="d-flex justify-content-center" href="actus.php"><img src="img/newspaper_2965879.png"
                                 style="width: 25%;" class="card-img-top" alt="..."></a>
                         <div class="mt-3">
                             <h5 class="text-center">Actualités</h5>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="col">
                     <div class="card" id="idea">
-                        <a class="d-flex justify-content-center" href="recettes.html"><img
+                        <a class="d-flex justify-content-center" href="recettes.php"><img
                                 src="img/cook-book_13310212.png" style="width: 25%;" class="card-img-top" alt="..."></a>
                         <div class="mt-3">
                             <h5 class="text-center">Recettes</h5>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="col">
                     <div class="card" id="idea">
-                        <a class="d-flex justify-content-center" href="produits-saison.html"><img
+                        <a class="d-flex justify-content-center" href="produits-saison.php"><img
                                 src="img/vegetables_3967324.png" class="card-img-top" style="width: 25%;" alt="..."></a>
                         <div class="mt-3">
                             <h5 class="text-center">Produits de saison</h5>

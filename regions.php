@@ -29,7 +29,6 @@
 
     <main>
         <section class="regions">
-            <div class="search-regions" style="width: 50%;">
                 <div class="map" id="map">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap"
                         xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 612 585">
@@ -90,47 +89,6 @@
 
                     </svg>
                 </div>
-            </div>
-            <br>
-            <div class="map_regions" id="map_regions">
-                <form class="contact" name="contact" method="POST" netlify>
-                    <p>
-                        <label>Où souhaitez-vous aller ?<input type="text" name="lastname" /></label>
-                    </p>
-
-                    <p>
-                        <label for="start">Arrivée :</label>
-
-                        <input type="date" id="start" name="trip-start" value="aaaa-mm-jj" />
-
-                    </p>
-
-                    <p>
-                        <label for="start">Départ :</label>
-
-                        <input type="date" id="start" name="trip-start" value="aaaa-mm-jj" />
-                    </p>
-                    <p>
-                        <label>Nombre de voyageurs :</label>
-                        <select name="people" id="nb_people">
-                            <option value="">Choisir</option>
-                            <option value="1">1 pers</option>
-                            <option value="2">2 pers</option>
-                            <option value="3">3 pers</option>
-                            <option value="4">4 pers</option>
-                            <option value="5">5 pers</option>
-                            <option value="6">6 pers</option>
-                            <option value="7">7 pers</option>
-                            <option value="8">8 pers</option>
-                            <option value="">Plus de 8 pers</option>
-
-                        </select>
-                    </p>
-                    <p class="envoyer">
-                        <button type="submit">Envoyer</button>
-                    </p>
-                </form>
-            </div>
         </section>
     </main>
 

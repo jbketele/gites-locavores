@@ -54,6 +54,9 @@
         <section id="description">
             <div class=" text-white description">
                 <div class="texte-description">
+                    <?php
+                        if (isset($_GET['farm']))
+                    ?>
                     <h3>La Ferme de M. Seguin</h3>
                     <h4>Éric DUPONT</h4>
                     <p>Marly-Gomont (02)</p>

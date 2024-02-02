@@ -28,10 +28,10 @@
 
     <main>
         <div class="d-flex justify-content-evenly pt-3">
-            <a href="event.html" class="btn btn-warning">Évènements</a>
-            <a href="actus.html" class="btn btn-warning">Actualités</a>
-            <a href="recettes.html" class="btn btn-warning">Recettes</a>
-            <a href="produits-saison.html" class="btn btn-warning">Produits de saison</a>
+            <a href="event.php" class="btn btn-warning">Évènements</a>
+            <a href="actus.php" class="btn btn-warning">Actualités</a>
+            <a href="recettes.php" class="btn btn-warning">Recettes</a>
+            <a href="produits-saison.php" class="btn btn-warning">Produits de saison</a>
         </div>
         <section>
             <div class="row-cols-1 row-cols-md-3 cards-blog">
