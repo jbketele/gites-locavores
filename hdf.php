@@ -20,7 +20,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" type="image/x-icon" href="img/logo gites detoure.png">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        @media (min-width: 767px) {
+    #map {
+        height: 50%;
+        width: 75%;
+        margin-top: 3rem;
+        margin-left: 5rem;
+    }
+
+    section {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        column-gap: 1rem;
+    }
+}
+    </style>
 </head>
 
 <body>
@@ -28,67 +45,14 @@
 
 
     <main>
-        <div id="map"></div>
+      
 
         <section>
             <div class="list-gites">
-                <div class="container col-md-2 filter" style="float: left;">
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                        <div class="group-content">
-                            <div class="input text">
-                                <label for="input_q">Mots clés</label>
-                                <input type="text" id="filterInput" placeholder="Filtre">
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input filter-checkbox" type="checkbox" data-location="Aisne (02)">
-                                <label class="form-check-label">
-                                    Aisne (02)
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input filter-checkbox" type="checkbox" data-location="Nord (59)">
-                                <label class="form-check-label">
-                                    Nord (59)
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input filter-checkbox" type="checkbox" data-location="Pas de Calais (62)">
-                                <label class="form-check-label">
-                                    Pas de Calais (62)
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input filter-checkbox" type="checkbox" data-location="Oise (60)">
-                                <label class="form-check-label">
-                                    Oise (60)
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input filter-checkbox" type="checkbox" data-location="Somme (80)">
-                                <label class="form-check-label">
-                                    Somme (80)
-                                </label>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="group-name">
-                            <h5>Séjours thémathiques</h5>
-                        </div>
-                        <div class="group-content">
-                            <div class="form-check">
-                                <input class="form-check-input filter-checkbox" type="checkbox">
-                                <label class="form-check-label">
-                                    Logement insolite
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input filter-checkbox" type="checkbox">
-                                <label class="form-check-label">
-                                    Chambres d'hôtes
-                                </label>
-                            </div>
-                        </div>
-                    </form>
+                <div class="container">
+                    <form method="post">
+                         <input type="text" id="filterInput" placeholder="Mots-clés">
+                    </form>    
                 </div>
 
                 <div class="container col-md-10 cards" id="gitesList">
@@ -141,16 +105,47 @@
                         </div>
                     </div>
                 </div>
-
             </div>
+
+        <div id="map"></div>
+        
         </section>
     </main>
 
 
     
     <?php require_once(__DIR__ . '/footer.php'); ?>
+    
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    document.getElementById('filterInput').addEventListener('input', function () {
+    filterCards();
+});
+function filterCards() {
+    var inputText = document.getElementById('filterInput').value.toLowerCase();
+    var cards = document.getElementsByClassName('card');
+    for (var i = 0; i < cards.length; i++) {
+        var cardText = cards[i].textContent.toLowerCase();
+        var card = cards[i];
 
-    <script src="main.js"></script>
+        if (cardText.includes(inputText)) {
+            card.classList.remove('hidden')
+            card.style.order = 0
+
+        } else {
+            card.classList.add('hidden')
+            card.style.order = 1
+        }
+    }
+}
+
+        var map = L.map('map').setView([49.900002, 2.3], 8); // Amiens, France
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+    </script>
+
 </body>
 
 </html>

@@ -20,8 +20,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" type="image/x-icon" href="img/logo gites detoure.png">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" type="text/css" href="styles.css">
-
+    <style>
+        #map {
+            height: 50%;
+            width: 75%;
+            margin-top: 3rem;
+            margin-left: 5rem;
+        }
+        section{
+            display: grid;
+            grid-template-columns : 3fr 2fr;
+            column-gap: 1rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -32,65 +45,14 @@
         <section>
             <div class="list-gites">
 
-                <div class="container col-md-2 filter" style="float: left;">
-                    <div class="group-content">
-                        <div class="input text">
-                            <label for="input_q">Mots clés</label>
-                            <input type="text" name="q" id="input_q" value="">
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox">
-                            <label class="form-check-label">
-                                Calvados (14)
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox">
-                            <label class="form-check-label">
-                                Eure (27)
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox">
-                            <label class="form-check-label">
-                                Manche (50)
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox">
-                            <label class="form-check-label">
-                                Orne (61)
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox">
-                            <label class="form-check-label">
-                                Seine-maritime (76)
-                            </label>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="group-name">
-                        <h5>Séjours thémathiques</h5>
-                    </div>
-                    <div class="group-content">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox">
-                            <label class="form-check-label">
-                                Logement insolite
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox">
-                            <label class="form-check-label">
-                                Chambres d'hôtes
-                            </label>
-                        </div>
-                    </div>
+            <div class="container">
+                    <form method="post">
+                         <input type="text" id="filterInput" placeholder="Mots-clés">
+                    </form>    
                 </div>
 
                 <div class="container col-md-10 cards">
-                    <div class="card mb-3">
+                    <div class="card mb-3" id="gitesCard">
                         <div class="card-header">Producteur</div>
                         <div class="card-body text-white bg-success">
                             <img src="img/rural-life-concept-with-farm-animals.jpg"
@@ -106,7 +68,7 @@
                         </div>
                     </div>
 
-                    <div class="card mb-3" data-aos="fade-up">
+                    <div class="card mb-3" id="gitesCard">
                         <div class="card-header">Producteur</div>
                         <div class="card-body text-white bg-success">
                             <img src="img/farmer-cowshed-looking-after-cows.jpg"
@@ -122,7 +84,7 @@
                         </div>
                     </div>
 
-                    <div class="card mb-3" data-aos="fade-up">
+                    <div class="card mb-3" id="gitesCard">
                         <div class="card-header">Producteur</div>
                         <div class="card-body text-white bg-success">
                             <img src="img/country-lifestyle-concept-hens-nest.jpg"
@@ -140,12 +102,40 @@
                 </div>
 
             </div>
+            <div id="map"></div>
         </section>
     </main>
 
     <?php require_once(__DIR__ . '/footer.php'); ?>
 
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    document.getElementById('filterInput').addEventListener('input', function () {
+    filterCards();
+});
+function filterCards() {
+    var inputText = document.getElementById('filterInput').value.toLowerCase();
+    var cards = document.getElementsByClassName('card');
+    for (var i = 0; i < cards.length; i++) {
+        var cardText = cards[i].textContent.toLowerCase();
+        var card = cards[i];
 
+        if (cardText.includes(inputText)) {
+            card.classList.remove('hidden')
+            card.style.order = 0
+
+        } else {
+            card.classList.add('hidden')
+            card.style.order = 1
+        }
+    }
+}
+
+        var map = L.map('map').setView([48.879870, 0.171253], 8); // Amiens, France
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
     </script>
 </body>
 

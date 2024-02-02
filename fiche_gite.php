@@ -21,9 +21,25 @@
     <link rel="icon" type="image/x-icon" href="img/logo gites detoure.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+<style>
+    @media screen (max-width: 767px) {
+        
+    }
 
+    @media screen (min-width: 767px) {
+        #map {
+            height: 25%;
+            width: 20%;
+            margin-top: 2rem;
+            margin-left: 50rem;
+            position: absolute;
+        }
+    }
+    
+</style>
 <body>
     <!--NAVBAR-->
     <?php require_once(__DIR__ . '/header.php'); ?>
@@ -190,14 +206,19 @@
         <br>
         <section id="coordonnees">
             <div class="coordonnees">
+                <div id="map"></div>
+
                 <h4>Coordonées</h4>
                 <br>
-                <h5>Adresse</h5>
-                <p>Chemin des Épis Dorés, 98765 Campagne-sur-Verdure</p>
-                <br>
-                <h5>Téléphone</h5>
-                <p>06.00.00.00.00</p>
-                <br>
+
+                <div class="coordonees-txt">
+                    <h5>Adresse</h5>
+                    <p>Chemin des Épis Dorés, 02120 Marly-Gomont</p>
+                    <br>
+                    <h5>Téléphone</h5>
+                    <p>06.00.00.00.00</p>
+                    <br>
+                </div>
             </div>
         </section>
         <br>
@@ -244,6 +265,7 @@
 
     <script src="https://kit.fontawesome.com/4f2c3f58c1.js" crossorigin="anonymous"></script>
     <script src="main.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
         // Sélectionnez le bouton et le modal
         var button = document.getElementById('buttonContact');
@@ -265,6 +287,12 @@
                 modal.style.display = 'none';
             }
         }
+
+        var map = L.map('map').setView([49.9052, 3.7924], 13); // Marly, France
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
     </script>
 </body>
