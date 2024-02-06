@@ -38,8 +38,8 @@
                 <div class="container card-blog border-light shadow-lg col-md-4">
                     <img src="img/pub_noel_gites_locavores.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Chaque avis compte ! N'hésitez pas à nous partagez le vôtre !</h5>
-                        <p class="card-text">Chaque avis est important ! Voici un exemple d'avis reçu cette semaine ...
+                        <h5 class="card-title">Profitez de nos chalets pendant les fêtes !</h5>
+                        <p class="card-text">Passez un moment en famille unique dans nos chalets et découvrez les saveurs des spécialités montagnardes ...
                         </p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>

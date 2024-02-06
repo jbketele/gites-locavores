@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="title-box">
                         <img src="img/loupe.png" alt="loupe" style="float:left;">
-                        <h2>Trouvez nos produits et découvrez nos expériences</h2>
+                        <h4>Trouvez nos produits et découvrez nos expériences</h4>
                     </div>
                     <div class="container row place-products">
                         <div class="container row col-md-5 search-container">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="shop">
-                    <h3>Nos points de vente</h3>
+                    <h4>Nos points de vente</h4>
                 </div>
                 <div class="container d-flex vente">
                     <label class="item" for="option1">Chambres d'hôtes</label>
@@ -78,13 +78,13 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="4000">
-                            <img src="img/gites-local.png" alt="gites ruraux" class="d-block w-100">
+                            <img src="img/gites-local.png" alt="gites ruraux" class="d-block couv w-50">
                         </div>
                         <div class="carousel-item" data-bs-interval="4000">
-                            <img src="img/produits-locaux.png" alt="" class="d-block portrait w-50">
+                            <img src="img/produits-locaux.png" alt="" class="d-block portrait w-25">
                         </div>
                         <div class="carousel-item" data-bs-interval="4000">
-                            <img src="img/image.png" alt="" class="d-block portrait w-50">
+                            <img src="img/image.png" alt="" class="d-block portrait w-25">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carousel1"
@@ -134,32 +134,29 @@
                     </div>
                 </div>
                 <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/654a33fe1116a512729429.png" class="card-img-top" alt="...">
+                    <img src="img/pub_noel_gites_locavores.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Chaque avis compte ! N'hésitez pas à nous partagez le vôtre !</h5>
-                        <p class="card-text">Chaque avis est important ! Voici un exemple d'avis reçu cette semaine ...
+                        <h5 class="card-title">Profitez de nos chalets pendant les fêtes !</h5>
+                        <p class="card-text">Passez un moment en famille unique dans nos chalets et découvrez les saveurs des spécialités montagnardes ...
                         </p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
 
                 <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/pexels-zen-chung-5529540.jpg" class="card-img" alt="...">
+                    <img src="img/6567139f9c967820700071.jpg" class="card-img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">La pomme, un fruit aux multiples saveurs !</h5>
-                        <p class="card-text">Découvrez les différentes variétés de pommes cultivées chez nos
-                            agriculteurs, et des recettes savoureuses ...</p>
+                        <h5 class="card-title">Coup de Pouce : Ferme de Janine et Denis dans le Calvados</h5>
+                        <p class="card-text">(Coup de Pouce) 🐮 Janine et Denis Langlais proposent dans leur ferme normande des produits laitiers 100% Bio et de la viande ...</p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
 
                 <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/60c32bd1cae0e003878780.jpg" class="card-img" alt="...">
+                    <img src="img/63bf03d6d30b9248784608.jpeg" class="card-img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Gnocchis de pommes de terre aux blettes</h5>
-                        <p class="card-text">Plus besoin de chercher à combiner féculents et légumes, voici une recette
-                            qui
-                            le fait pour vous ! Goûtez à ces délicieux gnocchis de pomme de terre aux ...</p>
+                        <h5 class="card-title">Recette de la Teurgoule</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>

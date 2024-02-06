@@ -28,7 +28,7 @@
             <div class="mt-5">
                 <div class="row justify-content-center">
                     <div>
-                        <form action="recap_gites.php" method="POST">
+                        <form method="POST">
                             <div class="form-floating">
                                 <input class="form-control" type="text" placeholder="farm name" name="farm_name" required>                            
                                 <label for="farm_name">Nom de la ferme:</label>
@@ -57,8 +57,21 @@
         
     </div>
 </div>
+ <?php
+       if (isset($_POST['host_name'])) {
+        $mysqli = new mysqli("localhost", "root", "", "liste-gites");
+        $mysqli->set_charset("utf8");
+        $requete = "INSERT INTO carnet VALUES(NULL, '" . $_POST['farm_name'] . "', '" . $_POST['host_name'] . "', '" . $_POST['location'] . "', '" . $_POST['description'] . "')";
+        $resultat = $mysqli->query($requete);
+        if ($resultat)
+            echo "<p>Le gîte a été ajouté</p>";
+        else
+            echo "<p>Erreur</p>";
+    }
+    ?>
 
     <?php require_once(__DIR__ . '/footer.php'); ?>
 
+   
 </body>
 </html>

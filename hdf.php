@@ -23,20 +23,51 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
-        @media (min-width: 767px) {
-    #map {
-        height: 50%;
-        width: 75%;
-        margin-top: 3rem;
-        margin-left: 5rem;
+
+ @media (max-width: 767px) {
+    section{
+        height: 202vh;
+    }
+    #map{
+        top: 95%;
+        width: 75vw;
+        height: 35vh;
+        right: 107%;
+    }
+    .list-gites{
+        margin-left: 2.5rem;
+    }
+    footer{
+        margin-top: 38vh
+    }
+ }
+
+ @media (min-width: 767px) {
+    #map{
+        width: 30vw;
+        height: 70vh;
     }
 
+    .list-gites{
+        margin-left: 0;
+    }
+    footer{
+        margin-top: 0;
+    }
+    section{
+        height: 170vh;
+    }
+ } 
     section {
         display: grid;
         grid-template-columns: 3fr 2fr;
         column-gap: 1rem;
     }
-}
+
+#map {
+        margin-top: 3rem;
+        margin-left: 5rem;
+    }
     </style>
 </head>
 

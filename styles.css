@@ -43,15 +43,23 @@
 @media screen and (min-width:767px) {
 
   .cards-blog {
-    width: 80vw;
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: auto;
-    margin-right: auto;
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    grid-auto-rows: 1fr;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    margin: 2.8rem 0;
   }
 
   .card-blog {
-    width: 30%;
+    position: relative;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background-color: #fff;
+    width: 60%;
   }
 
   #icons {
@@ -178,8 +186,20 @@ h3 {
   width: 100%;
 }
 
-.portrait {
+.couv {
   margin-left: 25%;
+}
+
+.carousel-control-prev-icon {
+  background-color: black;
+}
+
+.carousel-control-next-icon {
+  background-color: black;
+}
+
+.portrait {
+  margin-left: 40%;
 }
 
 .filter {
@@ -397,7 +417,7 @@ footer {
 }
 
 #filterInput {
-  width: 15%;
+  width: 30vw;
   margin-left: 9%;
 }
 
