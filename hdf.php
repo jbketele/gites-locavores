@@ -26,7 +26,7 @@
 
  @media (max-width: 767px) {
     section{
-        height: 202vh;
+        height: 1320px;
     }
     #map{
         top: 95%;
@@ -38,7 +38,7 @@
         margin-left: 2.5rem;
     }
     footer{
-        margin-top: 38vh
+        margin-top: 400px;
     }
  }
 
