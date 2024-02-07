@@ -13,7 +13,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gites Locavores</title>
+    <title>Gites Locavores - Normandie</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -136,6 +136,16 @@ function filterCards() {
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
+
+        var marker1 =  L.marker([49.6179384, 0.7538866]).addTo(map);
+        marker1.bindPopup("<b>La Ferme de M. Seguin</b><br>Éric Dupont");
+
+
+       var marker2 = L.marker([49.0598651, -1.0250661]).addTo(map);
+       marker2.bindPopup("<b>GAEC des Marais</b><br>D. Le Garrec");
+      var marker3 =  L.marker([49.3455531, 0.3427251]).addTo(map);
+      marker3.bindPopup("<b>SCEA de la Sablière</b><br>Jean Leclerc");
+
     </script>
 </body>
 

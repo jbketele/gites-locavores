@@ -13,7 +13,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gites Locavores</title>
+    <title>Gites Locavores - Hauts de France</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -87,7 +87,7 @@
                 </div>
 
                 <div class="container col-md-10 cards" id="gitesList">
-                    <div class="card mb-3" data-location="Aisne (02)" data-category="Chambres d'hôtes" id="gitesCard">
+                    <div class="card mb-3" data-lat="49.9052" data-lng="3.7924" data-location="Aisne (02)" data-category="Chambres d'hôtes" id="gitesCard">
                         <div class="card-header">Producteur</div>
                         <div class="card-body text-white" id="gite_card">
                             <img src="img/rural-life-concept-with-farm-animals.jpg"
@@ -170,11 +170,21 @@ function filterCards() {
     }
 }
 
-        var map = L.map('map').setView([49.900002, 2.3], 8); // Amiens, France
+        var map = L.map('map').setView([50.1024606, 2.7247515], 7.5); // Amiens, France
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
+
+      var marker1 =  L.marker([49.9052, 3.7924]).addTo(map);
+        marker1.bindPopup("<b>La Ferme de M. Seguin</b><br>Éric Dupont");
+
+
+       var marker2 = L.marker([50.5452102, 3.0252819]).addTo(map);
+       marker2.bindPopup("<b>GAEC des Marais</b><br>D. Van De Bruck");
+      var marker3 =  L.marker([49.7407935, 2.1511753]).addTo(map);
+      marker3.bindPopup("<b>SCEA de la Sablière</b><br>Jean Leclerc");
+
     </script>
 
 </body>

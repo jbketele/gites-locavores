@@ -13,7 +13,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gites Locavores</title>
+    <title>Gites Locavores - Produits de saison</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -38,8 +38,8 @@
                 <div class="container card-blog border-light shadow-lg col-md-4">
                     <img src="img/5e4d3f833639a044200785.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Chaque avis compte ! N'hésitez pas à nous partagez le vôtre !</h5>
-                        <p class="card-text">Chaque avis est important ! Voici un exemple d'avis reçu cette semaine ...
+                        <h5 class="card-title">La clémentine de Corse, unique et dynamisante !</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         </p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
@@ -58,18 +58,16 @@
                 <div class="container card-blog border-light shadow-lg col-md-4">
                     <img src="img/5e4d4b3e731c9362699544.jpg" class="card-img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Gnocchis de pommes de terre aux blettes</h5>
-                        <p class="card-text">Plus besoin de chercher à combiner féculents et légumes, voici une recette
-                            qui
-                            le fait pour vous ! Goûtez à ces délicieux gnocchis de pomme de terre aux ...</p>
+                        <h5 class="card-title">La mâche, une élégante valeur sûre</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut pharetra sit amet aliquam id diam.</p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
                 <div class="container card-blog border-light shadow-lg col-md-4">
                     <img src="img/5e4d49827a964177551332.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Chaque avis compte ! N'hésitez pas à nous partagez le vôtre !</h5>
-                        <p class="card-text">Chaque avis est important ! Voici un exemple d'avis reçu cette semaine ...
+                        <h5 class="card-title">Le kiwi, un grand voyageur devenu made in France</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         </p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
@@ -78,9 +76,8 @@
                 <div class="container card-blog border-light shadow-lg col-md-4">
                     <img src="img/60994cb671913953653688.png" class="card-img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">La pomme, un fruit aux multiples saveurs !</h5>
-                        <p class="card-text">Découvrez les différentes variétés de pommes cultivées chez nos
-                            agriculteurs, et des recettes savoureuses ...</p>
+                        <h5 class="card-title">La truffe, le diamant des forêts françaises</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
@@ -88,10 +85,8 @@
                 <div class="container card-blog border-light shadow-lg col-md-4">
                     <img src="img/6099447320d6d477693201.png" class="card-img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Gnocchis de pommes de terre aux blettes</h5>
-                        <p class="card-text">Plus besoin de chercher à combiner féculents et légumes, voici une recette
-                            qui
-                            le fait pour vous ! Goûtez à ces délicieux gnocchis de pomme de terre aux ...</p>
+                        <h5 class="card-title">La courge butternut, fidèle à ses promesses</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut pharetra sit amet aliquam id diam.</p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>

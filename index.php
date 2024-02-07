@@ -13,7 +13,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gites Locavores</title>
+    <title>Gites Locavores - Accueil</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="shop">
-                    <h4>Nos points de vente</h4>
+                    <h4>Nos types de gîtes</h4>
                 </div>
                 <div class="container d-flex vente">
                     <label class="item" for="option1">Chambres d'hôtes</label>
@@ -166,7 +166,7 @@
 
         <section class="other-cards">
             <div class="container-fluid d-flex justify-content-center">
-                <a href="event.html" class="btn-success btn-lg mt-5 mb-5">Et bien d'autres...</a>
+                <a href="event.php" class="btn-success btn-lg mt-5 mb-5">Et bien d'autres...</a>
             </div>
         </section>
     </main>

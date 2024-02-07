@@ -13,7 +13,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gites Locavores</title>
+    <title>Gites Locavores - Actus</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -47,9 +47,8 @@
                 <div class="container card-blog border-light shadow-lg col-md-4">
                     <img src="img/6567139f9c967820700071.jpg" class="card-img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">La pomme, un fruit aux multiples saveurs !</h5>
-                        <p class="card-text">Découvrez les différentes variétés de pommes cultivées chez nos
-                            agriculteurs, et des recettes savoureuses ...</p>
+                        <h5 class="card-title">Coup de Pouce : Ferme de Janine et Denis dans le Calvados</h5>
+                        <p class="card-text">(Coup de Pouce) 🐮 Janine et Denis Langlais proposent dans leur ferme normande des produits laitiers 100% Bio et de la viande ...</p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
@@ -57,18 +56,16 @@
                 <div class="container card-blog border-light shadow-lg col-md-4">
                     <img src="img/65687cface297532006431.jpg" class="card-img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Gnocchis de pommes de terre aux blettes</h5>
-                        <p class="card-text">Plus besoin de chercher à combiner féculents et légumes, voici une recette
-                            qui
-                            le fait pour vous ! Goûtez à ces délicieux gnocchis de pomme de terre aux ...</p>
+                        <h5 class="card-title">Tournage TF1 de la Recette de Filet de Truite à la Normande pour les fêtes chez Maison Lefèvre !</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
                 <div class="container card-blog border-light shadow-lg col-md-4">
                     <img src="img/655621d692388766238543.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Chaque avis compte ! N'hésitez pas à nous partagez le vôtre !</h5>
-                        <p class="card-text">Chaque avis est important ! Voici un exemple d'avis reçu cette semaine ...
+                        <h5 class="card-title">CATALOGUE DES FÊTES 2023</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut pharetra sit amet aliquam id diam.
                         </p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
@@ -77,9 +74,8 @@
                 <div class="container card-blog border-light shadow-lg col-md-4">
                     <img src="img/656496bf447ba477103428.jpg" class="card-img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">La pomme, un fruit aux multiples saveurs !</h5>
-                        <p class="card-text">Découvrez les différentes variétés de pommes cultivées chez nos
-                            agriculteurs, et des recettes savoureuses ...</p>
+                        <h5 class="card-title">Marché de Noël à Dozulé le 8 décembre</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut pharetra sit amet aliquam id diam.</p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
@@ -87,10 +83,8 @@
                 <div class="container card-blog border-light shadow-lg col-md-4">
                     <img src="img/6551e56d119fa581493692-copie.jpeg" class="card-img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Gnocchis de pommes de terre aux blettes</h5>
-                        <p class="card-text">Plus besoin de chercher à combiner féculents et légumes, voici une recette
-                            qui
-                            le fait pour vous ! Goûtez à ces délicieux gnocchis de pomme de terre aux ...</p>
+                        <h5 class="card-title">Des coffrets gourmands 100% produits de la ferme</h5>
+                        <p class="card-text">Coffrets gourmands Gites Locavores, une bonne idée pour faire plaisir à vos proches. Composez des coffrets gourmands de produits de la Normandie ...</p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>

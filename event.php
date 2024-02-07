@@ -13,7 +13,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gites Locavores</title>
+    <title>Gites Locavores - Évènements</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -48,9 +48,8 @@
                 <div class="container card-blog border-light shadow-lg col-md-4">
                     <img src="img/65546a2e98557988646525.jpg" class="card-img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">La pomme, un fruit aux multiples saveurs !</h5>
-                        <p class="card-text">Découvrez les différentes variétés de pommes cultivées chez nos
-                            agriculteurs, et des recettes savoureuses ...</p>
+                        <h5 class="card-title"> VENTE DE SAPINS</h5>
+                        <p class="card-text">Vente de sapins à partir du 2 décembre 2023. Quantité limitée.</p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
@@ -58,18 +57,16 @@
                 <div class="container card-blog border-light shadow-lg col-md-4">
                     <img src="img/652542e3a2a67183224928.jpg" class="card-img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Gnocchis de pommes de terre aux blettes</h5>
-                        <p class="card-text">Plus besoin de chercher à combiner féculents et légumes, voici une recette
-                            qui
-                            le fait pour vous ! Goûtez à ces délicieux gnocchis de pomme de terre aux ...</p>
+                        <h5 class="card-title">À Noël, partez à la découverte des vignes du Vermandois</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua... </p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
                 <div class="container card-blog border-light shadow-lg col-md-4">
                     <img src="img/61605a42736e9115570806-copie.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Chaque avis compte ! N'hésitez pas à nous partagez le vôtre !</h5>
-                        <p class="card-text">Chaque avis est important ! Voici un exemple d'avis reçu cette semaine ...
+                        <h5 class="card-title">Marché de Noël et ferme en fête chez Les Chèvres de M. Seguin</h5>
+                        <p class="card-text">Pour Noël, venez chez Les Chèvres de M. Seguin à Hautain : Samedis 9 et 16 décembre, Dimanches 10 et 17 décembre De 9h30 à 18h ...
                         </p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
@@ -78,9 +75,8 @@
                 <div class="container card-blog border-light shadow-lg col-md-4">
                     <img src="img/65577a82076c4095375992.jpg" class="card-img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">La pomme, un fruit aux multiples saveurs !</h5>
-                        <p class="card-text">Découvrez les différentes variétés de pommes cultivées chez nos
-                            agriculteurs, et des recettes savoureuses ...</p>
+                        <h5 class="card-title">Atelier Créatifs de Noël 2023</h5>
+                        <p class="card-text">Créer votre couronne de Noël et vos guirlandes de sapin. Une astuce pour une décoration intérieure et extérieure ...</p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
@@ -88,10 +84,8 @@
                 <div class="container card-blog border-light shadow-lg col-md-4">
                     <img src="img/655cbb90f1bbe735862856.png" class="card-img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Gnocchis de pommes de terre aux blettes</h5>
-                        <p class="card-text">Plus besoin de chercher à combiner féculents et légumes, voici une recette
-                            qui
-                            le fait pour vous ! Goûtez à ces délicieux gnocchis de pomme de terre aux ...</p>
+                        <h5 class="card-title">OFFRE DE NOEL 10%</h5>
+                        <p class="card-text">Venez découvrir toutes nos gammes déclinées en blanc, rosé et rouge ainsi que nos effervescent. Nous avons le plaisir de vous offrir 10% de réduction sur ...</p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>

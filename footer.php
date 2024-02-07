@@ -1,3 +1,8 @@
+<style>
+    a{
+        color: white;
+    }
+</style>
 <footer>
         <div class="bg-light border-light shadow py-3">
             <div class=" follow row">
@@ -14,8 +19,8 @@
         <div class="bg-dark text-white">
 
             <div style="margin-left: 2rem; height: 50px;">
-                <img src="img/logo gites detoure.png" class="container col-md-2 row logo" alt="logo_gites_locavores"
-                    style="width: 150px; float: left;">
+                <a href="index.php"><img src="img/logo gites detoure.png" class="container col-md-2 row logo" alt="logo_gites_locavores"
+                    style="width: 150px; float: left;"></a>
             </div>
             <div class="line container row offset-2 col-md-7">
                 <hr class="border mt-3 border-white">
@@ -25,28 +30,29 @@
 
             <div class="container d-flex flex-wrap row-cols-md-3">
                 <div class="container row offset-1 col-md-2">
-                    <p>RECHERCHE</p>
+                    <p><a href="gites.php">RECHERCHE DE GÎTES</a></p>
+                        <ul>
+                            <li><a href="hdf.php">Hauts-de-France</a></li>
+                            <li><a href="normandie.php">Normandie</a></li>
+                        </ul>
+                   
+                </div>
+                <div class="container row ms-5 col-md-2">
+                    <p><a href="idees.php">INSPIREZ-VOUS</a></p>
                     <ul>
-                        <li>Produits locaux</li>
-                        <li>Gîtes ruraux</li>
-                        <li>Nos régions</li>
+                        <li><a href="event.php">Évènements</a></li>
+                        <li><a href="actus.php">Actualités</a></li>
+                        <li><a href="recettes.php">Idées de recettes</a></li>
+                        <li><a href="produits-saison.php">Produits de saison</a></li>
                     </ul>
                 </div>
                 <div class="container row ms-5 col-md-2">
-                    <p>INSPIREZ-VOUS</p>
-                    <ul>
-                        <li>Actualités</li>
-                        <li>Idées de recettes</li>
-                        <li>Produits de saison</li>
-                    </ul>
-                </div>
-                <div class="container row ms-5 col-md-2">
-                    <p>QUI SOMMES-NOUS</p>
+                    <p><a href="presentation.php">QUI SOMMES-NOUS</a></p>
                     <ul>
                         <li>Nos activités</li>
                         <li>Nos valeurs</li>
                         <li>Nos partenaires</li>
-                        <li>Contactez-nous</li>
+                        <li><a href="contact.php">Contactez-nous</a></li>
                     </ul>
                 </div>
             </div>

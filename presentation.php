@@ -34,9 +34,12 @@
 
             <div style="background-color: white;">
                 <h2 class="text-center">QUI SOMMES-NOUS</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum repellat consectetur ipsam nobis,
-                    quam accusamus voluptatem, facere quas magnam quia maiores commodi, dignissimos expedita consequatur
-                    perferendis beatae doloremque molestias vitae?</p>
+                <br>
+                <p style= "margin-left : 5rem; margin-right: 10rem"><strong>Gîtes Locavores</strong> est une plateforme de location de gîtes ruraux de producteur locaux.
+                Vous pouvez trouver votre prochaine destination de vacances à travers les différentes régions françaises.
+                <br>Pour chaque gîte, vous pourrez découvrir les différentes productions locales et les différentes spécialités de vos hôtes. 
+                Il sera donc précisé les différents lieux de vente pour acheter ces produits.
+</p>
             </div>
         </div>
     </section>
