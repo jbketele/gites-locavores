@@ -1,9 +1,9 @@
 <header>
         <div>
             <div class="logo-titre">
-                <a href="index.php"><img src="img/logo_gites_locavores.png" class="container row logo"
+                <a href="index.php" class="logo"><img src="img/logo_gites_locavores.png" class="container "
                         alt="logo_gites_locavores"></a>
-                <h1 class="welcome row">Bienvenue</h1>
+                <h1 class="welcome">Bienvenue</h1>
             </div>
 
             <div class="menu">

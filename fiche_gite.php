@@ -25,19 +25,8 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <style>
-    @media screen (max-width: 767px) {
-        
-    }
 
-    @media screen (min-width: 767px) {
-        #map {
-            height: 25%;
-            width: 20%;
-            margin-top: 2rem;
-            margin-left: 50rem;
-            position: absolute;
-        }
-    }
+   
     
 </style>
 <body>
@@ -97,6 +86,7 @@
                     <br>
                     <button class="btn btn-light" id="buttonContact">Contactez-nous</button>
 
+                    
                     <div id="contactModal" class="modal">
                         <div class="modal-content">
                             <span class="close">&times;</span>
@@ -206,6 +196,7 @@
         <br>
         <section id="coordonnees">
             <div class="coordonnees">
+                
                 <div id="map"></div>
 
                 <h4>Coordonées</h4>
@@ -264,7 +255,6 @@
     <?php require_once(__DIR__ . '/footer.php'); ?>
 
     <script src="https://kit.fontawesome.com/4f2c3f58c1.js" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
         // Sélectionnez le bouton et le modal

@@ -12,6 +12,20 @@
 
 /*MOBILE*/
 @media (max-width:767px) {
+  .logo {
+    width: 25vw;
+  }
+
+  .top {
+    height: 35vh;
+    background-position: center;
+  }
+
+  .texte-couv {
+    letter-spacing: 2px;
+    font-size: xx-large;
+  }
+
   .line {
     margin: 0%;
   }
@@ -41,6 +55,19 @@
 
 /*DESKTOP*/
 @media screen and (min-width:767px) {
+  .logo {
+    width: 10vw;
+  }
+
+  .top {
+    height: 50vh;
+    background-position: center 30%;
+  }
+
+  .texte-couv {
+    letter-spacing: 30px;
+    font-size: xxx-large;
+  }
 
   .cards-blog {
     display: grid;
@@ -91,7 +118,6 @@
 }
 
 .logo {
-  width: 200px;
   float: left;
   padding: 0%;
   margin-left: 1rem;
@@ -128,9 +154,27 @@ main {
   width: max-content;
 }
 
+.top {
+  background-image: url(img/couv_gl.png);
+  background-size: cover;
+}
+
+.texte-couv {
+  font-family: 'Playfair Display', serif;
+  margin-top: 2rem;
+}
+
 .search {
   background-image: url(img/fond-nature.png);
   background-size: 100vw;
+}
+
+.place-products {
+  align-items: center;
+}
+
+.search-container {
+  height: fit-content;
 }
 
 .box1 {
@@ -167,7 +211,7 @@ h3 {
 }
 
 #place {
-  height: 20px;
+  height: 30px;
   margin-top: 10px;
 }
 
@@ -187,7 +231,8 @@ h3 {
 }
 
 .couv {
-  margin-left: 25%;
+  display: flex;
+  justify-content: center;
 }
 
 .carousel-control-prev-icon {

@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="img/logo gites detoure.png">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -34,14 +37,9 @@
         <form class="search">
             <div class="container box1">
                 <div class="row">
-                    <div class="title-box">
-                        <img src="img/loupe.png" alt="loupe" style="float:left;">
-                        <h4>Trouvez nos produits et découvrez nos expériences</h4>
-                    </div>
                     <div class="container row place-products">
-                        <div class="container row col-md-5 search-container">
-                            <label class="item" for="place">Localisez-vous</label>
-                            <input type="text" id="place" name="localisation" placeholder="Localisation">
+                        <div class="container row col-md-5 search-container ">
+                            <input type="text" id="place" name="localisation" placeholder="Où souhaitez vous aller ?">
                         </div>
 
                         <div class="container row col-md-2 suivant">
@@ -49,53 +47,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="shop">
-                    <h4>Nos types de gîtes</h4>
-                </div>
-                <div class="container d-flex vente">
-                    <label class="item" for="option1">Chambres d'hôtes</label>
-                    <input type="checkbox" id="option1" name="option1" value="option1">
-
-                    <label class="item" for="option2">Gîtes ruraux</label>
-                    <input type="checkbox" id="option2" name="option2" value="option2">
-
-                    <label class="item" for="option3">Gîtes de groupe</label>
-                    <input type="checkbox" id="option3" name="option3" value="option3">
-
-                    <input type="submit" value="Suivant">
-                </div>
+                
             </div>
         </form>
 
-        <!--CAROUSSEL-->
         <section class="top">
-            <div class="container" style="padding: 0%;">
-                <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active"></button>
-                        <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1"></button>
-                        <button type="button" data-bs-target="#carousel1" data-bs-slide-to="2"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="4000">
-                            <img src="img/gites-local.png" alt="gites ruraux" class="d-block couv w-50">
-                        </div>
-                        <div class="carousel-item" data-bs-interval="4000">
-                            <img src="img/produits-locaux.png" alt="" class="d-block portrait w-25">
-                        </div>
-                        <div class="carousel-item" data-bs-interval="4000">
-                            <img src="img/image.png" alt="" class="d-block portrait w-25">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel1"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carousel1"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
-                </div>
+            <div class="container couv" style="padding: 0%;">
+            <h1 class="text-dark text-center texte-couv"><em>Détente/Découverte<br>Dégustation</em></h1>
+            
             </div>
         </section>
         <br>
