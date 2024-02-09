@@ -1,3 +1,49 @@
+@font-face {
+  font-family: 'Titillium Web';
+  src: url(Titillium_Web/TitilliumWeb-SemiBold.ttf),
+    url(Titillium_Web/TitilliumWeb-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Titillium';
+  src: url(Titillium_Web/TitilliumWeb-Italic.ttf),
+}
+
+.welcome {
+
+  color: #0b5909;
+}
+
+.nav-item {
+  font-family: 'Titillium Web';
+  font-weight: 400;
+}
+
+h1 {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 600;
+  /* Utilise la variante semi-gras pour les titres h1 */
+}
+
+p,
+h2,
+h3,
+h4,
+h5,
+.book,
+.sign,
+.btn,
+.btn-success,
+label,
+li,
+::placeholder,
+input[type="submit"],
+.card-header {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  /* Utilise la variante régulière pour les paragraphes */
+}
+
 /* Page accueil */
 @media screen {
 
@@ -16,13 +62,18 @@
     width: 25vw;
   }
 
+  .welcome {
+    font-family: 'Titillium Web';
+    font-weight: 400;
+  }
+
   .top {
     height: 35vh;
     background-position: center;
   }
 
   .texte-couv {
-    letter-spacing: 2px;
+    letter-spacing: 5px;
     font-size: xx-large;
   }
 
@@ -57,6 +108,11 @@
 @media screen and (min-width:767px) {
   .logo {
     width: 10vw;
+  }
+
+  .welcome {
+    font-family: 'Titillium Web';
+    font-weight: 600;
   }
 
   .top {
@@ -127,9 +183,6 @@
 
 
 
-h1 {
-  color: #0b5909;
-}
 
 img {
   width: 20%;
@@ -160,7 +213,7 @@ main {
 }
 
 .texte-couv {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Titillium';
   margin-top: 2rem;
 }
 
