@@ -23,7 +23,7 @@
 </head>
 
 <body>
-<?php require_once(__DIR__ . '/header.php'); ?>
+<?php require_once('header-footer/header.php'); ?>
 
     <br>
     <section style="background-image:url(img/fond-nature.png) ;">
@@ -44,7 +44,7 @@
         </div>
     </section>
     <br>
-    <?php require_once(__DIR__ . '/footer.php'); ?>
+    <?php require_once('header-footer/footer.php'); ?>
 
 
 </body>

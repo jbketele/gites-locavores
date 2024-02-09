@@ -23,7 +23,7 @@
 </head>
 
 <body>
-<?php require_once(__DIR__ . '/header.php'); ?>
+<?php require_once('header-footer/header.php'); ?>
 
 
     <main>
@@ -94,7 +94,7 @@
         </section>
     </main>
 
-    <?php require_once(__DIR__ . '/footer.php'); ?>
+    <?php require_once('header-footer/footer.php'); ?>
 
 </body>
 

@@ -141,7 +141,7 @@ img {
 }
 
 main {
-  background-color: #FCF6EE;
+  background-image: url(img/fond-nature.png);
 }
 
 .sous-nav {
@@ -164,10 +164,6 @@ main {
   margin-top: 2rem;
 }
 
-.search {
-  background-image: url(img/fond-nature.png);
-  background-size: 100vw;
-}
 
 .place-products {
   align-items: center;

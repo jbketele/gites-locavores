@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php 
-require_once(__DIR__ . '/header.php');
+require_once('/header.php');
 // Vérifie si l'ID existe dans la requête GET
 if (isset($_GET['gitesCard'])) {
     // Récupère l'ID depuis la requête GET
@@ -30,7 +30,7 @@ if (isset($_GET['gitesCard'])) {
 }
 
 
-require_once(__DIR__ . '/footer.php'); 
+require_once('header-footer/footer.php'); 
 ?>
 
 </body>

@@ -29,9 +29,15 @@
 
 
     <!--NAVBAR-->
-    <?php require_once(__DIR__ . '/header.php'); ?>
+    <?php require_once('header-footer/header.php'); ?>
 
     <main>
+        <section class="top">
+            <div class="container couv" style="padding: 0%;">
+            <h1 class="text-dark text-center texte-couv"><em>Détente/Découverte<br>Dégustation</em></h1>
+            
+            </div>
+        </section>
 
         <!--SEARCH-->
         <form class="search">
@@ -51,13 +57,7 @@
             </div>
         </form>
 
-        <section class="top">
-            <div class="container couv" style="padding: 0%;">
-            <h1 class="text-dark text-center texte-couv"><em>Détente/Découverte<br>Dégustation</em></h1>
-            
-            </div>
-        </section>
-        <br>
+        
 
         <!--CARDS BLOG-->
         <section>
@@ -131,7 +131,7 @@
     </main>
 
     <!--FOOTER-->
-    <?php require_once(__DIR__ . '/footer.php'); ?>
+    <?php require_once('header-footer/footer.php'); ?>
 
 
     <script src="main.js"></script>

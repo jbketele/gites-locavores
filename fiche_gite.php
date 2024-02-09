@@ -31,7 +31,7 @@
 </style>
 <body>
     <!--NAVBAR-->
-    <?php require_once(__DIR__ . '/header.php'); ?>
+    <?php require_once('header-footer/header.php'); ?>
 
 
     <main class="container">
@@ -252,7 +252,7 @@
     </main>
 
     <!--FOOTER-->
-    <?php require_once(__DIR__ . '/footer.php'); ?>
+    <?php require_once('header-footer/footer.php'); ?>
 
     <script src="https://kit.fontawesome.com/4f2c3f58c1.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
