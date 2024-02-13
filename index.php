@@ -58,7 +58,7 @@
         
 
         <!--CARDS BLOG-->
-        <section>
+        <section class="blog">
             <div class="row-cols-1 row-cols-md-3 cards-blog">
                 <div class="container card-blog border-light shadow-lg col-md-4">
                     <img src="img/654a33fe1116a512729429.png" class="card-img-top" alt="...">

@@ -94,6 +94,14 @@ input[type="submit"],
     width: 80vw;
   }
 
+  .cards-blog {
+    background-color: white;
+  }
+
+  .blog {
+    background-color: white;
+  }
+
   .map {
     width: 100vw;
   }
