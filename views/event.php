@@ -13,16 +13,18 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gites Locavores - Actus</title>
+    <title>Gites Locavores - Évènements</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" type="image/x-icon" href="img/logo gites detoure.png">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 
 <body>
-<?php require_once('header-footer/header.php'); ?>
+<?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
+
 
     <main>
         <div class="d-flex justify-content-evenly pt-3">
@@ -34,56 +36,56 @@
         <section>
             <div class="row-cols-1 row-cols-md-3 cards-blog">
                 <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/654a33fe1116a512729429.png" class="card-img-top" alt="...">
+                    <img src="img/pub_noel_gites_locavores.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Chaque avis compte ! N'hésitez pas à nous partagez le vôtre !</h5>
-                        <p class="card-text">Chaque avis est important ! Voici un exemple d'avis reçu cette semaine ...
+                        <h5 class="card-title">Profitez de nos chalets pendant les fêtes !</h5>
+                        <p class="card-text">Passez un moment en famille unique dans nos chalets et découvrez les saveurs des spécialités montagnardes ...
                         </p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
 
                 <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/6567139f9c967820700071.jpg" class="card-img" alt="...">
+                    <img src="img/65546a2e98557988646525.jpg" class="card-img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Coup de Pouce : Ferme de Janine et Denis dans le Calvados</h5>
-                        <p class="card-text">(Coup de Pouce) 🐮 Janine et Denis Langlais proposent dans leur ferme normande des produits laitiers 100% Bio et de la viande ...</p>
+                        <h5 class="card-title"> VENTE DE SAPINS</h5>
+                        <p class="card-text">Vente de sapins à partir du 2 décembre 2023. Quantité limitée.</p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
 
                 <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/65687cface297532006431.jpg" class="card-img" alt="...">
+                    <img src="img/652542e3a2a67183224928.jpg" class="card-img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Tournage TF1 de la Recette de Filet de Truite à la Normande pour les fêtes chez Maison Lefèvre !</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h5 class="card-title">À Noël, partez à la découverte des vignes du Vermandois</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua... </p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
                 <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/655621d692388766238543.jpeg" class="card-img-top" alt="...">
+                    <img src="img/61605a42736e9115570806-copie.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">CATALOGUE DES FÊTES 2023</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut pharetra sit amet aliquam id diam.
+                        <h5 class="card-title">Marché de Noël et ferme en fête chez Les Chèvres de M. Seguin</h5>
+                        <p class="card-text">Pour Noël, venez chez Les Chèvres de M. Seguin à Hautain : Samedis 9 et 16 décembre, Dimanches 10 et 17 décembre De 9h30 à 18h ...
                         </p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
 
                 <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/656496bf447ba477103428.jpg" class="card-img" alt="...">
+                    <img src="img/65577a82076c4095375992.jpg" class="card-img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Marché de Noël à Dozulé le 8 décembre</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut pharetra sit amet aliquam id diam.</p>
+                        <h5 class="card-title">Atelier Créatifs de Noël 2023</h5>
+                        <p class="card-text">Créer votre couronne de Noël et vos guirlandes de sapin. Une astuce pour une décoration intérieure et extérieure ...</p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
 
                 <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/6551e56d119fa581493692-copie.jpeg" class="card-img" alt="...">
+                    <img src="img/655cbb90f1bbe735862856.png" class="card-img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Des coffrets gourmands 100% produits de la ferme</h5>
-                        <p class="card-text">Coffrets gourmands Gites Locavores, une bonne idée pour faire plaisir à vos proches. Composez des coffrets gourmands de produits de la Normandie ...</p>
+                        <h5 class="card-title">OFFRE DE NOEL 10%</h5>
+                        <p class="card-text">Venez découvrir toutes nos gammes déclinées en blanc, rosé et rouge ainsi que nos effervescent. Nous avons le plaisir de vous offrir 10% de réduction sur ...</p>
                         <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
@@ -91,7 +93,7 @@
         </section>
     </main>
 
-    <?php require_once('header-footer/footer.php'); ?>
+    <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/footer.php'); ?>
 
 </body>
 

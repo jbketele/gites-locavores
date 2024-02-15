@@ -20,14 +20,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
     <link rel="icon" type="image/x-icon" href="img/logo gites detoure.png">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 
 <body>
 
 
     <!--NAVBAR-->
-    <?php require_once('header-footer/header.php'); ?>
+    <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
 
     <main>
         <section class="top">
@@ -129,7 +129,7 @@
     </main>
 
     <!--FOOTER-->
-    <?php require_once('header-footer/footer.php'); ?>
+    <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/footer.php'); ?>
 
 
     <script src="main.js"></script>

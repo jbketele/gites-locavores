@@ -19,7 +19,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" type="image/x-icon" href="img/logo gites detoure.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <style>
     h3{
@@ -37,14 +37,14 @@
 </style>
 <body>
     <!--NAVBAR-->
-    <?php require_once('header-footer/header.php'); ?>
+    <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
 
     <main>
         <div class="row">
             <div class="d-flex justify-content-around" id="connexion">
                 <div>
                     <h3 class="mt-3">Inscription</h3>
-                    <form action="connexion.php">
+                    <form action="connexion.php" method="POST">
                         <div class="mt-5">
                             <div class="row justify-content-center">
                                 <div>
@@ -58,26 +58,51 @@
                                     <br>
                                     <div class="form-floating">
                                         <textarea class="form-control" placeholder="last name"
-                                            id="floatingTextarea"></textarea>
+                                            id="floatingTextarea" name="name"></textarea>
                                         <label for="floatingTextarea">Nom</label>
                                     </div>
                                     <br>
                                     <div class="form-floating">
                                         <input type="email" class="form-control" id="floatingInputGrid"
-                                            placeholder="name@example.com">
+                                            placeholder="name@example.com" name="mail">
                                         <label for="floatingInputGrid">Email</label>
                                     </div>
                                     <br>
                                     <div class="form-floating">
                                         <input type="password" class="form-control" id="floatingInputGrid"
-                                            placeholder="mdp">
+                                            placeholder="mdp" name="mdp">
                                         <label for="floatingInputGrid">Mot de passe</label>
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-primary btn-lg mt-5 mb-5" type="submit">Valider</button>
+                            <button class="btn btn-primary btn-lg mt-5 mb-5" type="submit" name="envoi">Valider</button>
                         </div>
                     </form>
+                    <?php
+
+                    // Database configuration
+                    $host = 'localhost';
+                    $dbName = 'gites';
+                    $username = 'jbketele';
+                    $password = 'pasdavenirsansagri';
+
+                    try {
+                        // Create a new PDO instance
+                        $pdo = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
+
+                        // Set PDO error mode to exception
+                        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                        // Your code here...
+
+                    } catch (PDOException $e) {
+                        // Handle database connection errors
+                        echo "Connection échouée: " . $e->getMessage();
+                    }
+
+                    echo "Connexion à la base de données réussie";
+
+                    ?>
                 </div>
                 <div>
                     <h3 class="mt-3">Connexion</h3>
@@ -109,7 +134,7 @@
 
 
     <!--FOOTER-->
-    <?php require_once('header-footer/footer.php'); ?>
+    <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/footer.php'); ?>
 
 
 </body>

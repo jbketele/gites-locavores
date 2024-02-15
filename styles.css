@@ -202,7 +202,7 @@ img {
 }
 
 main {
-  background-image: url(img/fond-nature.png);
+  background-image: url(views/img/fond-nature.png);
 }
 
 .sous-nav {
@@ -216,7 +216,7 @@ main {
 }
 
 .top {
-  background-image: url(img/couv_gl.png);
+  background-image: url(views/img/couv_gl.png);
   background-size: cover;
 }
 
@@ -355,7 +355,7 @@ h3 {
 }
 
 #connexion {
-  background-image: url(img/sunny-day-field.jpg);
+  background-image: url(views/img/sunny-day-field.jpg);
   background-position: center;
   background-size: 100vw;
   background-repeat: no-repeat;
@@ -413,7 +413,7 @@ input[type="submit"] {
 
 
 #contact {
-  background-image: url(img/sunny-day-field.jpg);
+  background-image: url(views/img/sunny-day-field.jpg);
   background-position: center;
   background-size: 100vw;
   background-repeat: no-repeat;
@@ -423,9 +423,7 @@ footer {
   width: 100vw;
 }
 
-.bi {
-  padding-left: 1rem;
-}
+.bi {}
 
 /* Fin de la Page contact */
 

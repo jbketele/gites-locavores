@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 <style>
 
@@ -31,7 +31,7 @@
 </style>
 <body>
     <!--NAVBAR-->
-    <?php require_once('header-footer/header.php'); ?>
+    <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
 
 
     <main class="container">
@@ -252,7 +252,7 @@
     </main>
 
     <!--FOOTER-->
-    <?php require_once('header-footer/footer.php'); ?>
+    <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/footer.php'); ?>
 
     <script src="https://kit.fontawesome.com/4f2c3f58c1.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>

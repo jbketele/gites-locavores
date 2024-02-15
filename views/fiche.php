@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php 
-require_once('/header.php');
+require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php');
 // Vérifie si l'ID existe dans la requête GET
 if (isset($_GET['gitesCard'])) {
     // Récupère l'ID depuis la requête GET
@@ -30,7 +30,7 @@ if (isset($_GET['gitesCard'])) {
 }
 
 
-require_once('header-footer/footer.php'); 
+require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/footer.php'); 
 ?>
 
 </body>
