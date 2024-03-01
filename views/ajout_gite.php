@@ -28,84 +28,41 @@
             <div class="mt-5">
                 <div class="row justify-content-center">
                     <div>
-                    <?php
-
-                    // Database configuration
-                    $host = 'localhost';
-                    $dbName = 'gites';
-                    $username = 'jbketele';
-                    $password = 'pasdavenirsansagri';
-
-                    try {
-                        // Create a new PDO instance
-                        $pdo = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
-
-                        // Set PDO error mode to exception
-                        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-                        // Your code here...
-                        // Vérifier si le formulaire a été soumis
-                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                            // Récupérer les valeurs du formulaire
-                            $farm_name = $_POST["farm_name"];
-                            $host_name = $_POST["host_name"];
-                            $location = $_POST["location"];
-                            $description = $_POST["description"];
-
-                            // Requête d'insertion avec une requête préparée
-                            $sql = "INSERT INTO gîtes (nom_gite, propriétaire, region, localisation, capacite, descriptif) 
-                            VALUES (:farm_name, :host_name, :place, :region, :capacite, :descriptif)";
-                            $stmt = $pdo->prepare($sql);
-
-                            // Lier les valeurs et exécuter la requête
-                            $stmt->bindParam(':farm_name', $farm_name);
-                            $stmt->bindParam(':host_name', $host_name);
-                            $stmt->bindParam(':place', $location);
-                            $stmt->bindParam(':region', $region);
-                            $stmt->bindParam(':capacite', $capacite);
-                            $stmt->bindParam(':nombre_chambres', $nombre_chambres);
-                            $stmt->bindParam(':descriptif', $description);
-                            $stmt->execute();
-                            echo "Données insérées avec succès.";
-                        }                        
-
-
-                    } catch (PDOException $e) {
-                        // Handle database connection errors
-                        echo "Connection échouée: " . $e->getMessage();
-                    }
-
-
-                    ?>
-                        <form method="POST">
+                    
+                        <form action="../controllers/ajout_gite.php" method="POST">
                             <div class="form-floating">
-                                <input class="form-control" type="text" placeholder="farm name" name="farm_name" required>                            
+                                <input class="form-control" type="text" placeholder="farm name" name="nom_gite" required>                            
                                 <label for="farm_name">Nom de la ferme:</label>
                             </div>
                             
                             <div class="form-floating">
-                            <input class="form-control" type="text" placeholder="host name"  name="host_name" required>
+                            <input class="form-control" type="text" placeholder="host name"  name="proprietaire" required>
                             <label for="host_name">Nom de l'hôte:</label>
                             </div>
 
                             <div class="form-floating">
-                            <textarea class="form-control" placeholder="region" name="region" required></textarea>
+                            <input class="form-control" type="text" placeholder="region" name="region" required></input>
                             <label for="description">Région:</label>
                             </div>
 
                             <div class="form-floating">
-                            <input class="form-control" type="text" placeholder="location" name="location" required>                                
+                            <input class="form-control" type="text" placeholder="location" name="localisation" required>                                
                             <label for="location">Localisation:</label>
                             </div>
                             
                             <div class="form-floating">
-                            <input class="form-control" type="text" placeholder="capacite"  name="capacite" required>
+                            <input class="form-control" type="number" placeholder="capacite"  name="capacite" required>
                             <label for="host_name">Capacité:</label>
                             </div>
 
                             <div class="form-floating">
-                            <textarea class="form-control" placeholder="description" name="description" required></textarea>
+                            <textarea class="form-control" placeholder="description" name="descriptif" required></textarea>
                             <label for="description">Description:</label>
+                            </div>
+
+                            <div class="form-floating">
+                            <input class="form-control" type="text" placeholder="price" name="tarifs" required>                                
+                            <label for="price">Tarifs:</label>
                             </div>
 
                             <input type="submit" value="Ajouter">

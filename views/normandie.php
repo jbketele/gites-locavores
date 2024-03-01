@@ -22,19 +22,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" type="text/css" href="../styles.css">
-    <style>
-        #map {
-            height: 50%;
-            width: 75%;
-            margin-top: 3rem;
-            margin-left: 5rem;
-        }
-        section{
-            display: grid;
-            grid-template-columns : 3fr 2fr;
-            column-gap: 1rem;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../hdf.css">
+
 </head>
 
 <body>

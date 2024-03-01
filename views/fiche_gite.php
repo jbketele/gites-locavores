@@ -24,11 +24,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
-<style>
 
-   
-    
-</style>
 <body>
     <!--NAVBAR-->
     <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
@@ -83,8 +79,15 @@
                 <div>
                     <img style="height: fit-content; width: 100%; margin: 2rem 0;"
                         src="img/rural-life-concept-with-farm-animals.jpg" alt="">
-                    <br>
-                    <button class="btn btn-light" id="buttonContact">Contactez-nous</button>
+                    
+                    <button class="btn btn-light mb-2" id="buttonContact">Contactez-nous</button><br>
+                    <div class="resa">
+                    <label for="arrivee">Arrivée</label>
+                    <input type="date" name="arrivee">
+                    <label for="depart">Départ</label>
+                    <input type="date" name="depart">
+                    <button class="btn btn-light">Vérifiez la disponibilité</button>
+                </div>
 
                     
                     <div id="contactModal" class="modal">

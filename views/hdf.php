@@ -22,53 +22,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" type="text/css" href="../styles.css">
-    <style>
+    <link rel="stylesheet" type="text/css" href="../hdf.css">
 
- @media (max-width: 767px) {
-    section{
-        height: 1320px;
-    }
-    #map{
-        top: 95%;
-        width: 75vw;
-        height: 35vh;
-        right: 107%;
-    }
-    .list-gites{
-        margin-left: 2.5rem;
-    }
-    footer{
-        margin-top: 400px;
-    }
- }
-
- @media (min-width: 767px) {
-    #map{
-        width: 30vw;
-        height: 70vh;
-    }
-
-    .list-gites{
-        margin-left: 0;
-    }
-    footer{
-        margin-top: 0;
-    }
-    section{
-        height: 170vh;
-    }
- } 
-    section {
-        display: grid;
-        grid-template-columns: 3fr 2fr;
-        column-gap: 1rem;
-    }
-
-#map {
-        margin-top: 3rem;
-        margin-left: 5rem;
-    }
-    </style>
 </head>
 
 <body>
@@ -87,6 +42,10 @@
                 </div>
 
                 <div class="container col-md-10 cards" id="gitesList">
+                    
+        
+                    
+
                     <div class="card mb-3" data-lat="49.9052" data-lng="3.7924" data-location="Aisne (02)" data-category="Chambres d'hôtes" id="gitesCard">
                         <div class="card-header">Producteur</div>
                         <div class="card-body text-white" id="gite_card">
@@ -135,11 +94,11 @@
                                     plus</a></div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
-
-        <div id="map"></div>
-        
+                </div>
+            <div id="map"></div>
         </section>
     </main>
 

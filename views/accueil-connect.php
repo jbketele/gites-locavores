@@ -25,7 +25,9 @@
 <body>
     
     <!--NAVBAR-->
-    <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
+    <?php session_start();
+    require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header-connect.php'); 
+    ?>
 
     <main>
         <section class="top">
@@ -52,8 +54,20 @@
                 
             </div>
         </form>
+        <div class="container">
+        <?php require_once '../models/user.php';
+            if (!isset($_SESSION['email'])) {
+                header("Location: ../views/connexion.php");
+                exit;
+            }
 
-        
+            // Récupérez le prénom de l'utilisateur
+            $firstName = Utilisateur::getFirstNameByEmail($_SESSION['email']);
+
+            // Affichez le contenu de la page d'accueil
+            echo "<h3>Bonjour " . $firstName . "</h3>";        
+        ?>
+        </div>
 
         <!--CARDS BLOG-->
         <section class="blog">

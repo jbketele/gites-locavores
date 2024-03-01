@@ -14,118 +14,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gites Locavores - Inscription</title>
-    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" type="image/x-icon" href="img/logo gites detoure.png">
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../sign.css">
+
 </head>
-<style>
-    h3{
-        padding: 0;
-        text-align: center;
-        backdrop-filter: brightness(0.5);
-        color: white;
-    }
-    select{
-        padding: 5%;
-        width: 100%;
-        border-radius: 5%;
-        border: none;
-    }
-</style>
+
 <body>
     <!--NAVBAR-->
-    <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
+    <?php include('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
 
     <main>
         <div class="row">
             <div class="d-flex justify-content-around" id="connexion">
                 <div>
                     <h3 class="mt-3">Inscription</h3>
-                    <form action="connexion.php" method="POST">
+                    <form action="../controllers/user.php" method="POST">
                         <div class="mt-5">
                             <div class="row justify-content-center">
                                 <div>
-                                <div class="form-floating">
-                                        <select name="user" id="user">
+                                    <div class="form-floating">
+                                        <select name="type" id="user">
                                             <option value="">Type de compte</option>
                                             <option value="visiteur">Visiteur</option>
                                             <option value="hôte">Hôte</option>
-                                    </select>
+                                        </select>
                                     </div>
                                     <br>
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="last name"
-                                            id="floatingTextarea" name="name"></textarea>
-                                        <label for="floatingTextarea">Nom</label>
+                                        <input type="text" class="form-control" placeholder="Nom" id="lastname" name="lastname">
+                                        <label for="lastname">Nom</label>
                                     </div>
                                     <br>
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="floatingInputGrid"
-                                            placeholder="name@example.com" name="mail">
-                                        <label for="floatingInputGrid">Email</label>
+                                        <input type="text" class="form-control" placeholder="Prénom" id="firstname" name="firstname">
+                                        <label for="firstname">Prénom</label>
                                     </div>
                                     <br>
                                     <div class="form-floating">
-                                        <input type="password" class="form-control" id="floatingInputGrid"
-                                            placeholder="mdp" name="mdp">
-                                        <label for="floatingInputGrid">Mot de passe</label>
+                                        <input type="email" class="form-control" id="mail" placeholder="name@example.com" name="email">
+                                        <label for="mail">Email</label>
+                                    </div>
+                                    <br>
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" id="mdp" placeholder="Mot de passe" name="password">
+                                        <label for="mdp">Mot de passe</label>
+                                    </div>
+                                    <br>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="mail"  name="tel">
+                                        <label for="mail">Téléphone</label>
                                     </div>
                                 </div>
                             </div>
                             <button class="btn btn-primary btn-lg mt-5 mb-5" type="submit" name="envoi">Valider</button>
                         </div>
                     </form>
-                    <?php
 
-                    // Database configuration
-                    $host = 'localhost';
-                    $dbName = 'gites';
-                    $username = 'jbketele';
-                    $password = 'pasdavenirsansagri';
-
-                    try {
-                        // Create a new PDO instance
-                        $pdo = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
-
-                        // Set PDO error mode to exception
-                        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-                        // Your code here...
-
-                    } catch (PDOException $e) {
-                        // Handle database connection errors
-                        echo "Connection échouée: " . $e->getMessage();
-                    }
-
-                    echo "Connexion à la base de données réussie";
-
-                    ?>
+                   
                 </div>
                 <div>
                     <h3 class="mt-3">Connexion</h3>
-                    <form>
+                    <form action="../controllers/user.php" method="POST">
                         <div class="connect">
                             <div class="row justify-content-center">
                                 <div>
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="identifiant"
-                                            id="floatingTextarea"></textarea>
-                                        <label for="floatingTextarea">Identifiant</label>
+                                        <input type="email" class="form-control" placeholder="Email"
+                                            id="floatingInputGrid" name="email"></input>
+                                        <label for="floatingInputGrid">Email</label>
                                     </div>
                                     <br>
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="floatingInputGrid"
-                                            placeholder="mdp">
+                                        <input type="password" class="form-control" id="floatingInputGrid"
+                                            placeholder="mdp" name="password">
                                         <label for="floatingInputGrid">Mot de passe</label>
                                     </div>
-
+                                    <div class="form-floating">
+                                        <input type="submit" class="btn" id="floatingInputGrid" value="Se connecter">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-primary btn-lg mt-5 mb-5" type="submit">Valider</button>
                     </form>
                     </div>
                 </div>
@@ -134,7 +107,7 @@
 
 
     <!--FOOTER-->
-    <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/footer.php'); ?>
+    <?php include('/Applications/MAMP/htdocs/gites_locavores/header-footer/footer.php'); ?>
 
 
 </body>

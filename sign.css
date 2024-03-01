@@ -1,0 +1,13 @@
+h3 {
+    padding: 0;
+    text-align: center;
+    backdrop-filter: brightness(0.5);
+    color: white;
+}
+
+select {
+    padding: 5%;
+    width: 100%;
+    border-radius: 5%;
+    border: none;
+}

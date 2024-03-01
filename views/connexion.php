@@ -20,15 +20,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" type="image/x-icon" href="img/logo gites detoure.png">
     <link rel="stylesheet" type="text/css" href="../styles.css">
+    <link rel="stylesheet" href="../sign.css">
+
 </head>
-<style>
-    h3{
-        padding: 0;
-        text-align: center;
-        backdrop-filter: brightness(0.5);
-        color: white;
-    }
-</style>
+
 <body>
     <!--NAVBAR-->
     <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
@@ -39,29 +34,29 @@
               
                 <div>
                     <h3 class="mt-3" style="padding: 0">Connexion</h3>
-                    <form>
+                    <form action="../controllers/user.php" method="POST">
                         <div class="connect">
                             <div class="row justify-content-center">
                                 <div>
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="identifiant"
-                                            id="floatingTextarea"></textarea>
-                                        <label for="floatingTextarea">Identifiant</label>
+                                        <input type="email" class="form-control" placeholder="Email"
+                                            id="floatingInputGrid" name="email"></input>
+                                        <label for="floatingInputGrid">Email</label>
                                     </div>
                                     <br>
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="floatingInputGrid"
-                                            placeholder="mdp">
+                                        <input type="password" class="form-control" id="floatingInputGrid"
+                                            placeholder="mdp" name="password">
                                         <label for="floatingInputGrid">Mot de passe</label>
                                     </div>
-
+                                    <div class="form-floating">
+                                        <input type="submit" id="floatingInputGrid" value="Se connecter">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </form>
-                    <div class="container-fluid d-flex justify-content-center">
-                        <a class="btn btn-primary btn-lg mt-5 mb-5" href="#" target="_blank">Valider</a>
-                    </div>
+                    
                 </div>
             </div>
     </main>

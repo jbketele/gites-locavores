@@ -173,7 +173,24 @@ input[type="submit"],
   }
 }
 
+#gitesCard {
+  margin-bottom: 1rem;
+}
 
+.card-header {
+  background-color: whitesmoke;
+  padding: 0.5rem;
+  border-radius: 10px 10px 0px 0px;
+  border: solid 1px darkgray;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.resa button {
+  width: 100%;
+}
 
 .logo-titre {
   padding: 0%;
@@ -354,6 +371,21 @@ h3 {
   float: right;
 }
 
+.add-gite {
+  border: solid;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  height: fit-content;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #0b5909;
+  border-color: black;
+  float: right;
+}
+
+
 #connexion {
   background-image: url(views/img/sunny-day-field.jpg);
   background-position: center;
@@ -362,7 +394,7 @@ h3 {
 }
 
 .connect {
-  margin-top: 6rem;
+  margin-top: 2rem;
 }
 
 .nav2 {
@@ -421,9 +453,11 @@ input[type="submit"] {
 
 footer {
   width: 100vw;
+  position: relative;
+  bottom: 0;
 }
 
-.bi {}
+
 
 /* Fin de la Page contact */
 
