@@ -50,6 +50,7 @@ function login() {
         // Stockage de l'email dans la session
         session_start();
         $_SESSION['email'] = $email;
+        $_SESSION['user_id'] = $user['Id_Utilisateur']; // Supposons que l'ID de l'utilisateur se trouve dans la colonne 'Id_Utilisateur'
 
         //Rediriger selon le type d'utilisateur
         if ($user['type_user'] == 'hôte') {
@@ -78,5 +79,17 @@ function logout() {
     // Rediriger vers la page de connexion ou une autre page appropriée
     header("Location: ../views/connexion.php");
     exit;
+}
+
+function getCurrentUser() {
+    session_start();
+
+    if (isset($_SESSION['email'])) {
+        $email = $_SESSION['email'];
+        $currentUser = Utilisateur::getUserByEmail($email);
+        return $currentUser;
+    } else {
+        return null;
+    }
 }
 ?>

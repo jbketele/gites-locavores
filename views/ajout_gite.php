@@ -20,7 +20,7 @@
     }
 </style>
 <body>
-<?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
+<?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header-hote.php'); ?>
 <div class="row">
 <div class="d-flex justify-content-around" id="connexion">
     <div>
@@ -29,44 +29,44 @@
                 <div class="row justify-content-center">
                     <div>
                     
-                        <form action="../controllers/ajout_gite.php" method="POST">
-                            <div class="form-floating">
-                                <input class="form-control" type="text" placeholder="farm name" name="nom_gite" required>                            
-                                <label for="farm_name">Nom de la ferme:</label>
-                            </div>
-                            
-                            <div class="form-floating">
-                            <input class="form-control" type="text" placeholder="host name"  name="proprietaire" required>
-                            <label for="host_name">Nom de l'hôte:</label>
-                            </div>
+                    <form action="../controllers/ajout_gite.php" method="POST" enctype="multipart/form-data">
+                        <div class="form-floating">
+                            <input class="form-control" type="text" placeholder="farm name" name="nom_gite" required>                            
+                            <label for="farm_name">Nom du gîte:</label>
+                        </div>
 
-                            <div class="form-floating">
-                            <input class="form-control" type="text" placeholder="region" name="region" required></input>
+                        <div class="form-floating">
+                            <input class="form-control" type="text" placeholder="region" name="region" required>
                             <label for="description">Région:</label>
-                            </div>
+                        </div>
 
-                            <div class="form-floating">
+                        <div class="form-floating">
                             <input class="form-control" type="text" placeholder="location" name="localisation" required>                                
                             <label for="location">Localisation:</label>
-                            </div>
-                            
-                            <div class="form-floating">
+                        </div>
+                                                
+                        <div class="form-floating">
                             <input class="form-control" type="number" placeholder="capacite"  name="capacite" required>
                             <label for="host_name">Capacité:</label>
-                            </div>
+                        </div>
 
-                            <div class="form-floating">
+                        <div class="form-floating">
                             <textarea class="form-control" placeholder="description" name="descriptif" required></textarea>
                             <label for="description">Description:</label>
-                            </div>
+                        </div>
 
-                            <div class="form-floating">
+                        <div class="form-floating">
                             <input class="form-control" type="text" placeholder="price" name="tarifs" required>                                
                             <label for="price">Tarifs:</label>
-                            </div>
+                        </div>
 
-                            <input type="submit" value="Ajouter">
-                        </form>
+                        <div class="form-floating">
+                            <input class="add-file  form-control" type="file" multiple accept=".png, .jpg" name="image_path[]" >
+                        </div>
+
+                        <input type="submit" value="Ajouter">
+                    </form>
+
                     </div>
                 </div>
             </div>

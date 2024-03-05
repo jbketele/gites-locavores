@@ -25,7 +25,7 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                        Nos Gites
+                                        Nos Gîtes
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><a class="dropdown-item" href="hdf.php">Hauts de France</a></li>
@@ -49,6 +49,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contact</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="votre-gite.php">Mon Gîte</a>
                                 </li>
                             </ul>
                         </div>

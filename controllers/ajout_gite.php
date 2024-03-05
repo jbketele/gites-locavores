@@ -1,36 +1,67 @@
 <?php
 require_once '../models/ajout_gite.php';
+require_once '../models/user.php';
+require_once '../models/database.php';
 
-echo "<br>-".$_POST['nom_gite'];
-echo "<br>-".$_POST['proprietaire'];
-echo "<br>-".$_POST['region'];
-echo "<br>-".$_POST['localisation'];
-echo "<br>-".$_POST['capacite'];
-echo "<br>-".$_POST['descriptif'];
-echo "<br>-".$_POST['tarifs'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Vérifier si l'utilisateur est connecté
+    session_start();
+    if (!isset($_SESSION['email'])) {
+        // Si l'utilisateur n'est pas connecté, le rediriger vers la page de connexion
+        header("Location: ../views/connexion.php");
+        exit;
+    }
 
+var_dump($_SESSION);
 
-if (isset($_POST['nom_gite']) && isset($_POST['proprietaire']) && isset($_POST['region']) && isset($_POST['localisation']) 
-&& isset($_POST['capacite'])&& isset($_POST['descriptif'])&& isset($_POST['equipements'])&& isset($_POST['tarifs'])) {
+    // Récupération des données du formulaire
     $name = $_POST['nom_gite'];
-    $host = $_POST['proprietaire'];
     $region = $_POST['region'];
     $place = $_POST['localisation'];
     $capacite = $_POST['capacite'];
     $descriptif = $_POST['descriptif'];
-    $tarifs = $_POST['tarifs'];
+    $price = $_POST['tarifs'];
 
+// Récupération de l'image
+if(isset($_FILES['image_path'])) {
+    $file = $_FILES['image_path'];
+
+    // Vérifier s'il n'y a pas eu d'erreur lors du téléchargement
+    if($file['error'] === UPLOAD_ERR_OK) {
+        // Récupérer le nom du fichier
+        $filename = $file['name'];
+
+        // Stocker le nom du fichier dans la variable $image_path
+        $image_path = $filename;
+    } else {
+        // Gérer les erreurs d'envoi de fichier
+        echo "Une erreur s'est produite lors du téléchargement de l'image.";
+    }
+}
+    // Récupérer d'autres données du formulaire
+
+    var_dump($_POST);
+
+    $userId = Utilisateur::getCurrentUserId();
+    // Création d'un nouvel objet Gite et ajout à la base de données
     $gite = new Gites();
     $gite->setName($name);
-    $gite->setHost($host);
     $gite->setRegion($region);
     $gite->setPlace($place);
     $gite->setCapacite($capacite);
     $gite->setDescriptif($descriptif);
-    $gite->setPrice($tarifs);
+    $gite->setPrice($price);
+    $gite->setProprietaireId($userId); // Associer l'ID de l'utilisateur connecté à la colonne de la clé étrangère
+    // Définir d'autres propriétés du gîte
+    $gite->setImagePath($image_path);
+    $newGiteId = $gite->addGite(); // Supposons que la méthode addGite() enregistre le gîte dans la base de données
 
-$gite -> addGite();
-
-header ("Location: ../views/regions.php");
+    if ($newGiteId) {
+        // Redirection vers une page de confirmation ou autre
+        header("Location: ../views/votre-gite.php?id=$newGiteId");
+        exit;
+    } else {
+        //header("Location: ../views/ajout_gite.php");
+    }
 }
 ?>
