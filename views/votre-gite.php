@@ -31,7 +31,7 @@
             echo "<div class='container'>";
             // Afficher les images du gîte
             foreach ($giteDetails['images'] as $imagePath) {
-                echo "<img src='../views/img/" . $imagePath . "' alt='Image du Gîte'><br>";
+                echo "<img src='" . $imagePath . "' alt='Image du Gîte'><br><br>";
             }        
             
         

@@ -12,8 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-var_dump($_SESSION);
-
     // Récupération des données du formulaire
     $name = $_POST['nom_gite'];
     $region = $_POST['region'];
@@ -22,25 +20,9 @@ var_dump($_SESSION);
     $descriptif = $_POST['descriptif'];
     $price = $_POST['tarifs'];
 
-// Récupération de l'image
-if(isset($_FILES['image_path'])) {
-    $file = $_FILES['image_path'];
 
-    // Vérifier s'il n'y a pas eu d'erreur lors du téléchargement
-    if($file['error'] === UPLOAD_ERR_OK) {
-        // Récupérer le nom du fichier
-        $filename = $file['name'];
-
-        // Stocker le nom du fichier dans la variable $image_path
-        $image_path = $filename;
-    } else {
-        // Gérer les erreurs d'envoi de fichier
-        echo "Une erreur s'est produite lors du téléchargement de l'image.";
-    }
-}
+    
     // Récupérer d'autres données du formulaire
-
-    var_dump($_POST);
 
     $userId = Utilisateur::getCurrentUserId();
     // Création d'un nouvel objet Gite et ajout à la base de données
@@ -52,16 +34,22 @@ if(isset($_FILES['image_path'])) {
     $gite->setDescriptif($descriptif);
     $gite->setPrice($price);
     $gite->setProprietaireId($userId); // Associer l'ID de l'utilisateur connecté à la colonne de la clé étrangère
-    // Définir d'autres propriétés du gîte
-    $gite->setImagePath($image_path);
-    $newGiteId = $gite->addGite(); // Supposons que la méthode addGite() enregistre le gîte dans la base de données
+
+    // Vérifiez si des fichiers ont été téléchargés
+    if (!empty($_FILES['image_path'])) {
+        // Appelez la méthode pour gérer le téléchargement de fichiers
+        Gites::uploadImages($lastInsertId, $_FILES['image_path']);
+    }
+    
+  $newGiteId = $gite->addGite($uploadedImages);
+
 
     if ($newGiteId) {
         // Redirection vers une page de confirmation ou autre
         header("Location: ../views/votre-gite.php?id=$newGiteId");
         exit;
     } else {
-        //header("Location: ../views/ajout_gite.php");
+        // header("Location: ../views/ajout_gite.php");
     }
 }
 ?>

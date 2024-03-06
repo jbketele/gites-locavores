@@ -10,6 +10,7 @@ class Gites {
     private $price;
     private $proprietaireId;
     private $imagePath;
+    private $images = [];
    
     public function setName($name){
         $this->name = $name;
@@ -40,6 +41,12 @@ class Gites {
     public function setImagePath($imagePath) {
         $this->imagePath = $imagePath;
     }
+    public function setImages($images) {    
+        $this->images = $images;
+    }
+    public function getImages() {
+        return $this->images;
+    }
 
     // Méthode pour ajouter un gîte à la base de données
     public function addGite() {
@@ -63,11 +70,28 @@ class Gites {
             // Récupérer l'ID du gîte nouvellement ajouté
             $lastInsertId = $connexion->lastInsertId();
 
-            $query = 'INSERT INTO Images (Id_Gîtes, image_path) VALUES (:id_gites, :image_path)';
-            $statement = $connexion->prepare($query);
-            $statement->bindParam(':id_gites', $lastInsertId);
-            $statement->bindParam(':image_path', $this->imagePath, PDO::PARAM_LOB);
-            $statement->execute();
+            // Récupérer les données des fichiers téléchargés
+            $image_data = $_FILES['image_path'];
+            if (!empty($image_data['name'][0])) {
+                // Stocker les chemins des images dans la base de données
+            foreach ($image_data['name'] as $index => $filename) {
+                $temp_file = $image_data['tmp_name'][$index]; // Chemin temporaire du fichier
+                $destination = '../views/img/img_gite/' . $filename; //Chemin de destination permanent
+                // Déplacer le fichier téléchargé vers le répertoire permanent
+                if (move_uploaded_file($temp_file, $destination)) {
+                // Ajouter le chemin de l'image à la base de données
+                $query = 'INSERT INTO Images (Id_Gîtes, image_path) VALUES (:id_gites, :image_path)';
+                $statement = $connexion->prepare($query);
+                $statement->bindParam(':id_gites', $lastInsertId);
+                $statement->bindParam(':image_path', $destination);
+                $statement->execute();
+                } else {
+                    echo "Erreur lors du déplacement du fichier.";
+
+                }
+            }
+                
+            }
             
             return $lastInsertId;
         } catch (PDOException $e) {
@@ -75,6 +99,30 @@ class Gites {
             echo "Erreur d'ajout de gîte: " . $e->getMessage();
         }
     }
+
+    public static function uploadImages($giteId, $image_data) {
+        $connexion = Database::getInstance();
+        // Répertoire de destination permanent
+        $destination_dir = '../views/img/img-gite/';
+    
+        // Parcourir les fichiers téléchargés
+        foreach ($image_data['name'] as $index => $filename) {
+            $temp_file = $image_data['tmp_name'][$index];
+            $destination = $destination_dir . $filename; // Chemin de destination permanent
+            // Déplacer le fichier téléchargé vers le répertoire permanent
+            if (move_uploaded_file($temp_file, $destination)) {
+                // Ajouter le chemin de l'image à la base de données
+                $query = 'INSERT INTO Images (image_path, Id_Gîtes) VALUES (:image_path, :id_gites)';
+                $statement = $connexion->prepare($query);
+                $statement->bindParam(':image_path', $destination);
+                $statement->bindParam(':id_gites', $giteId);
+                $statement->execute();
+            } else {
+                echo "Erreur lors du déplacement du fichier.";
+            }
+        }
+    }
+    
 
     public static function getGiteById($giteId) {
         $connexion = Database::getInstance();
