@@ -175,5 +175,27 @@ class Gites {
             echo "Erreur de mise à jour du gîte: " . $e->getMessage();
         }
     }
+
+    public static function getGitesByUserId($userId) {
+        $connexion = Database::getInstance();
+    
+        try {
+            // Requête SQL pour récupérer les gîtes de l'utilisateur en fonction de son ID
+            $query = "SELECT * FROM Gîtes WHERE Id_Utilisateur = :user_id";
+            $statement = $connexion->prepare($query);
+            $statement->bindParam(':user_id', $userId);
+            $statement->execute();
+    
+            // Récupérer les données des gîtes de l'utilisateur
+            $gites = $statement->fetchAll(PDO::FETCH_ASSOC);
+    
+            return $gites;
+        } catch (PDOException $e) {
+            // Gestion des erreurs de base de données
+            echo "Erreur lors de la récupération des gîtes de l'utilisateur: " . $e->getMessage();
+            return false;
+        }
+    }
+    
 }
 ?>

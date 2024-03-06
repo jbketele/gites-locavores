@@ -51,7 +51,7 @@
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="votre-gite.php">Mon Gîte</a>
+                                    <a class="nav-link" href="liste-gite-hote.php">Mes Gîtes</a>
                                 </li>
                             </ul>
                         </div>
