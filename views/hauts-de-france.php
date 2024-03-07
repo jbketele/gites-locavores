@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gîtes de la région Normandie</title>
+    <title>Gîtes des Hauts de France</title>
 </head>
 <body>
     <?php 
     require_once '../controllers/liste-gite.php';
     ?>    
-    <h1>Gîtes de la région Normandie</h1>
+    <h1>Gîtes des Hauts de France</h1>
     <ul>
-        <?php foreach ($gitesNormandie as $gite) : ?>
+        <?php foreach ($gitesHdf as $gite) : ?>
             <li>
                 <h2><?php echo $gite['nom_gite']; ?></h2>
                 <p>Région: <?php echo $gite['region']; ?></p>
@@ -23,4 +23,3 @@
     </ul>
 </body>
 </html>
-

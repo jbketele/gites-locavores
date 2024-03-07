@@ -661,3 +661,12 @@ footer {
 .stars .fa-star:hover~.fa-star {
   color: gray;
 }
+
+td {
+  text-align: center;
+}
+
+th,
+td {
+  padding-right: 1rem;
+}

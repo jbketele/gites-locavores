@@ -197,5 +197,35 @@ class Gites {
         }
     }
     
+    // Méthode pour récupérer les gîtes d'une région spécifique
+    public static function getGitesByRegion($region) {
+        $connexion = Database::getInstance();
+        $query = "SELECT * FROM Gîtes WHERE region = :region";
+        $statement = $connexion->prepare($query);
+        $statement->bindParam(':region', $region);
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+    // Méthode pour récupérer toutes les régions depuis la base de données
+    public static function getAllRegions() {
+        // Connexion à la base de données
+        $connexion = Database::getInstance();
+
+        try {
+            // Requête SQL pour récupérer toutes les régions distinctes de la table "Gîtes"
+            $query = "SELECT DISTINCT region FROM Gîtes";
+            $statement = $connexion->query($query);
+
+            // Récupérer les résultats sous forme de tableau associatif
+            $regions = $statement->fetchAll(PDO::FETCH_COLUMN);
+
+            return $regions;
+        } catch (PDOException $e) {
+            // Gestion des erreurs de base de données
+            echo "Erreur lors de la récupération des régions: " . $e->getMessage();
+            return [];
+        }
+    }
 }
 ?>

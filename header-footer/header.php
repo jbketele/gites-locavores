@@ -1,3 +1,7 @@
+<?php
+require_once '../controllers/menu.php';
+?>
+
 <header>
         <div>
             <div class="logo-titre">
@@ -28,8 +32,9 @@
                                         Nos Gites
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="hdf.php">Hauts de France</a></li>
-                                        <li><a class="dropdown-item" href="normandie.php">Normandie</a></li>
+                                    <?php sort($regions); foreach ($regions as $region) : ?>
+                                        <li><a class="dropdown-item" href="<?php echo strtolower(str_replace(' ', '-', $region)) . '.php'; ?>"><?php echo $region; ?></a></li>
+                                    <?php endforeach; ?>
                                         <li><a class="dropdown-item" href="regions.php">Tous</a></li>
                                     </ul>
                                 </li>
