@@ -216,17 +216,56 @@ class Gites {
             return [];
         }
     }
-    
+
     // Méthode pour récupérer les gîtes d'une région spécifique
     public static function getGitesByRegion($region) {
         $connexion = Database::getInstance();
-        $query = "SELECT * FROM Gîtes WHERE region = :region";
+        $query = "SELECT G.*, I.image_path, U.Nom, U.Prénom 
+        FROM Gîtes G LEFT JOIN Images I ON G.Id_Gîtes = I.Id_Gîtes 
+        LEFT JOIN Utilisateur U ON G.Id_Utilisateur = U.Id_Utilisateur 
+        WHERE G.region = :region";
         $statement = $connexion->prepare($query);
         $statement->bindParam(':region', $region);
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
-    
+
+        // Méthode pour récupérer les gîtes d'une région spécifique
+        public static function getGitesByRegionImage($region) {
+            $connexion = Database::getInstance();
+            $query = "SELECT G.*, I.image_path, U.Nom, U.Prénom 
+            FROM Gîtes G 
+            LEFT JOIN (
+                SELECT Id_Gîtes, MIN(Id_Images) AS min_image_id
+                FROM Images 
+                GROUP BY Id_Gîtes
+            ) AS I_id ON G.Id_Gîtes = I_id.Id_Gîtes
+            LEFT JOIN Images AS I ON I_id.Id_Gîtes = I.Id_Gîtes AND I_id.min_image_id = I.Id_Images
+            LEFT JOIN Utilisateur U ON G.Id_Utilisateur = U.Id_Utilisateur 
+            WHERE G.region = :region";
+            $statement = $connexion->prepare($query);
+            $statement->bindParam(':region', $region);
+            $statement->execute();
+            return $statement->fetchAll(PDO::FETCH_ASSOC);
+        }
+        public static function getAllGites() {
+            $connexion = Database::getInstance();
+        
+            try {
+                // Requête SQL pour récupérer tous les gîtes
+                $query = "SELECT * FROM Gîtes";
+                $statement = $connexion->query($query);
+        
+                // Récupérer les résultats sous forme de tableau associatif
+                $gites = $statement->fetchAll(PDO::FETCH_ASSOC);
+        
+                return $gites;
+            } catch (PDOException $e) {
+                // Gérer les erreurs de base de données
+                echo "Erreur lors de la récupération des gîtes: " . $e->getMessage();
+                return [];
+            }
+        }
     
 }
 ?>
