@@ -32,9 +32,9 @@ require_once '../controllers/menu.php';
                                         Nos Gites
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <?php sort($regions); foreach ($regions as $region) : ?>
-                                        <li><a class="dropdown-item" href="<?php echo strtolower(str_replace(' ', '-', $region)) . '.php'; ?>"><?php echo $region; ?></a></li>
-                                    <?php endforeach; ?>
+                                    
+                                    <li><a class="dropdown-item" href="hauts-de-france.php">Hauts de France</a></li>
+                                    <li><a class="dropdown-item" href="normandie.php">Normandie</a></li>
                                         <li><a class="dropdown-item" href="regions.php">Tous</a></li>
                                     </ul>
                                 </li>

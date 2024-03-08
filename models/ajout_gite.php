@@ -196,17 +196,6 @@ class Gites {
             return false;
         }
     }
-    
-    // Méthode pour récupérer les gîtes d'une région spécifique
-    public static function getGitesByRegion($region) {
-        $connexion = Database::getInstance();
-        $query = "SELECT * FROM Gîtes WHERE region = :region";
-        $statement = $connexion->prepare($query);
-        $statement->bindParam(':region', $region);
-        $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
-    }
-    
     // Méthode pour récupérer toutes les régions depuis la base de données
     public static function getAllRegions() {
         // Connexion à la base de données
@@ -227,5 +216,17 @@ class Gites {
             return [];
         }
     }
+    
+    // Méthode pour récupérer les gîtes d'une région spécifique
+    public static function getGitesByRegion($region) {
+        $connexion = Database::getInstance();
+        $query = "SELECT * FROM Gîtes WHERE region = :region";
+        $statement = $connexion->prepare($query);
+        $statement->bindParam(':region', $region);
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+    
 }
 ?>
