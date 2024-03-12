@@ -23,11 +23,12 @@
     <link rel="stylesheet" type="text/css" href="../styles.css">
     <link rel="stylesheet" type="text/css" href="../hdf.css">
 </head>
+    
+    <?php require_once "../controllers/liste-gite.php"; ?>
+    <?php require_once "../header-footer/header.php"; ?>
+
+    
 <body>
-    <?php 
-    require_once '../controllers/liste-gite.php';
-    require_once '/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'
-    ?>
     <main>
         <section>
             <div class="list-gites">

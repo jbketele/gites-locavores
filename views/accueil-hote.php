@@ -23,7 +23,6 @@
 </head>
 
 <body>
-    
     <!--NAVBAR-->
     <?php session_start();
     require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header-hote.php'); 

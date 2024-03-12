@@ -5,5 +5,4 @@ require_once '../models/ajout_gite.php';
 $regions = Gites::getAllRegions();
     $gitesNormandie = Gites::getGitesByRegionImage('Normandie');
     $gitesHdf = Gites::getGitesByRegionImage('Hauts de France');
-
 ?>

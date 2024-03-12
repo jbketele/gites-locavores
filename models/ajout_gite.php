@@ -1,5 +1,6 @@
 <?php
 require_once '../models/database.php';
+require_once '../models/user.php';
 
 class Gites {
     private $name;
@@ -129,7 +130,10 @@ class Gites {
     
         try {
             // Requête SQL pour récupérer les données du gîte en fonction de son ID
-            $query = "SELECT * FROM Gîtes WHERE Id_GÎtes = :id_gite";
+            $query = "SELECT G.*, U.Nom, U.Prénom
+            FROM Gîtes G
+            LEFT JOIN Utilisateur U ON G.Id_Utilisateur = U.Id_Utilisateur
+            WHERE G.Id_Gîtes = :id_gite";
             $statement = $connexion->prepare($query);
             $statement->bindParam(':id_gite', $giteId);
             $statement->execute();
@@ -266,6 +270,5 @@ class Gites {
                 return [];
             }
         }
-    
 }
 ?>

@@ -23,23 +23,74 @@
 <body>
     <?php
     require_once '../controllers/details_gite.php';
-    require_once '/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php';
-    ?>
+     if (isset($_SESSION['email'])) {
+        // L'utilisateur est connecté, affichez le formulaire de réservation
+        require_once '/Applications/MAMP/htdocs/gites_locavores/header-footer/header-connect.php';
+    } else {
+        // L'utilisateur n'est pas connecté, affichez un lien vers la page de connexion
+        require_once '/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php';
+    }?>
+    
 
     <div class="container">
-    <!-- Afficher les détails du gîte -->
-    <h2><?php echo $gite['nom_gite']; ?></h2>
-    <div class="gallery">
-        <?php foreach ($gite['images'] as $imagePath) : ?>
-            <img src="<?php echo $imagePath; ?>" alt="Image du Gîte">
-        <?php endforeach; ?>
-    </div>
-    <br>
-    <p>Région : <?php echo $gite['region']; ?></p>
-    <p>Localisation : <?php echo $gite['localisation']; ?></p>
-    <p>Prix : <?php echo $gite['tarifs']; ?></p>
-    <p><?php echo $gite['descriptif']; ?></p>   
+        <!-- Afficher les détails du gîte -->
+        <h2><?php echo $gite['nom_gite']; ?></h2>
+        <h3><?php echo $gite['Prénom'] . " " . $gite['Nom']; ?></h3>
+        <div class="gallery">
+            <?php foreach ($gite['images'] as $imagePath) : ?>
+                <img src="<?php echo $imagePath; ?>" alt="Image du Gîte">
+            <?php endforeach; ?>
+        </div>
+        <br>
+        <p>ID : <?php echo $gite['Id_Gîtes'] ?></p>
+        <p>Région : <?php echo $gite['region']; ?></p>
+        <p>Localisation : <?php echo $gite['localisation']; ?></p>
+        <p>Prix : <?php echo $gite['tarifs']; ?></p>
+        <p><?php echo $gite['descriptif']; ?></p>   
+        <?php
+        // Vérifiez si l'utilisateur est connecté
+        if (isset($_SESSION['email'])) {
+            // L'utilisateur est connecté, affichez le formulaire de réservation
+            echo "<button class='btn-success ' id='reservationBtn'>Réserver</button>";
+
+        } else {
+            // L'utilisateur n'est pas connecté, affichez un lien vers la page de connexion
+            echo '<a href="../views/inscription.php">Connectez-vous pour réserver</a>';
+        }
+        ?>
+
+        <!-- Formulaire de réservation (initiallement caché) -->
+        <div id="reservationForm" style="display: none;">
+            <form method="POST" action="../controllers/reservation.php" >
+
+                <!-- Champ de saisie pour la date d'arrivée -->
+                <label for="date_arrivee">Date d'arrivée :</label>
+                <input type="date" id="date_arrivee" name="date_arrivee" required>
+
+                <!-- Champ de saisie pour la date de départ -->
+                <label for="date_depart">Date de départ :</label>
+                <input type="date" id="date_depart" name="date_depart" value="" required>
+                
+                <!-- Champ caché pour le nom de l'utilisateur connecté -->
+                <?php $user_id = $_SESSION['user_id']; ?>
+                <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">    
+                
+                <?php $gite_id = $gite['Id_Gîtes']; ?>
+                <input type="hidden" name="gite_id" value="<?php echo $gite_id; ?>">
+
+
+                <!-- Bouton de soumission du formulaire -->
+                <input type="submit" name="submit_reservation" value="Réserver"></input>
+            </form>
+        </div>
     </div>
 
+    <script>
+    // Lorsque le bouton "Réserver" est cliqué
+    document.getElementById('reservationBtn').addEventListener('click', function() {
+        // Afficher le formulaire de réservation
+        document.getElementById('reservationForm').style.display = 'block';
+    });
+</script>
 </body>
 </html>

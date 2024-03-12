@@ -1,8 +1,5 @@
-<?php
-require_once '../controllers/menu.php';
-?>
-
 <header>
+
         <div>
             <div class="logo-titre">
                 <a href="index.php" class="logo"><img src="img/logo_gites_locavores.png" class="container "
@@ -66,4 +63,4 @@ require_once '../controllers/menu.php';
             </div>
 
         </div>
-    </header>
+</header>   

@@ -83,4 +83,32 @@ class Utilisateur {
             return null;
         }
     }
+
+    public static function getNomById($user_id) {
+        // Connexion à la base de données
+        $connexion = Database::getInstance();
+
+        try {
+            // Requête SQL pour sélectionner le nom de l'utilisateur par ID
+            $query = "SELECT Nom FROM Utilisateur WHERE Id_Utilisateur = :user_id";
+            $statement = $connexion->prepare($query);
+            $statement->bindParam(':user_id', $user_id);
+            $statement->execute();
+
+            // Récupérer le résultat de la requête
+            $result = $statement->fetch(PDO::FETCH_ASSOC);
+
+            // Vérifier si le résultat est valide
+            if ($result && isset($result['Nom'])) {
+                return $result['Nom'];
+            } else {
+                // Retourner une valeur par défaut si aucun nom n'est trouvé pour l'ID donné
+                return "Utilisateur inconnu";
+            }
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la récupération du nom de l'utilisateur : " . $e->getMessage();
+            return false;
+        }
+    }    
 }

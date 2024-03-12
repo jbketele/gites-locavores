@@ -25,7 +25,7 @@
 <body>
     
     <!--NAVBAR-->
-    <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
+    <?php require '../header-footer/header.php'?>
 
     <main>
         <section class="top">

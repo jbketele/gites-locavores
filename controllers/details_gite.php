@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once '../models/ajout_gite.php';
 // Vérifier si l'ID du gîte est passé dans l'URL
 if(isset($_GET['id'])) {
@@ -19,3 +21,4 @@ if(isset($_GET['id'])) {
     // Gérer le cas où l'ID du gîte n'est pas spécifié dans l'URL
     echo "ID du gîte non spécifié dans l'URL.";
 }
+
