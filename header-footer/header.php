@@ -1,5 +1,7 @@
 <header>
-
+<?php
+require_once '../models/user.php';
+?>
         <div>
             <div class="logo-titre">
                 <a href="index.php" class="logo"><img src="img/logo_gites_locavores.png" class="container "
@@ -52,12 +54,42 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
+                                <?php
+                                if (isset($_SESSION['user_id'])) {
+                                    $user_id = $_SESSION['user_id'];
+
+                                    $user_type = Utilisateur::getUserTypeById($user_id);
+                                    if ($user_type === 'hôte') {
+                                        echo "<li class='nav-item'>
+                                                <a class='nav-link' href='liste-gite-hote.php'>Mes Gîtes</a>
+                                                </li>";
+                                        echo "<li class='nav-item'>
+                                                <a class='nav-link' href='liste-article-hote.php'>Mes Articles</a>
+                                                </li>";
+
+                                    }
+                                }
+                                ?>                                
                             </ul>
                         </div>
 
                     </div>
-                    <div><a href="regions.php" class="book btn">Réserver</a></div>
-                    <div><a href="inscription.php" class="sign btn">Inscription/Connexion</a></div>
+                    <?php
+                    if (isset($_SESSION['user_id'])) {
+                        $user_id = $_SESSION['user_id'];
+                        $user_type = Utilisateur::getUserTypeById($user_id);
+                        if ($user_type === 'hôte') {
+                            echo "<div><a href='ajout_article.php' class='add-gite btn'>Ajouter un Article</a></div>";
+                            echo "<div><a href='ajout_gite.php' class='add-gite btn'>Ajouter un Gîte</a></div>";
+                            echo "<div><a href='inscription.php' class='sign btn'>Déconnexion</a></div>";
+
+                        } else {
+                            echo "<div><a href='regions.php' class='sign btn'>Réserver</a></div>";
+                            echo "<div><a href='inscription.php' class='sign btn'>Inscription/Connexion</a></div>";                            
+                        }
+                    }
+                    ?>
+
                 </nav>
 
             </div>

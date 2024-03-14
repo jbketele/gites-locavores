@@ -15,7 +15,7 @@
 <body>
 <?php session_start();
 require_once '../controllers/liste-articles-hote.php';
-require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header-hote.php'); ?>
+require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
 
     <h2>Liste de vos articles</h2>
     <div class="container">

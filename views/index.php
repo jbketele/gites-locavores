@@ -25,7 +25,10 @@
 <body>
     
     <!--NAVBAR-->
-    <?php require '../header-footer/header.php'?>
+    <?php session_start();
+    require '../header-footer/header.php';
+    
+    ?>
 
     <main>
         <section class="top">
@@ -53,7 +56,15 @@
             </div>
         </form>
 
-        
+        <?php require_once '../models/user.php';
+
+
+            // Récupérez le prénom de l'utilisateur
+            $firstName = Utilisateur::getFirstNameByEmail($_SESSION['email']);
+
+            // Affichez le contenu de la page d'accueil
+            echo "<h3>Bonjour " . $firstName . "</h3>";     
+            ?>
 
         <!--CARDS BLOG-->
         <section class="blog">
