@@ -53,6 +53,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="liste-gite-hote.php">Mes Gîtes</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="ajout_article.php">Ajouter un article</a>
+                                </li>
                             </ul>
                         </div>
 

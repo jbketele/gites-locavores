@@ -101,6 +101,7 @@ class Gites {
         }
     }
 
+
     public static function uploadImages($giteId, $image_data) {
         $connexion = Database::getInstance();
         // Répertoire de destination permanent
@@ -268,6 +269,24 @@ class Gites {
                 // Gérer les erreurs de base de données
                 echo "Erreur lors de la récupération des gîtes: " . $e->getMessage();
                 return [];
+            }
+        }
+
+        public static function deleteGite($giteId) {
+            $connexion = Database::getInstance();
+        
+            try {
+                // Requête SQL pour supprimer le gîte de la base de données
+                $query = "DELETE FROM Gîtes WHERE Id_Gîtes = :id_gite";
+                $statement = $connexion->prepare($query);
+                $statement->bindParam(':id_gite', $giteId);
+                $statement->execute();
+        
+                return true; // Succès de la suppression
+            } catch (PDOException $e) {
+                // Gérer les erreurs de base de données
+                echo "Erreur lors de la suppression du gîte: " . $e->getMessage();
+                return false; // Échec de la suppression
             }
         }
 }

@@ -38,7 +38,8 @@ require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header-hot
                     echo "<td>" . $gite['localisation'] . "</td>";
                     echo "<td>" . $gite['capacite'] . "</td>";
                     echo "<td><a href='../views/votre-gite.php?id=" . $gite['Id_Gîtes'] ."'>Voir le gîte</a></td>";
-                echo "</tr>";
+                    echo "<td><a href='../controllers/supprimer_gite.php?id=" . $gite['Id_Gîtes'] ."' onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer ce gîte ?')\">Supprimer</a>";
+                    echo "</tr>";
                 ?>
             <?php endforeach; ?>
         </tbody>
