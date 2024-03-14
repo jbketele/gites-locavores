@@ -111,4 +111,27 @@ class Utilisateur {
             return false;
         }
     }    
+
+    public static function getUserTypeById($user_id) {
+        // Connexion à la base de données
+        $connexion = Database::getInstance();
+        
+        try {
+            // Requête SQL pour récupérer le type d'utilisateur par son ID
+            $query = "SELECT type_user FROM Utilisateur WHERE Id_Utilisateur = :user_id";
+            $statement = $connexion->prepare($query);
+            $statement->bindParam(':user_id', $user_id);
+            $statement->execute();
+            
+            // Récupérer le type d'utilisateur
+            $user_type = $statement->fetchColumn();
+    
+            return $user_type;
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la récupération du type d'utilisateur : " . $e->getMessage();
+            return false;
+        }
+    }
+    
 }

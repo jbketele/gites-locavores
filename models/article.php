@@ -61,8 +61,15 @@ class Article {
     }
 
     public function setImagePaths($image_paths) {
-        $this->image_paths = $image_paths;
+        if (is_array($image_paths)) {
+            $this->image_paths = $image_paths;
+        } else {
+            $this->image_paths = [];
+            // Si vous avez un seul chemin d'image à assigner, vous pouvez l'ajouter directement au tableau
+            $this->image_paths[] = $image_paths;
+        }
     }
+    
 
     public function getImagePaths() {
         return $this->image_paths;
@@ -176,7 +183,10 @@ class Article {
     
         try {
             // Requête SQL pour sélectionner les détails de l'article par son ID
-            $query = "SELECT * FROM Article WHERE Id_Article = :article_id";
+            $query = "SELECT A.*, IA.image_path 
+            FROM Article A 
+            JOIN image_article IA ON A.Id_Article = IA.Id_Article 
+            WHERE A.Id_Article = :article_id";            
             $statement = $connexion->prepare($query);
             $statement->bindParam(':article_id', $article_id);
             $statement->execute();
@@ -189,11 +199,11 @@ class Article {
             $article->setCategorie($article_data['categorie']);
             $article->setNomArticle($article_data['nom']);
             $article->setDescriptif($article_data['descriptif']);
-            $article->setLieu($article_data['lieu']);
-            $article->setIngredients($article_data['ingredients']);
-            $article->setNbPersonnes($article_data['nb_personnes']);
+            $article->setLieu($article_data['Lieu']);
+            $article->setIngredients($article_data['ingredients'] ?? '');
+            $article->setNbPersonnes($article_data['nb_personnes'] ?? '');
             $article->setImagePaths($article_data['image_path']);
-            
+             
             return $article; // Retourner les détails de l'article
         } catch (PDOException $e) {
             // Gérer les erreurs de base de données
