@@ -212,6 +212,88 @@ class Article {
         }
     }
         
+    public function updateArticle($id, $categorie, $nom, $descriptif, $lieu, $ingredients, $nb_personnes) {
+        $connexion = Database::getInstance();
+        
+        try {
+            // Requête SQL pour mettre à jour un article dans la base de données
+            $query = 'UPDATE Article SET categorie = :categorie, nom = :nom, descriptif = :descriptif, lieu = :lieu, ingredients = :ingredients, nb_personnes = :nb_personnes WHERE Id_Article = :id';
+            $statement = $connexion->prepare($query);
+            $statement->bindParam(':id', $id);
+            $statement->bindParam(':categorie', $categorie);
+            $statement->bindParam(':nom', $nom);
+            $statement->bindParam(':descriptif', $descriptif);
+            $statement->bindParam(':lieu', $lieu);
+            $statement->bindParam(':ingredients', $ingredients);
+            $statement->bindParam(':nb_personnes', $nb_personnes);
+            $statement->execute();
+            
+            return true; // Succès de la mise à jour
+        } catch (PDOException $e) {
+            // Gestion des erreurs de base de données
+            echo "Erreur de mise à jour de l'article: " . $e->getMessage();
+            return false; // Échec de la mise à jour
+        }
+    }
     
+    public static function getAllArticles() {
+        // Connexion à la base de données
+        $connexion = Database::getInstance();
+    
+        try {
+            // Requête SQL pour récupérer tous les articles
+            $query = "SELECT * FROM Article";
+            $statement = $connexion->query($query);
+    
+            // Récupérer les résultats sous forme de tableau associatif
+            $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
+    
+            return $articles;
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la récupération des articles: " . $e->getMessage();
+            return [];
+        }
+    }
+    
+    public static function getArticlesByUserId($user_id) {
+        // Connexion à la base de données
+        $connexion = Database::getInstance();
+    
+        try {
+            // Requête SQL pour récupérer les articles de l'utilisateur en fonction de son ID
+            $query = "SELECT * FROM Article WHERE Id_Utilisateur = :user_id";
+            $statement = $connexion->prepare($query);
+            $statement->bindParam(':user_id', $user_id);
+            $statement->execute();
+    
+            // Récupérer les articles de l'utilisateur
+            $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
+    
+            return $articles;
+        } catch (PDOException $e) {
+            // Gestion des erreurs de base de données
+            echo "Erreur lors de la récupération des articles de l'utilisateur : " . $e->getMessage();
+            return [];
+        }
+    }
+    
+    public static function deleteArticle($article_id) {
+        $connexion = Database::getInstance();
+    
+        try {
+            // Requête SQL pour supprimer le gîte de la base de données
+            $query = "DELETE FROM Article WHERE Id_Article = :article_id";
+            $statement = $connexion->prepare($query);
+            $statement->bindParam(':article_id', $article_id);
+            $statement->execute();
+    
+            return true; // Succès de la suppression
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la suppression du gîte: " . $e->getMessage();
+            return false; // Échec de la suppression
+        }
+    }
 }
 

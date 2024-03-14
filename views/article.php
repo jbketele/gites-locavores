@@ -37,19 +37,26 @@ if(isset($article_details)) {
         <p><strong>Catégorie:</strong> <?php echo $article_details->getCategorie(); ?></p>
         <p><strong>Descriptif:</strong> <?php echo $article_details->getDescriptif(); ?></p>
         <p><strong>Lieu:</strong> <?php echo $article_details->getLieu(); ?></p>
+
+        <?php
+        if ($article_details->getCategorie() === "recettes") {
+        ?>
         <p><strong>Ingrédients:</strong> <?php echo $article_details->getIngredients(); ?></p>
         <p><strong>Nombre de personnes:</strong> <?php echo $article_details->getNbPersonnes(); ?></p>
-        <!-- Ajoutez ici d'autres détails de l'article -->
+        <?php } ?>
         <?php
         // Afficher les images associées à l'article
         $image_paths = $article_details->getImagePaths();
         if (!empty($image_paths)) {
             echo "<h3>Images associées:</h3>";
             foreach ($image_paths as $image_path) {
-                echo "<img src='$image_path' alt='Image de l'article'>";
+                echo "<img src='$image_path' alt='Image de l'article'><br><br>";
             }
         }
+
+
         ?>
+        <a href="../views/modifier_article.php?id=<?php echo $article_id; ?>">Modifier cet article</a>
     </div>
     <?php
 } else {
