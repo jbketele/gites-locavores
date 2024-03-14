@@ -1,5 +1,5 @@
 <header>
-<?php
+<?php session_start();
 require_once '../models/user.php';
 ?>
         <div>
@@ -82,12 +82,11 @@ require_once '../models/user.php';
                             echo "<div><a href='ajout_article.php' class='add-gite btn'>Ajouter un Article</a></div>";
                             echo "<div><a href='ajout_gite.php' class='add-gite btn'>Ajouter un Gîte</a></div>";
                             echo "<div><a href='inscription.php' class='sign btn'>Déconnexion</a></div>";
-
-                        } else {
+                        } 
+                    }else {
                             echo "<div><a href='regions.php' class='sign btn'>Réserver</a></div>";
                             echo "<div><a href='inscription.php' class='sign btn'>Inscription/Connexion</a></div>";                            
                         }
-                    }
                     ?>
 
                 </nav>

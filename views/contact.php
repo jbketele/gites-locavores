@@ -23,7 +23,7 @@
 </head>
 
 <body>
-<?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
+<?php require_once'/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'; ?>
 
 
     <main>
