@@ -29,7 +29,7 @@
 
     <main>
         <div class="row">
-            <div class="d-flex justify-content-around" id="connexion">
+            <div id="connexion">
                 <div>
                     <h3 class="mt-3">Inscription</h3>
                     <form action="../controllers/user.php" method="POST">

@@ -1,5 +1,5 @@
 <header>
-<?php session_start();
+<?php
 require_once '../models/user.php';
 ?>
         <div>
@@ -64,7 +64,7 @@ require_once '../models/user.php';
                                                 <a class='nav-link' href='liste-gite-hote.php'>Mes Gîtes</a>
                                                 </li>";
                                         echo "<li class='nav-item'>
-                                                <a class='nav-link' href='liste-article-hote.php'>Mes Articles</a>
+                                                <a class='nav-link' href='liste-articles-hote.php'>Mes Articles</a>
                                                 </li>";
 
                                     }

@@ -119,7 +119,7 @@ class Reservation {
         }
     }
 
-    public static function getReservationDetailsById($reservation_id) {
+    public static function getReservationDetailsById($reservationId) {
         // Connexion à la base de données
         $connexion = Database::getInstance();
     
@@ -130,7 +130,7 @@ class Reservation {
             INNER JOIN Gîtes g ON r.Id_Gîtes = g.Id_Gîtes
             WHERE Id_Réservation = :reservation_id";
             $statement = $connexion->prepare($query);
-            $statement->bindParam(':reservation_id', $reservation_id);
+            $statement->bindParam(':reservation_id', $reservationId);
             $statement->execute();
     
             // Récupérer les détails de la réservation

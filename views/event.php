@@ -23,9 +23,9 @@
 </head>
 
 <body>
-<?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
-
-
+<?php require_once '../controllers/article.php';
+require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php');
+ ?>
     <main>
         <div class="d-flex justify-content-evenly pt-3">
             <a href="event.php" class="btn btn-warning">Évènements</a>
@@ -33,62 +33,32 @@
             <a href="recettes.php" class="btn btn-warning">Recettes</a>
             <a href="produits-saison.php" class="btn btn-warning">Produits de saison</a>
         </div>
+
         <section>
             <div class="row-cols-1 row-cols-md-3 cards-blog">
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/pub_noel_gites_locavores.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Profitez de nos chalets pendant les fêtes !</h5>
-                        <p class="card-text">Passez un moment en famille unique dans nos chalets et découvrez les saveurs des spécialités montagnardes ...
-                        </p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
+            
+            <?php
+            // Récupérer les articles de la catégorie "évènements"
+            $eventArticles = Article::getEventArticles();
+            
+            // Vérifier si des articles ont été récupérés
+            if ($eventArticles) {
+                // Afficher les cartes des articles
+                foreach ($eventArticles as $article) {
+                    echo '<div class="container card-blog border-light shadow-lg col-md-4">';
+                    echo '<img src="' . $article['image_path'] . '" class="card-img-top" alt="...">';
+                    echo '<div class="card-body">';
+                    echo '<h5 class="card-title">' . $article['nom'] . '</h5>';
+                    echo '<p class="card-text">' . $article['descriptif'] . '</p>';
+                    echo '<a href="#" class="btn btn-success">En savoir plus</a>';
+                    echo '</div></div>';
+                }
+            } else {
+                // Afficher un message si aucun article n'est disponible
+                echo '<p>Aucun article disponible pour le moment.</p>';
+            }
+            ?>
 
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/65546a2e98557988646525.jpg" class="card-img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"> VENTE DE SAPINS</h5>
-                        <p class="card-text">Vente de sapins à partir du 2 décembre 2023. Quantité limitée.</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/652542e3a2a67183224928.jpg" class="card-img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">À Noël, partez à la découverte des vignes du Vermandois</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua... </p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/61605a42736e9115570806-copie.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Marché de Noël et ferme en fête chez Les Chèvres de M. Seguin</h5>
-                        <p class="card-text">Pour Noël, venez chez Les Chèvres de M. Seguin à Hautain : Samedis 9 et 16 décembre, Dimanches 10 et 17 décembre De 9h30 à 18h ...
-                        </p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/65577a82076c4095375992.jpg" class="card-img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Atelier Créatifs de Noël 2023</h5>
-                        <p class="card-text">Créer votre couronne de Noël et vos guirlandes de sapin. Une astuce pour une décoration intérieure et extérieure ...</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/655cbb90f1bbe735862856.png" class="card-img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">OFFRE DE NOEL 10%</h5>
-                        <p class="card-text">Venez découvrir toutes nos gammes déclinées en blanc, rosé et rouge ainsi que nos effervescent. Nous avons le plaisir de vous offrir 10% de réduction sur ...</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
             </div>
         </section>
     </main>

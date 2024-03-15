@@ -289,5 +289,40 @@ class Gites {
                 return false; // Échec de la suppression
             }
         }
+
+        public static function getTotalGites() {
+            $connexion = Database::getInstance(); // Obtenez une instance de connexion à la base de données
+    
+            try {
+                // Requête SQL pour récupérer le nombre total de gîtes
+                $query = "SELECT COUNT(*) AS total FROM Gîtes";
+                $statement = $connexion->query($query);
+                $row = $statement->fetch(PDO::FETCH_ASSOC);
+                return $row['total'];
+            } catch (PDOException $e) {
+                // Gérer les erreurs de base de données
+                echo "Erreur lors de la récupération du nombre total de gîtes : " . $e->getMessage();
+                return false;
+            }
+        }
+    
+        public static function getGitesWithPagination($limit, $offset) {
+            $connexion = Database::getInstance(); // Obtenez une instance de connexion à la base de données
+    
+            try {
+                // Requête SQL pour récupérer les gîtes avec pagination
+                $query = "SELECT * FROM Gîtes LIMIT :limit OFFSET :offset";
+                $statement = $connexion->prepare($query);
+                $statement->bindParam(':limit', $limit, PDO::PARAM_INT);
+                $statement->bindParam(':offset', $offset, PDO::PARAM_INT);
+                $statement->execute();
+                return $statement->fetchAll(PDO::FETCH_ASSOC);
+            } catch (PDOException $e) {
+                // Gérer les erreurs de base de données
+                echo "Erreur lors de la récupération des gîtes avec pagination : " . $e->getMessage();
+                return false;
+            }
+        }
+    
 }
 ?>

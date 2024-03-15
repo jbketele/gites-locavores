@@ -45,5 +45,6 @@ require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header-hot
         </tbody>
     </table>
     </div>
+    </div>
 </body>
 </html>

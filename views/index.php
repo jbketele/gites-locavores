@@ -38,32 +38,15 @@
             </div>
         </section>
 
-        <!--SEARCH-->
-        <form class="search">
-            <div class="container box1">
-                <div class="row">
-                    <div class="container row place-products">
-                        <div class="container row col-md-5 search-container ">
-                            <input type="text" id="place" name="localisation" placeholder="Où souhaitez vous aller ?">
-                        </div>
-
-                        <div class="container row col-md-2 suivant">
-                            <input class="item btn" type="submit" value="Suivant">
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </form>
-
         <?php require_once '../models/user.php';
 
-
+            if (isset($_SESSION['email'])) {
             // Récupérez le prénom de l'utilisateur
             $firstName = Utilisateur::getFirstNameByEmail($_SESSION['email']);
 
             // Affichez le contenu de la page d'accueil
             echo "<h3>Bonjour " . $firstName . "</h3>";     
+            }
             ?>
 
         <!--CARDS BLOG-->

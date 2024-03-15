@@ -295,5 +295,93 @@ class Article {
             return false; // Échec de la suppression
         }
     }
+
+    public static function getEventArticles() {
+        // Connexion à la base de données
+        $connexion = Database::getInstance();
+        
+        try {
+            // Requête SQL pour sélectionner les articles de la catégorie "évènements"
+            $query = "SELECT a.*, ia.image_path FROM Article a
+                  LEFT JOIN image_article ia ON a.Id_Article = ia.Id_Article
+                  WHERE a.categorie = 'evenements'";
+            $statement = $connexion->query($query);
+            
+            // Récupérer les données des articles
+            $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
+            
+            return $articles; // Retourner les articles récupérés
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la récupération des articles : " . $e->getMessage();
+            return false;
+        }
+    }
+    
+    public static function getActusArticles() {
+        // Connexion à la base de données
+        $connexion = Database::getInstance();
+        
+        try {
+            // Requête SQL pour sélectionner les articles de la catégorie "évènements"
+            $query = "SELECT a.*, ia.image_path FROM Article a
+                  LEFT JOIN image_article ia ON a.Id_Article = ia.Id_Article
+                  WHERE a.categorie = 'actualités'";
+            $statement = $connexion->query($query);
+            
+            // Récupérer les données des articles
+            $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
+            
+            return $articles; // Retourner les articles récupérés
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la récupération des articles : " . $e->getMessage();
+            return false;
+        }
+    }
+
+    public static function getRecettesArticles() {
+        // Connexion à la base de données
+        $connexion = Database::getInstance();
+        
+        try {
+            // Requête SQL pour sélectionner les articles de la catégorie "évènements"
+            $query = "SELECT a.*, ia.image_path FROM Article a
+                  LEFT JOIN image_article ia ON a.Id_Article = ia.Id_Article
+                  WHERE a.categorie = 'recettes'";
+            $statement = $connexion->query($query);
+            
+            // Récupérer les données des articles
+            $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
+            
+            return $articles; // Retourner les articles récupérés
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la récupération des articles : " . $e->getMessage();
+            return false;
+        }
+    }
+
+    public static function getProduitsSaisonArticles() {
+        // Connexion à la base de données
+        $connexion = Database::getInstance();
+        
+        try {
+            // Requête SQL pour sélectionner les articles de la catégorie "évènements"
+            $query = "SELECT a.*, ia.image_path FROM Article a
+                  LEFT JOIN image_article ia ON a.Id_Article = ia.Id_Article
+                  WHERE a.categorie = 'produits de saison'";
+            $statement = $connexion->query($query);
+            
+            // Récupérer les données des articles
+            $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
+            
+            return $articles; // Retourner les articles récupérés
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la récupération des articles : " . $e->getMessage();
+            return false;
+        }
+    }
 }
 

@@ -11,3 +11,22 @@ select {
     border-radius: 5%;
     border: none;
 }
+
+@media (min-width:767px) {
+    #connexion {
+        display: grid;
+        grid-template-columns: 15vw 15vw;
+        gap: 45%;
+        padding-left: 15%;
+    }
+}
+
+@media (max-width:767px) {
+    #connexion {
+        display: grid;
+        grid-template-columns: 33vw 33vw;
+        gap: 20%;
+        padding: 10%;
+        background-size: 100vw 110vh;
+    }
+}

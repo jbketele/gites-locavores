@@ -42,12 +42,16 @@ require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php
                     echo "<td>" . $article['Ingrédients'] . "</td>";
                     echo "<td>" . $article['Nb_personnes'] . "</td>";
                     echo "<td><a href='../views/votre-gite.php?id=" . $article['Id_Article'] ."'>Voir le gîte</a></td>";
-                    echo "<td><a href='../controllers/supprimer_article.php?id=" . $article['Id_Article'] ."' onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')\">Supprimer</a>";
+                    echo "<td><a href='../controllers/supprimer-article.php?id=" . $article['Id_Article'] ."' onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')\">Supprimer</a>";
                     echo "</tr>";
                 ?>
             <?php endforeach; ?>
         </tbody>
     </table>
+    <div class="pagination">
+        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+            <a href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+        <?php endfor; ?>
     </div>
 </body>
 </html>
