@@ -52,12 +52,8 @@ function login() {
         $_SESSION['email'] = $email;
         $_SESSION['user_id'] = $user['Id_Utilisateur']; // Supposons que l'ID de l'utilisateur se trouve dans la colonne 'Id_Utilisateur'
 
-        //Rediriger selon le type d'utilisateur
-        if ($user['type_user'] == 'hôte') {
-            header("Location: ../views/accueil-hote.php");
-        } else {
-            header("Location: ../views/accueil-connect.php");
-        }
+  
+        header("Location: ../views/index.php");
         exit;
     } else {
         // Authentification échouée

@@ -423,6 +423,18 @@ class Article {
             return false;
         }
     }
+
+    public static function getRandomArticles($limit) {
+        $connexion = Database::getInstance();
+        $query = "SELECT a.*, ia.image_path FROM Article a 
+        LEFT JOIN image_article ia ON a.Id_Article = ia.Id_Article
+        ORDER BY RAND() LIMIT :limit";
+        $statement = $connexion->prepare($query);
+        $statement->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
     
 }
 

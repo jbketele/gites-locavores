@@ -25,9 +25,9 @@
 <body>
     
     <!--NAVBAR-->
-    <?php session_start();
+    <?php
+    require '../controllers/article.php';    
     require '../header-footer/header.php';
-    
     ?>
 
     <main>
@@ -38,79 +38,49 @@
             </div>
         </section>
 
-        <?php require_once '../models/user.php';
+        <?php 
+
 
             if (isset($_SESSION['email'])) {
             // Récupérez le prénom de l'utilisateur
             $firstName = Utilisateur::getFirstNameByEmail($_SESSION['email']);
 
             // Affichez le contenu de la page d'accueil
-            echo "<h3>Bonjour " . $firstName . "</h3>";     
+            echo "<div class='container text-center'>
+            <h3>Bonjour " . $firstName . "</h3></div>";     
             }
             ?>
 
         <!--CARDS BLOG-->
-        <section class="blog">
+        <section>
             <div class="row-cols-1 row-cols-md-3 cards-blog">
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/654a33fe1116a512729429.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Chaque avis compte ! N'hésitez pas à nous partagez le vôtre !</h5>
-                        <p class="card-text">Chaque avis est important ! Voici un exemple d'avis reçu cette semaine ...
-                        </p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
+            
+            <?php
+            // Récupérer une sélection aléatoire de 4 articles
+            $randomArticles = Article::getRandomArticles(6);
 
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/pexels-zen-chung-5529540.jpg" class="card-img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">La pomme, un fruit aux multiples saveurs !</h5>
-                        <p class="card-text">Découvrez les différentes variétés de pommes cultivées chez nos
-                            agriculteurs, et des recettes savoureuses ...</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/60c32bd1cae0e003878780.jpg" class="card-img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Gnocchis de pommes de terre aux blettes</h5>
-                        <p class="card-text">Plus besoin de chercher à combiner féculents et légumes, voici une recette
-                            qui
-                            le fait pour vous ! Goûtez à ces délicieux gnocchis de pomme de terre aux ...</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/pub_noel_gites_locavores.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Profitez de nos chalets pendant les fêtes !</h5>
-                        <p class="card-text">Passez un moment en famille unique dans nos chalets et découvrez les saveurs des spécialités montagnardes ...
-                        </p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/6567139f9c967820700071.jpg" class="card-img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Coup de Pouce : Ferme de Janine et Denis dans le Calvados</h5>
-                        <p class="card-text">(Coup de Pouce) 🐮 Janine et Denis Langlais proposent dans leur ferme normande des produits laitiers 100% Bio et de la viande ...</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/63bf03d6d30b9248784608.jpeg" class="card-img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Recette de la Teurgoule</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+            
+            // Vérifier si des articles ont été récupérés
+            if ($randomArticles) {
+                // Afficher les cartes des articles
+                foreach ($randomArticles as $article) {
+                    echo '<div class="container card-blog border-light shadow-lg col-md-4">';
+                    echo '<img src="' . $article['image_path'] . '" class="card-img-top" alt="...">';
+                    echo '<div class="card-body">';
+                    echo '<h5 class="card-title">' . $article['nom'] . '</h5>';
+                    echo '<p class="card-text">' . $article['descriptif'] . '</p>';
+                    if (isset($article['Id_Article'])) {
+                        echo '<a href="article.php?id=' . $article['Id_Article'] . '" class="btn btn-success">En savoir plus</a>';
+                    } else {
+                        echo '<a href="#" class="btn btn-danger">Article non disponible</a>';
+                    }
+                    echo '</div></div>';
+                }
+            } else {
+                // Afficher un message si aucun article n'est disponible
+                echo '<p>Aucun article disponible pour le moment.</p>';
+            }
+            ?>
         <br>
 
         <section class="other-cards">

@@ -386,7 +386,8 @@ h3 {
 }
 
 
-#connexion {
+#connexion,
+#connect {
   background-image: url(views/img/sunny-day-field.jpg);
   background-position: center;
   background-size: 100vw;

@@ -66,7 +66,13 @@ require_once '../models/user.php';
                                         echo "<li class='nav-item'>
                                                 <a class='nav-link' href='liste-articles-hote.php'>Mes Articles</a>
                                                 </li>";
-
+                                    } else {
+                                        echo "<li class='nav-item dropdown'>
+                                        <a class='nav-link dropdown-toggle' href='' id='navbarDropdown' role='button' 
+                                        data-bs-toggle='dropdown' aria-expanded='false'>Mon compte</a>
+                                        <ul class='dropdown-menu' araia-labelledby='navbarDropdown'>
+                                        <li><a class='dropdown-item' href=''>Mes Réseravtion</a>
+                                        </li></ul>";
                                     }
                                 }
                                 ?>                                
@@ -81,8 +87,13 @@ require_once '../models/user.php';
                         if ($user_type === 'hôte') {
                             echo "<div><a href='ajout_article.php' class='add-gite btn'>Ajouter un Article</a></div>";
                             echo "<div><a href='ajout_gite.php' class='add-gite btn'>Ajouter un Gîte</a></div>";
-                            echo "<div><a href='inscription.php' class='sign btn'>Déconnexion</a></div>";
-                        } 
+                            echo "<form action='../controllers/logout.php' method='POST'>
+                            <button type='submit' class='sign btn'>Déconnexion</button>";
+                        } else {
+                            echo "<div><a href='regions.php' class='sign btn'>Réserver</a></div>";
+                            echo "<form action='../controllers/logout.php' method='POST'>
+                            <button type='submit' class='sign btn'>Déconnexion</button>";
+                        }
                     }else {
                             echo "<div><a href='regions.php' class='sign btn'>Réserver</a></div>";
                             echo "<div><a href='inscription.php' class='sign btn'>Inscription/Connexion</a></div>";                            

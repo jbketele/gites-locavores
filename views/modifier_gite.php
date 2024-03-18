@@ -38,7 +38,7 @@
             <div class="gallery">
                 <?php foreach ($giteDetails['images'] as $image): ?>
                     <img src="<?php echo $image; ?>" alt="Image du gîte">
-                    <br>
+                    <br>    
                     <?php $imageName = basename($image); ?>
                     <input type="text" value="<?php echo $imageName; ?>" readonly>
 

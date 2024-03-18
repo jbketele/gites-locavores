@@ -20,7 +20,7 @@
     }
 </style>
 <body>
-<?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header-hote.php'); ?>
+<?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
 <div class="row">
 <div class="d-flex justify-content-around" id="connexion">
     <div>

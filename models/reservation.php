@@ -2,6 +2,7 @@
 class Reservation {
     private $dateArrivee;
     private $dateDepart;
+    private $nbPersonnes;
     private $userId;
     private $giteId;
     private $reservationId;
@@ -47,18 +48,27 @@ class Reservation {
         $this->reservationId = $reservationId;
     }
 
+    public function getNbPersonnes() {
+        return $this->nb_personnes;
+    }
+
+    public function setNbPersonnes($nbPersonnes) {
+        $this->nb_personnes = $nbPersonnes;
+    }
+
     // Méthode pour réserver un gîte
-    public static function reserverGite($giteId, $userId, $date_arrivee, $date_depart) {
+    public static function reserverGite($giteId, $userId, $date_arrivee, $date_depart, $nbPersonnes) {
         // Connexion à la base de données
         $connexion = Database::getInstance();
 
         try {
             // Requête SQL pour insérer la réservation dans la table des réservations
-            $query = "INSERT INTO Réservation (date_arrivee, date_depart, Id_Utilisateur, Id_Gîtes) 
-                      VALUES (:date_arrivee, :date_depart, :userId, :giteId)";
+            $query = "INSERT INTO Réservation (date_arrivee, date_depart, nombre_personnes, Id_Utilisateur, Id_Gîtes) 
+                      VALUES (:date_arrivee, :date_depart, :nb_personnes, :userId, :giteId)";
             $statement = $connexion->prepare($query);
             $statement->bindParam(':date_arrivee', $date_arrivee);
-            $statement->bindParam(':date_depart', $date_depart);                
+            $statement->bindParam(':date_depart', $date_depart);
+            $statement->bindParam(':nb_personnes', $nbPersonnes);
             $statement->bindParam(':userId', $userId);
             $statement->bindParam(':giteId', $giteId);
 
@@ -76,7 +86,8 @@ class Reservation {
                 $date_arrivee,
                 $date_depart,
                 $userId,
-                $giteId
+                $giteId,
+                $nbPersonnes
             );
 
             $reservation->setReservationId($reservation_id);

@@ -45,7 +45,7 @@
         <p>ID : <?php echo $gite['Id_Gîtes'] ?></p>
         <p>Région : <?php echo $gite['region']; ?></p>
         <p>Localisation : <?php echo $gite['localisation']; ?></p>
-        <p>Prix : <?php echo $gite['tarifs']; ?></p>
+        <p>Prix : <?php echo $gite['tarifs']; ?> €</p>
         <p><?php echo $gite['descriptif']; ?></p>   
         <?php
         // Vérifiez si l'utilisateur est connecté
@@ -70,6 +70,9 @@
                 <!-- Champ de saisie pour la date de départ -->
                 <label for="date_depart">Date de départ :</label>
                 <input type="date" id="date_depart" name="date_depart" value="" required>
+
+                <label for="nb_personnes">Nombre de personnes :</label>
+                <input type="number" id="nb_personnes" name="nb_personnes" value="" required>
                 
                 <!-- Champ caché pour le nom de l'utilisateur connecté -->
                 <?php $user_id = $_SESSION['user_id']; ?>

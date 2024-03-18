@@ -13,52 +13,31 @@
 <body>
 <?php
 require_once '../controllers/reservation.php';
-     if (isset($_SESSION['email'])) {
-        // L'utilisateur est connecté, affichez le formulaire de réservation
-        require_once '/Applications/MAMP/htdocs/gites_locavores/header-footer/header-connect.php';
-    } else {
-        // L'utilisateur n'est pas connecté, affichez un lien vers la page de connexion
-        require_once '/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php';
-    }
-    // Vérifier si l'ID de la réservation est passé dans l'URL
-if (isset($_GET['id'])) {
-    // Récupérer l'ID de la réservation depuis l'URL
-    $reservation_id = $_GET['id'];
+require_once '../header-footer/header.php';
 
-    // Récupérer les détails de la réservation depuis la base de données
-    $reservation_details = Reservation::getReservationDetailsById($reservation_id);
 
-    // Vérifier si les détails de la réservation ont été récupérés avec succès
-    if ($reservation_details) {
-        // Les détails de la réservation ont été récupérés avec succès
-        // Assigner les détails à des variables pour les utiliser dans la vue
-        $nom_gite = $reservation_details['nom_gite'];
-        $date_arrivee = $reservation_details['date_arrivee'];
-        $date_depart = $reservation_details['date_depart'];
-    } else {
-        // Les détails de la réservation n'ont pas pu être récupérés
-        // Afficher un message d'erreur ou rediriger vers une page d'erreur
-        echo "Erreur: Impossible de récupérer les détails de la réservation.";
-        exit;
-    }
+    if (isset($_GET['nom_gite'], $_GET['date_arrivee'], $_GET['date_depart'], $_GET['nb_pers'])) {
+    // Récupérer les valeurs des paramètres GET
+    $nom_gite = $_GET['nom_gite'];
+    $date_arrivee = $_GET['date_arrivee'];
+    $date_depart = $_GET['date_depart'];
+    $nb_personnes = $_GET['nb_pers'];
+    // Afficher les détails de la réservation
+    echo "<h1>Confirmation de Réservation</h1>";
+    echo "<p>Merci pour votre réservation!</p>";
+    echo "<p>Voici les détails de votre réservation :</p>";
+    echo "<ul>";
+    echo "<li>Gîte : $nom_gite</li>";
+    echo "<li>Date d'arrivée : $date_arrivee</li>";
+    echo "<li>Date de départ : $date_depart</li>";
+    echo "<li>Nombre de personnes : $nb_personnes</li>";
+    // Ajouter d'autres détails de réservation au besoin
+    echo "</ul>";
+    echo "<p>Un email de confirmation vous sera envoyé sous peu.</p>";
 } else {
-    // L'ID de la réservation n'est pas passé dans l'URL
-    // Afficher un message d'erreur ou rediriger vers une page d'erreur
-    echo "Erreur: ID de réservation manquant dans l'URL.";
-    exit;
+    // Si les variables ne sont pas définies, afficher un message d'erreur
+    echo "Erreur : Les détails de la réservation sont manquants.";
 }
-    ?>
-    <h1>Confirmation de Réservation</h1>
-    <p>Merci pour votre réservation!</p>
-    <p>Voici les détails de votre réservation :</p>
-    
-    <ul>
-        <li>Gîte : <?php echo $nom_gite; ?></li>
-        <li>Date d'arrivée : <?php echo date_format(date_create($date_arrivee), 'd/m/Y'); ?></li>
-        <li>Date de départ : <?php echo date_format(date_create($date_depart), 'd/m/Y'); ?></li>
-        <!-- Ajoutez d'autres détails de réservation au besoin -->
-    </ul>
-    
-    <p>Un email de confirmation vous sera envoyé sous peu.</p>
+?>
 </body>
 </html>
