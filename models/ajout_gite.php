@@ -105,7 +105,7 @@ class Gites {
     public static function uploadImages($giteId, $image_data) {
         $connexion = Database::getInstance();
         // Répertoire de destination permanent
-        $destination_dir = '../views/img/img-gite/';
+        $destination_dir = '../views/img/img_gite/';
     
         // Parcourir les fichiers téléchargés
         foreach ($image_data['name'] as $index => $filename) {
@@ -160,26 +160,51 @@ class Gites {
         }
     }
 
-    public function updateGite($id, $name, $region, $place, $capacite, $descriptif, $price) {
+    public function updateGite() {
         $connexion = Database::getInstance();
     
         try {
             // Requête SQL pour mettre à jour un gîte dans la base de données
-            $query = 'UPDATE Gîtes SET nom_gite = :nom_gite, region = :region, localisation = :localisation, capacite = :capacite, descriptif = :descriptif, tarifs = :tarifs WHERE id_gite = :id_gite';
+            $query = 'UPDATE Gîtes SET nom_gite = :nom_gite, region = :region, localisation = :localisation, capacite = :capacite, descriptif = :descriptif, tarifs = :tarifs WHERE Id_Gîtes = :id_gite';
             $statement = $connexion->prepare($query);
-            $statement->bindParam(':nom_gite', $name);
-            $statement->bindParam(':region', $region);
-            $statement->bindParam(':localisation', $place);
-            $statement->bindParam(':capacite', $capacite);
-            $statement->bindParam(':descriptif', $descriptif);
-            $statement->bindParam(':tarifs', $price);
-            $statement->bindParam(':id_gite', $id);
+            $statement->bindParam(':nom_gite', $this->name);
+            $statement->bindParam(':region', $this->region);
+            $statement->bindParam(':localisation', $this->place);
+            $statement->bindParam(':capacite', $this->capacite);
+            $statement->bindParam(':descriptif', $this->descriptif);
+            $statement->bindParam(':tarifs', $this->price);
+            $statement->bindParam(':id_gite', $giteId);
             $statement->execute();
         } catch (PDOException $e) {
             // Gestion des erreurs de base de données
             echo "Erreur de mise à jour du gîte: " . $e->getMessage();
         }
     }
+
+    public function updateImages($giteId, $newImages) {
+        $connexion = Database::getInstance();
+    
+        try {
+            // Supprimer les anciennes images associées au gîte
+            $deleteQuery = 'DELETE FROM Images WHERE Id_Gîtes = :id_gite';
+            $deleteStatement = $connexion->prepare($deleteQuery);
+            $deleteStatement->bindParam(':id_gite', $giteId);
+            $deleteStatement->execute();
+    
+            // Insérer les nouvelles images associées au gîte
+            foreach ($newImages as $image) {
+                $insertQuery = 'INSERT INTO Images (Id_Gîtes, image_path) VALUES (:id_gite, :image_path)';
+                $insertStatement = $connexion->prepare($insertQuery);
+                $insertStatement->bindParam(':id_gite', $giteId);
+                $insertStatement->bindParam(':image_path', $image);
+                $insertStatement->execute();
+            }
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la mise à jour des images : " . $e->getMessage();
+        }
+    }
+    
 
     public static function getGitesByUserId($userId) {
         $connexion = Database::getInstance();

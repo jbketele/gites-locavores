@@ -34,9 +34,19 @@ if(isset($article_details)) {
     <h1>Détails de l'article</h1>
     <div class="container">
         <h2><?php echo $article_details->getNomArticle(); ?></h2>
+        <?php
+        if ($article_details->getCategorie() === "produits_saison") { ?>
+        <p><strong>Catégorie: </strong>Produits de saison</p>
+
+        <?php } else { ?>
         <p><strong>Catégorie:</strong> <?php echo $article_details->getCategorie(); ?></p>
+        <?php } ?>
+
         <p><strong>Descriptif:</strong> <?php echo $article_details->getDescriptif(); ?></p>
+        <?php
+        if ($article_details->getCategorie() === "evenements" || $article_details->getCategorie() === "actus") { ?>
         <p><strong>Lieu:</strong> <?php echo $article_details->getLieu(); ?></p>
+        <?php } ?>
 
         <?php
         if ($article_details->getCategorie() === "recettes") {
@@ -53,8 +63,8 @@ if(isset($article_details)) {
                 echo "<img src='$image_path' alt='Image de l'article'><br><br>";
             }
         }
-
-
+        
+        
         ?>
         <a href="../views/modifier_article.php?id=<?php echo $article_id; ?>">Modifier cet article</a>
     </div>

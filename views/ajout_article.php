@@ -50,12 +50,12 @@
                         </div>
                                                 
                         <div class="form-floating extra-fields recettes" style="display: none">
-                            <input class="form-control" type="number" placeholder="ingredients"  name="ingredients">
+                            <textarea class="form-control" placeholder="ingredients"  name="ingredients"></textarea>
                             <label for="ingredients">Ingrédients:</label>
                         </div>
 
                         <div class="form-floating extra-fields recettes" style="display: none">
-                            <textarea class="form-control" placeholder="nombre_personnes" name="nb_personnes"></textarea>
+                            <input class="form-control" type="number" placeholder="nombre_personnes" name="nb_personnes">
                             <label for="nb_personnes">Nombres de personnes:</label>
                         </div>
 

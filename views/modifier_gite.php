@@ -29,7 +29,7 @@
     if ($giteDetails) {
         ?>
         <div class="container">
-        <form action="../controllers/modifier_gite.php" method="post">
+        <form action="../controllers/modifier_gite.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php echo $giteId; ?>"> <!-- Champ caché pour l'ID du gîte -->
             <label for="nom_gite">Nom du Gîte:</label>
             <input type="text" id="nom_gite" name="nom_gite" value="<?php echo $giteDetails['nom_gite']; ?>"><br>
@@ -41,11 +41,12 @@
                     <br>
                     <?php $imageName = basename($image); ?>
                     <input type="text" value="<?php echo $imageName; ?>" readonly>
+
                 <?php endforeach; ?>
             </div>
 
             <label for="images">Nouvelles Images:</label>
-            <input type="file" id="images" name="images[]" multiple accept="image/*" value="<?php echo $giteDetails['images'] ?>"><br>
+            <input type="file" id="images" name="images[]" multiple accept="image/*"><br>
 
             <label for="region">Région:</label>
             <input type="text" id="region" name="region" value="<?php echo $giteDetails['region']; ?>"><br>

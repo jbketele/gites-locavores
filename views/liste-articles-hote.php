@@ -41,17 +41,27 @@ require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php
                     echo "<td>" . $article['Lieu'] . "</td>";
                     echo "<td>" . $article['Ingrédients'] . "</td>";
                     echo "<td>" . $article['Nb_personnes'] . "</td>";
-                    echo "<td><a href='../views/votre-gite.php?id=" . $article['Id_Article'] ."'>Voir le gîte</a></td>";
+                    echo "<td><a href='../views/article.php?id=" . $article['Id_Article'] ."'>Voir l'article</a></td>";
                     echo "<td><a href='../controllers/supprimer-article.php?id=" . $article['Id_Article'] ."' onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')\">Supprimer</a>";
                     echo "</tr>";
                 ?>
             <?php endforeach; ?>
         </tbody>
     </table>
-    <div class="pagination">
-        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-            <a href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+    <nav aria-label="Pagination">
+    <ul class="pagination">
+        <?php for($i = 1; $i <= $totalPages; $i++) : ?>
+            <?php if ($i == $page) : ?>
+                <li class="page-item active"><a class="page-link" href="#"><?php echo $i; ?></a></li>
+            <?php else : ?>
+                <li class="page-item"><a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+            <?php endif; ?>
+            <?php if ($i < $totalPages) : ?>
+                <li class="page-item"><span>&nbsp;</span></li> <!-- Ajoutez un espace entre les numéros de page -->
+            <?php endif; ?>
         <?php endfor; ?>
-    </div>
+    </ul>
+</nav>
+
 </body>
 </html>

@@ -1,42 +1,35 @@
 <?php
-require_once '../models/article.php'; // Incluez le fichier contenant votre modèle de gîte
+require_once '../models/article.php'; // Inclure le modèle d'article
 require_once '../models/user.php';
 require_once '../models/ajout_gite.php';
 
-// Vérifiez si l'utilisateur est connecté
+// Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['email'])) {
-    header("Location: connexion.php"); // Redirigez vers la page de connexion si l'utilisateur n'est pas connecté
+    header("Location: connexion.php"); // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
     exit;
 }
 
-if(isset($_GET['page'])) {
-    $page = $_GET['page'];
-} else {
-    // Par défaut, définissez la page sur 1
-    $page = 1;
-}
+// Définir le nombre d'articles par page
+$articlesParPage = 6;
 
-// Récupérez l'ID de l'utilisateur connecté
+// Récupérer l'ID de l'utilisateur connecté
 $userId = Utilisateur::getCurrentUserId();
 
-// Récupérez les gîtes de l'utilisateur à partir de la base de données
-$articles = Article::getArticlesByUserId($userId);
+// Récupérer le numéro de page à partir de la requête GET
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 
-// Nombre de gîtes par page
-$gitesParPage = 6;
+// Calculer l'offset pour la requête SQL en fonction du numéro de page
+$offset = ($page - 1) * $articlesParPage;
 
-// Récupérer le nombre total de gîtes
-$totalGites = Gites::getTotalGites();
+// Récupérer les articles de l'utilisateur avec pagination
+$articles = Article::getArticlesByUserIdWithPagination($userId, $articlesParPage, $offset);
+
+// Récupérer le nombre total d'articles de l'utilisateur
+$totalArticles = Article::getTotalArticlesByUserId($userId);
 
 // Calculer le nombre total de pages
-$totalPages = ceil($totalGites / $gitesParPage);
+$totalPages = ceil($totalArticles / $articlesParPage);
 
-// Calculer l'offset
-$offset = ($page - 1) * $gitesParPage;
-
-// Récupérer les gîtes pour la page actuelle
-$gites = Gites::getGitesWithPagination($gitesParPage, $offset);
-
-// Incluez la vue HTML pour afficher la liste des gîtes par utilisateur
+// Inclure la vue HTML pour afficher la liste des articles par utilisateur avec pagination
 include_once '../views/liste-articles-hote.php';
 ?>

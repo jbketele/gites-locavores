@@ -23,7 +23,8 @@
 </head>
 
 <body>
-<?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
+<?php require_once '../controllers/article.php';
+require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
 
 
     <main>
@@ -35,62 +36,29 @@
         </div>
         <section>
             <div class="row-cols-1 row-cols-md-3 cards-blog">
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/63bf03d6d30b9248784608.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Recette de la Teurgoule</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
+            
+            <?php
+            // Récupérer les articles de la catégorie "évènements"
+            $recettesArticles = Article::getRecettesArticles();
+            
+            // Vérifier si des articles ont été récupérés
+            if ($recettesArticles) {
+                // Afficher les cartes des articles
+                foreach ($recettesArticles as $article) {
+                    echo '<div class="container card-blog border-light shadow-lg col-md-4">';
+                    echo '<img src="' . $article['image_path'] . '" class="card-img-top" alt="...">';
+                    echo '<div class="card-body">';
+                    echo '<h5 class="card-title">' . $article['nom'] . '</h5>';
+                    echo '<p class="card-text">' . $article['descriptif'] . '</p>';
+                    echo '<a href="#" class="btn btn-success">En savoir plus</a>';
+                    echo '</div></div>';
+                }
+            } else {
+                // Afficher un message si aucun article n'est disponible
+                echo '<p>Aucun article disponible pour le moment.</p>';
+            }
+            ?>
 
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/63da7b58ddfbd983659485.jpg" class="card-img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Crêpes moelleuse et délicieuses : la recette facile !</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/60c32bd1cae0e003878780.jpg" class="card-img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Gnocchis de pommes de terre aux blettes</h5>
-                        <p class="card-text">Plus besoin de chercher à combiner féculents et légumes, voici une recette
-                            qui
-                            le fait pour vous ! Goûtez à ces délicieux gnocchis de pomme de terre aux ...</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/638e1b67d9182531985049.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Recette des Florentins de Noël</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/614491cbeeb8b645710995.jpg" class="card-img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Salade de pêches grillés, figues, jambon cru et fromage persillé</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/60d9b9bc6344e463259857.png" class="card-img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Salade de haricots verts, cerises, noisettes et chèvre</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut pharetra sit amet aliquam id diam.</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
             </div>
         </section>
     </main>

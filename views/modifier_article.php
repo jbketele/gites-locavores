@@ -18,7 +18,6 @@
     $article_id = $_GET['id'];
     $article_details = Article::getArticleById($article_id);
     echo "<h2>Modifier Gîte</h2>";
-
     ?>
     <div class="container">
     <form action="../controllers/modifier_article.php" method="POST">
@@ -31,6 +30,9 @@
         <textarea id="descriptif" name="descriptif"><?php echo $article_details->getDescriptif(); ?></textarea><br>
         <label for="lieu">Lieu:</label>
         <input type="text" id="lieu" name="lieu" value="<?php echo $article_details->getLieu(); ?>"><br>
+        <label for="images">Nouvelles Images:</label>
+        <input type="file" id="images" name="images[]" multiple accept="image/*"><br>
+
         <!-- Afficher les champs ingrédients et nombre de personnes seulement si la catégorie est "recettes" -->
         <?php if ($article_details->getCategorie() === 'recettes') : ?>
             <label for="ingredients">Ingrédients:</label>

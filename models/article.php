@@ -157,7 +157,7 @@ class Article {
     
     public static function uploadImages($article_id, $image_data) {
         $connexion = Database::getInstance();
-        $destination_dir = '../views/img/img-gite/'; // Répertoire de destination permanent
+        $destination_dir = '../views/img/img_article/'; // Répertoire de destination permanent
     
         // Parcourir les fichiers téléchargés
         foreach ($image_data['name'] as $index => $filename) {
@@ -200,8 +200,8 @@ class Article {
             $article->setNomArticle($article_data['nom']);
             $article->setDescriptif($article_data['descriptif']);
             $article->setLieu($article_data['Lieu']);
-            $article->setIngredients($article_data['ingredients'] ?? '');
-            $article->setNbPersonnes($article_data['nb_personnes'] ?? '');
+            $article->setIngredients($article_data['Ingrédients']);
+            $article->setNbPersonnes($article_data['Nb_personnes']);
             $article->setImagePaths($article_data['image_path']);
              
             return $article; // Retourner les détails de l'article
@@ -212,20 +212,20 @@ class Article {
         }
     }
         
-    public function updateArticle($id, $categorie, $nom, $descriptif, $lieu, $ingredients, $nb_personnes) {
+    public function updateArticle() {
         $connexion = Database::getInstance();
         
         try {
             // Requête SQL pour mettre à jour un article dans la base de données
-            $query = 'UPDATE Article SET categorie = :categorie, nom = :nom, descriptif = :descriptif, lieu = :lieu, ingredients = :ingredients, nb_personnes = :nb_personnes WHERE Id_Article = :id';
+            $query = 'UPDATE Article SET categorie = :categorie, nom = :nom, descriptif = :descriptif, lieu = :lieu, Ingrédients = :ingredients, nb_personnes = :nb_personnes WHERE Id_Article = :id';
             $statement = $connexion->prepare($query);
             $statement->bindParam(':id', $id);
-            $statement->bindParam(':categorie', $categorie);
-            $statement->bindParam(':nom', $nom);
-            $statement->bindParam(':descriptif', $descriptif);
-            $statement->bindParam(':lieu', $lieu);
-            $statement->bindParam(':ingredients', $ingredients);
-            $statement->bindParam(':nb_personnes', $nb_personnes);
+            $statement->bindParam(':categorie', $this->categorie);
+            $statement->bindParam(':nom', $this->nom);
+            $statement->bindParam(':descriptif', $this->descriptif);
+            $statement->bindParam(':lieu', $this->lieu);
+            $statement->bindParam(':ingredients', $this->ingredients);
+            $statement->bindParam(':nb_personnes', $this->nb_personnes);
             $statement->execute();
             
             return true; // Succès de la mise à jour
@@ -304,7 +304,7 @@ class Article {
             // Requête SQL pour sélectionner les articles de la catégorie "évènements"
             $query = "SELECT a.*, ia.image_path FROM Article a
                   LEFT JOIN image_article ia ON a.Id_Article = ia.Id_Article
-                  WHERE a.categorie = 'evenements'";
+                  WHERE a.categorie IN ('evenements', 'évènements', 'Evènements', 'Evenements')";
             $statement = $connexion->query($query);
             
             // Récupérer les données des articles
@@ -326,7 +326,7 @@ class Article {
             // Requête SQL pour sélectionner les articles de la catégorie "évènements"
             $query = "SELECT a.*, ia.image_path FROM Article a
                   LEFT JOIN image_article ia ON a.Id_Article = ia.Id_Article
-                  WHERE a.categorie = 'actualités'";
+                  WHERE a.categorie IN ('actualités', 'actus', 'Actualités', 'Actus')";
             $statement = $connexion->query($query);
             
             // Récupérer les données des articles
@@ -348,7 +348,7 @@ class Article {
             // Requête SQL pour sélectionner les articles de la catégorie "évènements"
             $query = "SELECT a.*, ia.image_path FROM Article a
                   LEFT JOIN image_article ia ON a.Id_Article = ia.Id_Article
-                  WHERE a.categorie = 'recettes'";
+                  WHERE a.categorie IN ('recettes', 'Recettes')";
             $statement = $connexion->query($query);
             
             // Récupérer les données des articles
@@ -370,7 +370,7 @@ class Article {
             // Requête SQL pour sélectionner les articles de la catégorie "évènements"
             $query = "SELECT a.*, ia.image_path FROM Article a
                   LEFT JOIN image_article ia ON a.Id_Article = ia.Id_Article
-                  WHERE a.categorie = 'produits de saison'";
+                  WHERE a.categorie IN ('produits de saison', 'Produits de saison', 'produits_saison')";
             $statement = $connexion->query($query);
             
             // Récupérer les données des articles
@@ -383,5 +383,46 @@ class Article {
             return false;
         }
     }
+
+    public static function getArticlesByUserIdWithPagination($userId, $limit, $offset) {
+        $connexion = Database::getInstance();
+    
+        try {
+            $query = "SELECT * FROM Article WHERE Id_Utilisateur = :userId LIMIT :limit OFFSET :offset";
+            $statement = $connexion->prepare($query);
+            $statement->bindValue(':userId', $userId, PDO::PARAM_INT);
+            $statement->bindValue(':limit', $limit, PDO::PARAM_INT);
+            $statement->bindValue(':offset', $offset, PDO::PARAM_INT);
+            $statement->execute();
+    
+            // Récupérer les résultats de la requête
+            $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
+            return $articles;
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la récupération des articles : " . $e->getMessage();
+            return false;
+        }
+    }
+
+    public static function getTotalArticlesByUserId($userId) {
+        $connexion = Database::getInstance();
+    
+        try {
+            $query = "SELECT COUNT(*) FROM Article WHERE Id_Utilisateur = :userId";
+            $statement = $connexion->prepare($query);
+            $statement->bindValue(':userId', $userId, PDO::PARAM_INT);
+            $statement->execute();
+    
+            // Récupérer le nombre total d'articles
+            $totalArticles = $statement->fetchColumn();
+            return $totalArticles;
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la récupération du nombre total d'articles : " . $e->getMessage();
+            return false;
+        }
+    }
+    
 }
 

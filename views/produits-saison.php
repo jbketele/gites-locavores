@@ -23,7 +23,8 @@
 </head>
 
 <body>
-<?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
+<?php require_once '../controllers/article.php';
+require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
 
 
     <main>
@@ -35,61 +36,29 @@
         </div>
         <section>
             <div class="row-cols-1 row-cols-md-3 cards-blog">
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/5e4d3f833639a044200785.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">La clémentine de Corse, unique et dynamisante !</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
+            
+            <?php
+            // Récupérer les articles de la catégorie "évènements"
+            $produitsArticles = Article::getProduitsSaisonArticles();
+            
+            // Vérifier si des articles ont été récupérés
+            if ($produitsArticles) {
+                // Afficher les cartes des articles
+                foreach ($produitsArticles as $article) {
+                    echo '<div class="container card-blog border-light shadow-lg col-md-4">';
+                    echo '<img src="' . $article['image_path'] . '" class="card-img-top" alt="...">';
+                    echo '<div class="card-body">';
+                    echo '<h5 class="card-title">' . $article['nom'] . '</h5>';
+                    echo '<p class="card-text">' . $article['descriptif'] . '</p>';
+                    echo '<a href="#" class="btn btn-success">En savoir plus</a>';
+                    echo '</div></div>';
+                }
+            } else {
+                // Afficher un message si aucun article n'est disponible
+                echo '<p>Aucun article disponible pour le moment.</p>';
+            }
+            ?>
 
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/pexels-zen-chung-5529540.jpg" class="card-img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">La pomme, un fruit aux multiples saveurs !</h5>
-                        <p class="card-text">Découvrez les différentes variétés de pommes cultivées chez nos
-                            agriculteurs, et des recettes savoureuses ...</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/5e4d4b3e731c9362699544.jpg" class="card-img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">La mâche, une élégante valeur sûre</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut pharetra sit amet aliquam id diam.</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/5e4d49827a964177551332.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Le kiwi, un grand voyageur devenu made in France</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/60994cb671913953653688.png" class="card-img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">La truffe, le diamant des forêts françaises</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-
-                <div class="container card-blog border-light shadow-lg col-md-4">
-                    <img src="img/6099447320d6d477693201.png" class="card-img" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">La courge butternut, fidèle à ses promesses</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut pharetra sit amet aliquam id diam.</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
