@@ -36,6 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($reservation) {
             $reservationId = $reservation->getReservationId();
 
+            // Récupérer le prix total de la réservation
+            $prixTotal = $reservation->getPrixTotal();
+
             // Récupérer les détails de la réservation depuis la base de données
             $reservation_details = Reservation::getReservationDetailsById($reservationId);
 
@@ -46,10 +49,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $date_arrivee = $reservation_details['date_arrivee'];
                 $date_depart = $reservation_details['date_depart'];
                 $nbPersonnes = $reservation_details['nombre_personnes'];
-                
+
 
                 // Rediriger l'utilisateur vers la page de confirmation de réservation avec l'ID de la réservation dans l'URL
-                header("Location: ../views/confirmation_reservation.php?nom_gite=$nom_gite&date_arrivee=$date_arrivee&date_depart=$date_depart&nb_pers=$nbPersonnes");
+                header("Location: ../views/confirmation_reservation.php?nom_gite=$nom_gite&date_arrivee=$date_arrivee&date_depart=$date_depart&nb_pers=$nbPersonnes&prixTotal=$prixTotal");
                 exit;
 
             } else {

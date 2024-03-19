@@ -71,7 +71,7 @@ require_once '../models/user.php';
                                         <a class='nav-link dropdown-toggle' href='' id='navbarDropdown' role='button' 
                                         data-bs-toggle='dropdown' aria-expanded='false'>Mon compte</a>
                                         <ul class='dropdown-menu' araia-labelledby='navbarDropdown'>
-                                        <li><a class='dropdown-item' href=''>Mes Réseravtion</a>
+                                        <li><a class='dropdown-item' href='liste-reservations.php'>Mes Réseravtion</a>
                                         </li></ul>";
                                     }
                                 }

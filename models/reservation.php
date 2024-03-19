@@ -6,6 +6,8 @@ class Reservation {
     private $userId;
     private $giteId;
     private $reservationId;
+    private $prixTotal;
+
 
     // Getters et setters
     public function getDateArrivee() {
@@ -56,31 +58,51 @@ class Reservation {
         $this->nb_personnes = $nbPersonnes;
     }
 
+    public function setPrixTotal($prixTotal) {
+        $this->prixTotal = $prixTotal;
+    }
+
+    public function getPrixTotal() {
+        return $this->prixTotal;
+    }
+
     // Méthode pour réserver un gîte
     public static function reserverGite($giteId, $userId, $date_arrivee, $date_depart, $nbPersonnes) {
         // Connexion à la base de données
         $connexion = Database::getInstance();
-
+    
         try {
-            // Requête SQL pour insérer la réservation dans la table des réservations
-            $query = "INSERT INTO Réservation (date_arrivee, date_depart, nombre_personnes, Id_Utilisateur, Id_Gîtes) 
-                      VALUES (:date_arrivee, :date_depart, :nb_personnes, :userId, :giteId)";
+            // Requête SQL pour obtenir le prix par nuit du gîte
+            $query = "SELECT tarifs FROM Gîtes WHERE Id_Gîtes = :giteId";
             $statement = $connexion->prepare($query);
-            $statement->bindParam(':date_arrivee', $date_arrivee);
-            $statement->bindParam(':date_depart', $date_depart);
-            $statement->bindParam(':nb_personnes', $nbPersonnes);
-            $statement->bindParam(':userId', $userId);
             $statement->bindParam(':giteId', $giteId);
-
             $statement->execute();
-
+            $tarifParNuit = $statement->fetchColumn(); // Récupérer le tarif par nuit du gîte
+    
+            // Calculer le nombre de nuits entre la date d'arrivée et la date de départ
+            $dateArrivee = new DateTime($date_arrivee);
+            $dateDepart = new DateTime($date_depart);
+            $diff = $dateDepart->diff($dateArrivee);
+            $nombreNuits = $diff->days;
+    
+            // Calculer le prix total de la réservation
+            $prixTotal = $tarifParNuit * $nombreNuits;
+    
+            // Requête SQL pour insérer la réservation dans la table des réservations
+            $queryInsert = "INSERT INTO Réservation (date_arrivee, date_depart, nombre_personnes, prix_total, Id_Utilisateur, Id_Gîtes) 
+                            VALUES (:date_arrivee, :date_depart, :nbPersonnes, :prixTotal, :userId, :giteId)";
+            $statementInsert = $connexion->prepare($queryInsert);
+            $statementInsert->bindParam(':date_arrivee', $date_arrivee);
+            $statementInsert->bindParam(':date_depart', $date_depart);
+            $statementInsert->bindParam(':nbPersonnes', $nbPersonnes);
+            $statementInsert->bindParam(':prixTotal', $prixTotal);
+            $statementInsert->bindParam(':userId', $userId);
+            $statementInsert->bindParam(':giteId', $giteId);
+            $statementInsert->execute();
+    
             // Récupérer l'ID de la dernière réservation insérée
             $reservation_id = $connexion->lastInsertId();
-
-            // Récupérer le nom de l'utilisateur
-            $user_nom = self::getNomUtilisateur($userId); // Utilisation de self:: pour appeler la méthode dans la même classe
-
-            // Retourner l'ID de la réservation et le nom de l'utilisateur
+    
             // Créer un nouvel objet Reservation avec les données insérées dans la base de données
             $reservation = new Reservation(
                 $date_arrivee,
@@ -89,17 +111,19 @@ class Reservation {
                 $giteId,
                 $nbPersonnes
             );
-
             $reservation->setReservationId($reservation_id);
-
+            $reservation->setPrixTotal($prixTotal);
+    
             // Retourner l'objet Reservation
-            return $reservation;        
+            return $reservation;
         } catch (PDOException $e) {
             // Gérer les erreurs de base de données
             echo "Erreur lors de la réservation du gîte : " . $e->getMessage();
             return false;
         }
     }
+    
+    
 
     // Méthode pour récupérer le nom de l'utilisateur par ID
     public static function getNomUtilisateur($userId) {
@@ -151,6 +175,32 @@ class Reservation {
         } catch (PDOException $e) {
             // Gérer les erreurs de base de données
             echo "Erreur lors de la récupération des détails de la réservation : " . $e->getMessage();
+            return false;
+        }
+    }
+
+    public static function getAllReservations($userId) {
+        // Connexion à la base de données
+        $connexion = Database::getInstance();
+
+        try {
+            // Requête SQL pour récupérer toutes les réservations
+            $query = "SELECT Réservation.*, Gîtes.nom_gite 
+            FROM Réservation 
+            INNER JOIN Gîtes ON Réservation.Id_Gîtes = Gîtes.Id_Gîtes 
+            WHERE Réservation.Id_Utilisateur = :userId";
+            $statement = $connexion->prepare($query);
+            $statement->bindParam(':userId', $userId);
+            $statement->execute();
+
+            // Récupérer toutes les réservations sous forme de tableau associatif
+            $reservations = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            // Retourner les réservations
+            return $reservations;
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la récupération des réservations : " . $e->getMessage();
             return false;
         }
     }

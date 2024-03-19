@@ -16,12 +16,16 @@ require_once '../controllers/reservation.php';
 require_once '../header-footer/header.php';
 
 
-    if (isset($_GET['nom_gite'], $_GET['date_arrivee'], $_GET['date_depart'], $_GET['nb_pers'])) {
+    if (isset($_GET['nom_gite'], $_GET['date_arrivee'], $_GET['date_depart'], $_GET['nb_pers'], $_GET['prixTotal'])) {
     // Récupérer les valeurs des paramètres GET
     $nom_gite = $_GET['nom_gite'];
     $date_arrivee = $_GET['date_arrivee'];
     $date_depart = $_GET['date_depart'];
     $nb_personnes = $_GET['nb_pers'];
+    $prixTotal = $_GET['prixTotal'];
+
+    $prixTotalFormate = number_format($prixTotal, 0, ',', ' ');
+
     // Afficher les détails de la réservation
     echo "<h1>Confirmation de Réservation</h1>";
     echo "<p>Merci pour votre réservation!</p>";
@@ -31,6 +35,8 @@ require_once '../header-footer/header.php';
     echo "<li>Date d'arrivée : $date_arrivee</li>";
     echo "<li>Date de départ : $date_depart</li>";
     echo "<li>Nombre de personnes : $nb_personnes</li>";
+    echo "<li>Prix total : $prixTotalFormate €</li>";
+
     // Ajouter d'autres détails de réservation au besoin
     echo "</ul>";
     echo "<p>Un email de confirmation vous sera envoyé sous peu.</p>";
