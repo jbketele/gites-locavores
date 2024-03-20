@@ -11,6 +11,8 @@ class Article {
     private $nb_personnes;
     private $image_paths;
     private $user_id;
+    private $id;
+
 
     public function setCategorie($categorie) {
         $this->categorie = $categorie;
@@ -81,6 +83,10 @@ class Article {
 
     public function getUserId() {
         return $this->user_id;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
     }
 
 
@@ -219,7 +225,7 @@ class Article {
             // Requête SQL pour mettre à jour un article dans la base de données
             $query = 'UPDATE Article SET categorie = :categorie, nom = :nom, descriptif = :descriptif, lieu = :lieu, Ingrédients = :ingredients, nb_personnes = :nb_personnes WHERE Id_Article = :id';
             $statement = $connexion->prepare($query);
-            $statement->bindParam(':id', $id);
+            $statement->bindParam(':id', $this->id);
             $statement->bindParam(':categorie', $this->categorie);
             $statement->bindParam(':nom', $this->nom);
             $statement->bindParam(':descriptif', $this->descriptif);

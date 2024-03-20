@@ -21,9 +21,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['modifier_article'])) {
 
     // Créer une instance de la classe Article et appeler la méthode de mise à jour de l'article
     $article = new Article();
-$article->updateArticle();
+    $article->setNomArticle($new_nom);
+    $article->setCategorie($new_categorie);
+    $article->setDescriptif($new_descriptif);
+    $article->setLieu($new_lieu);
+    $article->setId($id); // Définir l'ID du gîte
+    $updateResult = $article->updateArticle();
+
+    if ($updateResult) {
         // Rediriger vers une page de confirmation ou effectuer une autre action après la mise à jour
         header("Location: ../views/article.php?id=$id");
         exit;
+    } else {
+        // Afficher un message d'erreur si la mise à jour du gîte a échoué
+        echo "Erreur lors de la mise à jour de l'article.";
+        exit;
+    }
 }
 ?>
