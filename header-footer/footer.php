@@ -1,9 +1,10 @@
-<style>
+
+<footer>
+    <style>
     a{
         color: white;
     }
 </style>
-<footer>
         <div class="bg-light border-light shadow py-3">
             <div class=" follow row">
                 <p class="follow container text-center" style=font-size:2rem;>Suivez-nous :
@@ -48,12 +49,7 @@
                 </div>
                 <div class="container row ms-5 col-md-2">
                     <p><a href="presentation.php">QUI SOMMES-NOUS</a></p>
-                    <ul>
-                        <li>Nos activités</li>
-                        <li>Nos valeurs</li>
-                        <li>Nos partenaires</li>
-                        <li><a href="contact.php">Contactez-nous</a></li>
-                    </ul>
+                    <p><a href="contact.php">CONTACTEZ-NOUS</a></p>
                 </div>
             </div>
 
