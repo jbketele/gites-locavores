@@ -14,30 +14,36 @@
 </head>
 <body>
     <?php session_start();
-    require_once '../header-footer/header.php';
-    $userId = $_GET['id'];
-    $user = Utilisateur::getUserById($userId);
+require_once '../header-footer/header-connect.php';
+require_once '../models/user.php';
+$userId = $_GET['id'];
+$user = Utilisateur::getUserById($userId);
+// Activer l'affichage des erreurs
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
     ?>
     <div class="container">
     <h1>Modifier Votre Compte</h1>
-    <form action="../controllers/modifier-user.php" method="POST">
+        <form action="../controllers/modifier-user.php" method="POST">
         <input type="hidden" name="id" value="<?php echo $userId; ?>">
 
         <label for="lastname">Nom:</label>
-        <input type="text" id="nom" name="lastname" value="<?php echo $user['Nom']; ?>"><br>
+        <input type="text" name="lastname" value="<?php echo $user['Nom']; ?>"><br>
 
         <label for="firstname">Prénom:</label>
-        <input type="text" id="nom" name="firstname" value="<?php echo $user['Prénom']; ?>"><br>
+        <input type="text" name="firstname" value="<?php echo $user['Prénom']; ?>"><br>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" value="<?php echo $user['Email']; ?>"><br>
+        <input type="email" name="email" value="<?php echo $user['Email']; ?>"><br>
 
-        <label for="tel">Autre Champ:</label>
-        <input type="text" id="tel" name="tel" value="<?php echo $user['Tel']; ?>"><br>
+        <label for="tel">Téléphone:</label>
+        <input type="text" name="tel" value="<?php echo $user['Tel']; ?>"><br>
 
-        <input type="submit" name="modifier_user" value="Modifier">
+        <input type="submit" >
     </form>
+
+
     </div>
 </body>
 </html>

@@ -47,6 +47,13 @@
                                         <li><a class="dropdown-item" href="idees.php">Tous</a></li>
                                     </ul>
                                 </li>
+                                <li class='nav-item dropdown'>
+                                        <a class='nav-link dropdown-toggle' href='' id='navbarDropdown' role='button' 
+                                        data-bs-toggle='dropdown' aria-expanded='false'>Mon compte</a>
+                                        <ul class='dropdown-menu' araia-labelledby='navbarDropdown'>
+                                        <li><a class='dropdown-item' href='liste-reservations.php'>Mes Réseravtion</a></li>
+                                        <li><a class='dropdown-item' href='votre-compte.php'>Mes infos</a></li>
+                                        </ul>
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>

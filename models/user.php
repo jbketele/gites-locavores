@@ -9,6 +9,7 @@ class Utilisateur {
     private $email;
     private $password;
     private $tel;
+    private $id;
 
 
     //Définir les données de l'utilisateur
@@ -30,7 +31,9 @@ class Utilisateur {
     public function setTel($tel){
         $this->tel = $tel;
     }
-
+    public function setId($id) {
+        $this->id = $id;
+    }
 
     //Méthode pour ajouter un utilisateur à la base de données
     public function addUser () {
@@ -157,19 +160,20 @@ class Utilisateur {
         }
     }
     
-    public static function updateUser() {
+    public static function updateUser($lastname, $email, $firstname, $tel, $id) {
         // Connexion à la base de données
         $connexion = Database::getInstance();
     
         try {
+            
             // Requête SQL pour mettre à jour les informations de l'utilisateur
             $query = "UPDATE Utilisateur SET Nom = :nom, Prénom = :prenom, Email = :email, Tel = :tel WHERE Id_Utilisateur = :userId";
             $statement = $connexion->prepare($query);
-            $statement->bindParam(':nom', $this->lastname);
-            $statement->bindParam(':email', $this->email);
-            $statement->bindParam(':prenom', $this->firstname);
-            $statement->bindParam(':tel', $this->tel);
-            $statement->bindParam(':userId', $userId);
+            $statement->bindParam(':nom', $lastname);
+            $statement->bindParam(':email', $email);
+            $statement->bindParam(':prenom', $firstname);
+            $statement->bindParam(':tel', $tel);
+            $statement->bindParam(':userId', $id);
             $statement->execute();
     
             // Retourner true si la mise à jour a réussi

@@ -66,7 +66,7 @@ require_once '../models/user.php';
                                         echo "<li class='nav-item'>
                                                 <a class='nav-link' href='liste-articles-hote.php'>Mes Articles</a>
                                                 </li>";
-                                    } else {
+                                    } elseif ($user_type = 'visiteur') {
                                         echo "<li class='nav-item dropdown'>
                                         <a class='nav-link dropdown-toggle' href='' id='navbarDropdown' role='button' 
                                         data-bs-toggle='dropdown' aria-expanded='false'>Mon compte</a>
@@ -90,7 +90,7 @@ require_once '../models/user.php';
                             echo "<div><a href='ajout_gite.php' class='add-gite btn'>Ajouter un Gîte</a></div>";
                             echo "<form action='../controllers/logout.php' method='POST'>
                             <button type='submit' class='sign btn'>Déconnexion</button>";
-                        } else {
+                        } elseif ($user_type = 'visiteur') {
                             echo "<div><a href='regions.php' class='sign btn'>Réserver</a></div>";
                             echo "<form action='../controllers/logout.php' method='POST'>
                             <button type='submit' class='sign btn'>Déconnexion</button>";
