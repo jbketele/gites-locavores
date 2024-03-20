@@ -24,9 +24,13 @@
     <link rel="stylesheet" type="text/css" href="../hdf.css">
 </head>
 <body>
-    <?php 
+    <?php session_start();
     require_once '../controllers/liste-gite.php';
-    require_once '/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'
+    if (isset($_SESSION['user_id'])) {
+        require_once '/Applications/MAMP/htdocs/gites_locavores/header-footer/header-connect.php';
+    } else {
+        require_once '/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php';
+    }
     ?>
     <main>
         <section>
@@ -34,7 +38,7 @@
     
                 <div class="conatainer">
                     <form method="post">
-                        <input type="text" id="filterInput" placeholder="Mots-clés">
+                        <input type="search" id="filterInput" placeholder="Mots-clés">
                     </form>  
                 </div>
 

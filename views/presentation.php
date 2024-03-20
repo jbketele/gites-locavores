@@ -23,7 +23,8 @@
 </head>
 
 <body>
-<?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
+<?php session_start();
+require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
 
     <br>
     <section style="background-image:url(img/fond-nature.png) ;">

@@ -24,9 +24,13 @@
     <link rel="stylesheet" type="text/css" href="../hdf.css">
 </head>
     
-    <?php require_once "../controllers/liste-gite.php"; ?>
-    <?php require_once "../header-footer/header.php"; ?>
-
+    <?php session_start();
+    require_once "../controllers/liste-gite.php"; 
+    if (isset($_SESSION['user_id'])) {
+        require_once '/Applications/MAMP/htdocs/gites_locavores/header-footer/header-connect.php';
+    } else {
+        require_once '/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php';
+    }    ?>
     
 <body>
     <main>

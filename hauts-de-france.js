@@ -1,6 +1,15 @@
+document.getElementById('filterInput').addEventListener('keydown', function (event) {
+    // Empêcher l'action par défaut du formulaire
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Empêcher la soumission du formulaire
+        filterCards();
+    }
+});
+
 document.getElementById('filterInput').addEventListener('input', function () {
     filterCards();
 });
+
 function filterCards() {
     var inputText = document.getElementById('filterInput').value.toLowerCase();
     var cards = document.getElementsByClassName('card');
@@ -9,15 +18,15 @@ function filterCards() {
         var card = cards[i];
 
         if (cardText.includes(inputText)) {
-            card.classList.remove('hidden')
-            card.style.order = 0
-
+            card.classList.remove('hidden');
+            card.style.order = 0;
         } else {
-            card.classList.add('hidden')
-            card.style.order = 1
+            card.classList.add('hidden');
+            card.style.order = 1;
         }
     }
 }
+
 
 var map = L.map('map').setView([50.1024606, 2.7247515], 7.5); // Amiens, France
 

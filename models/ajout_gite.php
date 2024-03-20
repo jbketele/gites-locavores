@@ -274,94 +274,110 @@ class Gites {
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-        // Méthode pour récupérer les gîtes d'une région spécifique
-        public static function getGitesByRegionImage($region) {
-            $connexion = Database::getInstance();
-            $query = "SELECT G.*, I.image_path, U.Nom, U.Prénom 
-            FROM Gîtes G 
-            LEFT JOIN (
-                SELECT Id_Gîtes, MIN(Id_Images) AS min_image_id
-                FROM Images 
-                GROUP BY Id_Gîtes
-            ) AS I_id ON G.Id_Gîtes = I_id.Id_Gîtes
-            LEFT JOIN Images AS I ON I_id.Id_Gîtes = I.Id_Gîtes AND I_id.min_image_id = I.Id_Images
-            LEFT JOIN Utilisateur U ON G.Id_Utilisateur = U.Id_Utilisateur 
-            WHERE G.region = :region";
+    // Méthode pour récupérer les gîtes d'une région spécifique
+    public static function getGitesByRegionImage($region) {
+        $connexion = Database::getInstance();
+        $query = "SELECT G.*, I.image_path, U.Nom, U.Prénom 
+        FROM Gîtes G 
+        LEFT JOIN (
+            SELECT Id_Gîtes, MIN(Id_Images) AS min_image_id
+            FROM Images 
+            GROUP BY Id_Gîtes
+        ) AS I_id ON G.Id_Gîtes = I_id.Id_Gîtes
+        LEFT JOIN Images AS I ON I_id.Id_Gîtes = I.Id_Gîtes AND I_id.min_image_id = I.Id_Images
+        LEFT JOIN Utilisateur U ON G.Id_Utilisateur = U.Id_Utilisateur 
+        WHERE G.region = :region";
+        $statement = $connexion->prepare($query);
+        $statement->bindParam(':region', $region);
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public static function getAllGites() {
+        $connexion = Database::getInstance();
+    
+        try {
+            // Requête SQL pour récupérer tous les gîtes
+            $query = "SELECT * FROM Gîtes";
+            $statement = $connexion->query($query);
+    
+            // Récupérer les résultats sous forme de tableau associatif
+            $gites = $statement->fetchAll(PDO::FETCH_ASSOC);
+    
+            return $gites;
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la récupération des gîtes: " . $e->getMessage();
+            return [];
+        }
+    }
+
+    public static function deleteGite($giteId) {
+        $connexion = Database::getInstance();
+    
+        try {
+            // Requête SQL pour supprimer le gîte de la base de données
+            $query = "DELETE FROM Gîtes WHERE Id_Gîtes = :id_gite";
             $statement = $connexion->prepare($query);
-            $statement->bindParam(':region', $region);
+            $statement->bindParam(':id_gite', $giteId);
+            $statement->execute();
+    
+            return true; // Succès de la suppression
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la suppression du gîte: " . $e->getMessage();
+            return false; // Échec de la suppression
+        }
+    }
+
+    public static function getTotalGites() {
+        $connexion = Database::getInstance(); // Obtenez une instance de connexion à la base de données
+
+        try {
+            // Requête SQL pour récupérer le nombre total de gîtes
+            $query = "SELECT COUNT(*) AS total FROM Gîtes";
+            $statement = $connexion->query($query);
+            $row = $statement->fetch(PDO::FETCH_ASSOC);
+            return $row['total'];
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la récupération du nombre total de gîtes : " . $e->getMessage();
+            return false;
+        }
+    }
+
+    public static function getGitesWithPagination($limit, $offset) {
+        $connexion = Database::getInstance(); // Obtenez une instance de connexion à la base de données
+
+        try {
+            // Requête SQL pour récupérer les gîtes avec pagination
+            $query = "SELECT * FROM Gîtes LIMIT :limit OFFSET :offset";
+            $statement = $connexion->prepare($query);
+            $statement->bindParam(':limit', $limit, PDO::PARAM_INT);
+            $statement->bindParam(':offset', $offset, PDO::PARAM_INT);
             $statement->execute();
             return $statement->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la récupération des gîtes avec pagination : " . $e->getMessage();
+            return false;
         }
-        public static function getAllGites() {
-            $connexion = Database::getInstance();
-        
-            try {
-                // Requête SQL pour récupérer tous les gîtes
-                $query = "SELECT * FROM Gîtes";
-                $statement = $connexion->query($query);
-        
-                // Récupérer les résultats sous forme de tableau associatif
-                $gites = $statement->fetchAll(PDO::FETCH_ASSOC);
-        
-                return $gites;
-            } catch (PDOException $e) {
-                // Gérer les erreurs de base de données
-                echo "Erreur lors de la récupération des gîtes: " . $e->getMessage();
-                return [];
-            }
-        }
+    }
 
-        public static function deleteGite($giteId) {
-            $connexion = Database::getInstance();
-        
-            try {
-                // Requête SQL pour supprimer le gîte de la base de données
-                $query = "DELETE FROM Gîtes WHERE Id_Gîtes = :id_gite";
-                $statement = $connexion->prepare($query);
-                $statement->bindParam(':id_gite', $giteId);
-                $statement->execute();
-        
-                return true; // Succès de la suppression
-            } catch (PDOException $e) {
-                // Gérer les erreurs de base de données
-                echo "Erreur lors de la suppression du gîte: " . $e->getMessage();
-                return false; // Échec de la suppression
-            }
-        }
+    public static function searchGites($search_term) {
+        $connexion = Database::getInstance();
+    
+        // Requête SQL pour rechercher les patients en fonction du terme de recherche
+        $query = 'SELECT * FROM Gîtes WHERE nom_gite LIKE :search OR descriptif LIKE :search OR localisation LIKE :search';
+        $statement = $connexion->prepare($query);
+        $search_param = "%$search_term%"; // Ajouter des wildcards pour la recherche partielle
+        $statement->bindParam(':search', $search_param);
+        $statement->execute();
+    
+        // Récupérer les résultats sous forme de tableau associatif
+        $filtered_gites = $statement->fetchAll(PDO::FETCH_ASSOC);
+    
+        return $filtered_gites;
+    }
 
-        public static function getTotalGites() {
-            $connexion = Database::getInstance(); // Obtenez une instance de connexion à la base de données
-    
-            try {
-                // Requête SQL pour récupérer le nombre total de gîtes
-                $query = "SELECT COUNT(*) AS total FROM Gîtes";
-                $statement = $connexion->query($query);
-                $row = $statement->fetch(PDO::FETCH_ASSOC);
-                return $row['total'];
-            } catch (PDOException $e) {
-                // Gérer les erreurs de base de données
-                echo "Erreur lors de la récupération du nombre total de gîtes : " . $e->getMessage();
-                return false;
-            }
-        }
-    
-        public static function getGitesWithPagination($limit, $offset) {
-            $connexion = Database::getInstance(); // Obtenez une instance de connexion à la base de données
-    
-            try {
-                // Requête SQL pour récupérer les gîtes avec pagination
-                $query = "SELECT * FROM Gîtes LIMIT :limit OFFSET :offset";
-                $statement = $connexion->prepare($query);
-                $statement->bindParam(':limit', $limit, PDO::PARAM_INT);
-                $statement->bindParam(':offset', $offset, PDO::PARAM_INT);
-                $statement->execute();
-                return $statement->fetchAll(PDO::FETCH_ASSOC);
-            } catch (PDOException $e) {
-                // Gérer les erreurs de base de données
-                echo "Erreur lors de la récupération des gîtes avec pagination : " . $e->getMessage();
-                return false;
-            }
-        }
-    
 }
 ?>
