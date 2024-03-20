@@ -36,7 +36,7 @@ if (isset($_POST['id'], $_POST['nom_gite'], $_POST['region'], $_POST['localisati
         // Mettre à jour les images du gîte
         if (isset($_FILES['images'])) {
             $newImages = $_FILES['images']; // Récupérer les fichiers envoyés via le formulaire
-            $gite->updateImages($newImages);
+            $gite->updateImages($giteId, $newImages);
         }
 
         // Rediriger vers une page de confirmation ou effectuer une autre action après la mise à jour

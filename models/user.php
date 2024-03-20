@@ -134,4 +134,51 @@ class Utilisateur {
         }
     }
     
+    public static function getUserById($userId) {
+        // Connexion à la base de données
+        $connexion = Database::getInstance();
+    
+        try {
+            // Requête SQL pour récupérer les informations de l'utilisateur
+            $query = "SELECT * FROM Utilisateur WHERE Id_Utilisateur = :userId";
+            $statement = $connexion->prepare($query);
+            $statement->bindParam(':userId', $userId);
+            $statement->execute();
+    
+            // Récupérer les informations de l'utilisateur sous forme de tableau associatif
+            $user = $statement->fetch(PDO::FETCH_ASSOC);
+    
+            // Retourner les informations de l'utilisateur
+            return $user;
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la récupération des informations de l'utilisateur : " . $e->getMessage();
+            return false;
+        }
+    }
+    
+    public static function updateUser() {
+        // Connexion à la base de données
+        $connexion = Database::getInstance();
+    
+        try {
+            // Requête SQL pour mettre à jour les informations de l'utilisateur
+            $query = "UPDATE Utilisateur SET Nom = :nom, Prénom = :prenom, Email = :email, Tel = :tel WHERE Id_Utilisateur = :userId";
+            $statement = $connexion->prepare($query);
+            $statement->bindParam(':nom', $this->lastname);
+            $statement->bindParam(':email', $this->email);
+            $statement->bindParam(':prenom', $this->firstname);
+            $statement->bindParam(':tel', $this->tel);
+            $statement->bindParam(':userId', $userId);
+            $statement->execute();
+    
+            // Retourner true si la mise à jour a réussi
+            return true;
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la mise à jour des informations de l'utilisateur : " . $e->getMessage();
+            return false;
+        }
+    }
+    
 }

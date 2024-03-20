@@ -204,5 +204,32 @@ class Reservation {
             return false;
         }
     }
+
+    public static function getReservationsByGiteId($giteId) {
+        // Connexion à la base de données
+        $connexion = Database::getInstance();
+    
+        try {
+            // Requête SQL pour récupérer les réservations associées à un gîte spécifique
+            $query = "SELECT R.*, U.Nom AS nom_utilisateur 
+            FROM Réservation R
+            INNER JOIN Utilisateur U ON R.Id_Utilisateur = U.Id_Utilisateur
+            WHERE R.Id_Gîtes = :giteId";            
+            $statement = $connexion->prepare($query);
+            $statement->bindParam(':giteId', $giteId);
+            $statement->execute();
+    
+            // Récupérer les réservations associées à ce gîte sous forme de tableau associatif
+            $reservations = $statement->fetchAll(PDO::FETCH_ASSOC);
+    
+            // Retourner les réservations
+            return $reservations;
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la récupération des réservations : " . $e->getMessage();
+            return false;
+        }
+    }
+    
     
 }

@@ -16,7 +16,8 @@
     <?php
     session_start();
     require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header-hote.php'); 
-    require_once '../models/ajout_gite.php'; // Assurez-vous que le chemin d'accès est correct
+    require_once '../models/ajout_gite.php';
+    require_once '../models/reservation.php';
 
     echo "<h2>Détails de votre gîte</h2><br>";
     // Récupérer l'ID du gîte depuis l'URL
@@ -49,5 +50,49 @@
         echo "<a href='../views/modifier_gite.php?id=" . $giteId . "'>Modifier le Gîte</a><br>";
         echo "</div>";
     ?>
+
+<h2>Réservations</h2>
+    <?php
+        $reservations = Reservation::getReservationsByGiteId($giteId);
+    if (!empty($reservations)) {
+        ?>
+        <div class="container">
+        <table>
+                <thead>
+                    <tr>
+                        <th>Date d'arrivée</th>
+                        <th>Date de départ</th>
+                        <th>Nombre de personnes</th>
+                        <th>Prix Total</th>
+                        <th>Nom</th>
+
+                        <!-- Ajoutez d'autres colonnes au besoin -->
+                    </tr>
+                </thead>
+                <tbody>
+        <?php
+        foreach ($reservations as $reservation) {
+            $prixTotalFormate = number_format($reservation['Prix_Total'], 0, ',', ' ');
+        ?>
+
+        <tr>
+        <td><?php echo date("d/m/Y", strtotime($reservation['date_arrivee'])) ; ?></td>
+        <td><?php echo date("d/m/Y", strtotime($reservation['date_depart'])) ; ?></td>
+        <td><?php echo $reservation['nombre_personnes']; ?></td>
+        <td><?php echo $prixTotalFormate . " €"; ?></td>
+        <td><?php echo $reservation['nom_utilisateur']; ?></td>
+
+                    <!-- Ajoutez d'autres cellules au besoin -->
+        </tr>
+        <?php 
+        }
+    } else {
+        echo "<p>Aucune réservation pour ce gîte.</p>";
+    }
+    ?>
+        </tbody>
+   </table>
+   </div>
+   <br>
 </body>
 </html>

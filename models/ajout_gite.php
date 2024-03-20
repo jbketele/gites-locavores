@@ -12,6 +12,7 @@ class Gites {
     private $proprietaireId;
     private $imagePath;
     private $images = [];
+    private $id;
    
     public function setName($name){
         $this->name = $name;
@@ -47,6 +48,9 @@ class Gites {
     }
     public function getImages() {
         return $this->images;
+    }
+    public function setId($id) {
+        $this->id = $id;
     }
 
     // Méthode pour ajouter un gîte à la base de données
@@ -165,16 +169,26 @@ class Gites {
     
         try {
             // Requête SQL pour mettre à jour un gîte dans la base de données
-            $query = 'UPDATE Gîtes SET nom_gite = :nom_gite, region = :region, localisation = :localisation, capacite = :capacite, descriptif = :descriptif, tarifs = :tarifs WHERE Id_Gîtes = :id_gite';
+            $query = 'UPDATE Gîtes SET nom_gite = :nom_gite, region = :region, localisation = :localisation, 
+            capacite = :capacite, descriptif = :descriptif, tarifs = :tarifs WHERE Id_Gîtes = :id_gite';
             $statement = $connexion->prepare($query);
-            $statement->bindParam(':nom_gite', $this->name);
-            $statement->bindParam(':region', $this->region);
-            $statement->bindParam(':localisation', $this->place);
-            $statement->bindParam(':capacite', $this->capacite);
-            $statement->bindParam(':descriptif', $this->descriptif);
-            $statement->bindParam(':tarifs', $this->price);
-            $statement->bindParam(':id_gite', $giteId);
-            $statement->execute();
+            $statement->bindParam(':nom_gite', $this->name, PDO::PARAM_STR);
+            $statement->bindParam(':region', $this->region, PDO::PARAM_STR);
+            $statement->bindParam(':localisation', $this->place, PDO::PARAM_STR);
+            $statement->bindParam(':capacite', $this->capacite, PDO::PARAM_INT);
+            $statement->bindParam(':descriptif', $this->descriptif, PDO::PARAM_STR);
+            $statement->bindParam(':tarifs', $this->price, PDO::PARAM_INT);
+            $statement->bindParam(':id_gite', $this->id, PDO::PARAM_INT);
+            
+            $success = $statement->execute();
+                    // Vérifier si la requête a été exécutée avec succès
+        if ($success) {
+            // La mise à jour du gîte a réussi
+            return true;
+        } else {
+            // La mise à jour du gîte a échoué
+            return false;
+        }
         } catch (PDOException $e) {
             // Gestion des erreurs de base de données
             echo "Erreur de mise à jour du gîte: " . $e->getMessage();

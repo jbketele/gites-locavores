@@ -81,7 +81,8 @@
                 echo '<p>Aucun article disponible pour le moment.</p>';
             }
             ?>
-        <br>
+        
+        </section>
 
         <section class="other-cards">
             <div class="container-fluid d-flex justify-content-center">
