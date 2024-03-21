@@ -28,7 +28,7 @@
                                         Nos Gites
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="hdf.php">Hauts de France</a></li>
+                                        <li><a class="dropdown-item" href="hauts-de-france.php">Hauts de France</a></li>
                                         <li><a class="dropdown-item" href="normandie.php">Normandie</a></li>
                                         <li><a class="dropdown-item" href="regions.php">Tous</a></li>
                                     </ul>

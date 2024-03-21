@@ -19,13 +19,25 @@ function filterCards() {
     }
 }
 
-// Modifier le texte de la description pour afficher uniquement les premiers caractères
-var descriptionElements = document.getElementsByClassName('descriptif');
-for (var i = 0; i < descriptionElements.length; i++) {
-    var descriptionText = descriptionElements[i].textContent;
-    var truncatedDescription = descriptionText.substring(0, 150); // Modifier la longueur selon vos besoins
-    descriptionElements[i].textContent = truncatedDescription;
+// Fonction pour tronquer la description en fonction de la largeur de l'écran
+function truncateDescription() {
+    var descriptionElements = document.getElementsByClassName('descriptif');
+    var screenWidth = window.innerWidth;
+
+    // Définir la longueur maximale de la description en fonction de la largeur de l'écran
+    var maxCharacters = screenWidth < 768 ? 100 : 300;
+
+    for (var i = 0; i < descriptionElements.length; i++) {
+        var descriptionText = descriptionElements[i].textContent;
+        var truncatedDescription = descriptionText.length > maxCharacters ? descriptionText.substring(0, maxCharacters) + '...' : descriptionText;
+        descriptionElements[i].textContent = truncatedDescription;
+    }
 }
+
+// Appeler la fonction pour tronquer la description au chargement de la page et lors du redimensionnement de la fenêtre
+window.addEventListener('DOMContentLoaded', truncateDescription);
+window.addEventListener('resize', truncateDescription);
+
 
 var map = L.map('map').setView([48.879870, 0.171253], 8); // Amiens, France
 

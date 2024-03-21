@@ -27,14 +27,24 @@ function filterCards() {
     }
 }
 
-// Modifier le texte de la description pour afficher uniquement les premiers caractères
-var descriptionElements = document.getElementsByClassName('descriptif');
-for (var i = 0; i < descriptionElements.length; i++) {
-    var descriptionText = descriptionElements[i].textContent;
-    var truncatedDescription = descriptionText.substring(0, 150); // Modifier la longueur selon vos besoins
-    descriptionElements[i].textContent = truncatedDescription;
+// Fonction pour tronquer la description en fonction de la largeur de l'écran
+function truncateDescription() {
+    var descriptionElements = document.getElementsByClassName('descriptif');
+    var screenWidth = window.innerWidth;
+
+    // Définir la longueur maximale de la description en fonction de la largeur de l'écran
+    var maxCharacters = screenWidth < 768 ? 100 : 300;
+
+    for (var i = 0; i < descriptionElements.length; i++) {
+        var descriptionText = descriptionElements[i].textContent;
+        var truncatedDescription = descriptionText.length > maxCharacters ? descriptionText.substring(0, maxCharacters) + '...' : descriptionText;
+        descriptionElements[i].textContent = truncatedDescription;
+    }
 }
 
+// Appeler la fonction pour tronquer la description au chargement de la page et lors du redimensionnement de la fenêtre
+window.addEventListener('DOMContentLoaded', truncateDescription);
+window.addEventListener('resize', truncateDescription);
 
 var map = L.map('map').setView([50.1024606, 2.7247515], 7.5); // Amiens, France
 
@@ -42,11 +52,11 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-var marker1 = L.marker([49.9052, 3.7924]).addTo(map);
-marker1.bindPopup("<b>La Ferme de M. Seguin</b><br>Éric Dupont");
+var marker1 = L.marker([50.8051308, 2.6016682]).addTo(map);
+marker1.bindPopup("<b>La Cabane du Terroir</b><br>Michel Van De Bruck");
 
 
-var marker2 = L.marker([50.5452102, 3.0252819]).addTo(map);
-marker2.bindPopup("<b>GAEC des Marais</b><br>D. Van De Bruck");
+var marker2 = L.marker([50.5139552, 1.6386252]).addTo(map);
+marker2.bindPopup("<b>Le Refuge des Dunes</b><br>D. Van De Bruck");
 var marker3 = L.marker([49.7407935, 2.1511753]).addTo(map);
-marker3.bindPopup("<b>SCEA de la Sablière</b><br>Jean Leclerc");
+marker3.bindPopup("<b>La Maison des Quais</b><br>Céline Dubois");

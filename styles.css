@@ -25,11 +25,7 @@ h1 {
   /* Utilise la variante semi-gras pour les titres h1 */
 }
 
-p,
-h2,
-h3,
-h4,
-h5,
+
 .book,
 .sign,
 .btn,
@@ -42,6 +38,23 @@ input[type="submit"],
   font-family: 'Titillium Web', sans-serif;
   font-weight: 400;
   /* Utilise la variante régulière pour les paragraphes */
+}
+
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 600;
+}
+
+p {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 200;
+}
+
+.txt-gite {
+  width: 75%;
 }
 
 /* Page accueil */

@@ -35,13 +35,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gite->setPrice($price);
     $gite->setProprietaireId($userId); // Associer l'ID de l'utilisateur connecté à la colonne de la clé étrangère
 
+    $newGiteId = $gite->addGite($uploadedImages);
+
+
     // Vérifiez si des fichiers ont été téléchargés
-    if (!empty($_FILES['image_path'])) {
+    if ($newGiteId) {
         // Appelez la méthode pour gérer le téléchargement de fichiers
-        Gites::uploadImages($lastInsertId, $_FILES['image_path']);
+        Gites::uploadImages($newGiteId, $_FILES['image_path']);
     }
     
-  $newGiteId = $gite->addGite($uploadedImages);
 
 
     if ($newGiteId) {

@@ -19,18 +19,27 @@
     require_once '../models/ajout_gite.php';
     require_once '../models/reservation.php';
 
-    echo "<h2>Détails de votre gîte</h2><br>";
+
     // Récupérer l'ID du gîte depuis l'URL
     $giteId = $_GET['id'];
 
     // Récupérer les détails du gîte en fonction de son ID
     $giteDetails = Gites::getGiteById($giteId);
-    
+
+    if ($giteDetails['region'] === 'normandie') {
+        $region = "Normandie";
+    } elseif ($giteDetails['region'] === 'hauts de france') {
+        $region = "Hauts de France";
+    }
+
     // Vérifier si le gîte existe
         if ($giteDetails) {
+            echo "<div class='ms-5'>";
+            echo "<h2>" . $giteDetails['nom_gite'] . "</h2>";
+            echo "<h4>" . $giteDetails['localisation'] . " - " . $region . "</h4>";
+
             // Afficher les détails du gîte
-            echo "<div class='container'>
-            <div class='d-flex justify-content-between'>";
+            echo "<div class='d-flex justify-content-between'>";
             // Afficher les images du gîte
             foreach ($giteDetails['images'] as $imagePath) {
                 echo "<img src='" . $imagePath . "' alt='Image du Gîte'><br><br>";
@@ -43,22 +52,20 @@
             echo "Ce gîte n'existe pas.";
         }
         echo "<br>";
-        echo "<p>Nom du gîte: " . $giteDetails['nom_gite'] . "</p>";
-        echo "<p>Région: " . $giteDetails['region'] . "</p>";
-        echo "<p>Localisation: " . $giteDetails['localisation'] . "</p>";
-        echo "<p>Capacité: " . $giteDetails['capacite'] . " personnes</p>";
-        echo "<p>Description: " . $giteDetails['descriptif'] . "</p>";
-        echo "<p>Tarifs: " . $giteDetails['tarifs'] . "€</p>";
+        echo "<p>Capacité : " . $giteDetails['capacite'] . " personnes</p>";
+        echo "<p class='txt-gite'>Description : <br>" . $giteDetails['descriptif'] . "</p>";
+        echo "<p>Tarifs : " . $giteDetails['tarifs'] . "€</p>";
         echo "<a href='../views/modifier_gite.php?id=" . $giteId . "'>Modifier le Gîte</a><br>";
         echo "</div>";
     ?>
-
+<br>
 <h2>Réservations</h2>
+    <div class="ms-5">
+
     <?php
         $reservations = Reservation::getReservationsByGiteId($giteId);
     if (!empty($reservations)) {
         ?>
-        <div class="container">
         <table>
                 <thead>
                     <tr>
@@ -92,9 +99,13 @@
         echo "<p>Aucune réservation pour ce gîte.</p>";
     }
     ?>
+    <br>
+</div>
+    <?php
+    require_once '../header-footer/footer.php';
+    ?>
         </tbody>
    </table>
    </div>
-   <br>
 </body>
 </html>
