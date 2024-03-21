@@ -38,7 +38,7 @@
             <label for="ingredients">Ingrédients:</label>
             <textarea id="ingredients" name="ingredients"><?php echo $article_details->getIngredients(); ?></textarea><br>
             <label for="nb_personnes">Nombre de personnes:</label>
-            <input type="text" id="nb_personnes" name="nb_personnes" value="<?php echo $article_details->getNbPersonnes(); ?>"><br>
+            <input type="number" id="nb_personnes" name="nb_personnes" value="<?php echo $article_details->getNbPersonnes(); ?>"><br>
         <?php endif; ?>
         <input type="submit" name="modifier_article" value="Modifier">
     </form>

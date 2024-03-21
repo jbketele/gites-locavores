@@ -25,6 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['modifier_article'])) {
     $article->setCategorie($new_categorie);
     $article->setDescriptif($new_descriptif);
     $article->setLieu($new_lieu);
+    $article->setIngredients($new_ingredients);
+    $article->setNbPersonnes($new_nb_personnes);
     $article->setId($id); // Définir l'ID du gîte
     $updateResult = $article->updateArticle();
 
