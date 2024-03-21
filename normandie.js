@@ -19,6 +19,14 @@ function filterCards() {
     }
 }
 
+// Modifier le texte de la description pour afficher uniquement les premiers caractères
+var descriptionElements = document.getElementsByClassName('description');
+for (var i = 0; i < descriptionElements.length; i++) {
+    var descriptionText = descriptionElements[i].textContent;
+    var truncatedDescription = descriptionText.substring(0, 50); // Modifier la longueur selon vos besoins
+    descriptionElements[i].textContent = truncatedDescription;
+}
+
 var map = L.map('map').setView([48.879870, 0.171253], 8); // Amiens, France
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

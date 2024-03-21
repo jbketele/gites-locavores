@@ -53,7 +53,7 @@
                                         echo "<p>" . $gite['localisation'] . "</p>";
                                         echo "<p>" . $gite['capacite'] . " personnes</p>";
                                         echo "<p>" . $gite['tarifs'] . " €</p>";
-                                        echo "<p class='card-text'>" . $gite['descriptif'] . "</p>";
+                                        echo "<p class='card-text descriptif'>" . $gite['descriptif'] . "</p>";
                                         echo "<div class='d-flex justify-content-end'><a href='details_gite.php?id=" . $gite['Id_Gîtes'] . "' class='text-success btn btn-light'>Lire plus</a></div>";
                                     echo"</div>";
                         echo "</div>";
