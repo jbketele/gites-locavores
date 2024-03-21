@@ -28,10 +28,10 @@
     <?php include('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
 
     <main>
-        <div class="row">
+        <div>
             <div id="connexion">
                 <div>
-                    <h3 class="mt-3">Inscription</h3>
+                    <h3 class="mt-3 p-0">Inscription</h3>
                     <form action="../controllers/user.php" method="POST">
                         <div class="mt-5">
                             <div class="row justify-content-center">
@@ -77,7 +77,7 @@
                    
                 </div>
                 <div>
-                    <h3 class="mt-3">Connexion</h3>
+                    <h3 class="mt-3 p-0">Connexion</h3>
                     <form action="../controllers/user.php" method="POST">
                         <div class="connect">
                             <div class="row justify-content-center">

@@ -1,10 +1,14 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
 <footer>
-    <style>
-    a{
-        color: white;
-    }
-</style>
+
         <div class="bg-light border-light shadow py-3">
             <div class=" follow row">
                 <p class="follow container text-center" style=font-size:2rem;>Suivez-nous :
@@ -54,4 +58,6 @@
             </div>
 
         </div>
-    </footer>
+    </footer>    
+</body>
+</html>

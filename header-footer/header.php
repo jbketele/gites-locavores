@@ -51,9 +51,7 @@ require_once '../models/user.php';
                                         <li><a class="dropdown-item" href="idees.php">Tous</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.php">Contact</a>
-                                </li>
+
                                 <?php
                                 if (isset($_SESSION['user_id'])) {
                                     $user_id = $_SESSION['user_id'];
@@ -76,7 +74,12 @@ require_once '../models/user.php';
                                         </ul>";
                                     }
                                 }
-                                ?>                                
+                                ?>
+                                
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.php">Contact</a>
+                                </li>
+                                
                             </ul>
                         </div>
 

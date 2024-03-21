@@ -28,8 +28,8 @@
 
     <main>
         <section>
-            <div class="row row-cols-1 row-cols-md-2 g-2 mx-5" id="ideas">
-                <div class="col">
+            <div class="row row-cols-1 row-cols-md-2 g-2 mx-5 mt-0" id="ideas">
+                <div class="col d-flex">
                     <div class="card" id="idea">
                         <a class="d-flex justify-content-center" href="event.php"><img src="img/calendar_591567.png"
                                 style="width: 25%" class="card-img-top" alt="..."></a>
@@ -38,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col d-flex">
                     <div class="card" id="idea">
                         <a class="d-flex justify-content-center" href="actus.php"><img src="img/newspaper_2965879.png"
                                 style="width: 25%;" class="card-img-top" alt="..."></a>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col d-flex">
                     <div class="card" id="idea">
                         <a class="d-flex justify-content-center" href="recettes.php"><img
                                 src="img/cook-book_13310212.png" style="width: 25%;" class="card-img-top" alt="..."></a>
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col d-flex">
                     <div class="card" id="idea">
                         <a class="d-flex justify-content-center" href="produits-saison.php"><img
                                 src="img/vegetables_3967324.png" class="card-img-top" style="width: 25%;" alt="..."></a>

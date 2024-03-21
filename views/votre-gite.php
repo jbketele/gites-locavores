@@ -29,11 +29,13 @@
     // Vérifier si le gîte existe
         if ($giteDetails) {
             // Afficher les détails du gîte
-            echo "<div class='container'>";
+            echo "<div class='container'>
+            <div class='d-flex justify-content-between'>";
             // Afficher les images du gîte
             foreach ($giteDetails['images'] as $imagePath) {
                 echo "<img src='" . $imagePath . "' alt='Image du Gîte'><br><br>";
-            }        
+            }
+            echo "</div>";     
             
         
         } else {

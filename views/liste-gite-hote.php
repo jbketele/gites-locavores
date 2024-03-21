@@ -23,7 +23,6 @@ require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header-hot
         <thead>
             <tr>
                 <th>Nom du gîte</th>
-                <th>Région</th>
                 <th>Localisation</th>
                 <th>Capacité</th>
                 <!-- Ajoutez d'autres en-têtes de colonnes au besoin -->
@@ -34,11 +33,11 @@ require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header-hot
             <?php foreach ($gites as $gite) : 
                 echo "<tr>";
                     echo "<td>" . $gite['nom_gite'] . "</td>";
-                    echo "<td>" . $gite['region'] . "</td>";
                     echo "<td>" . $gite['localisation'] . "</td>";
                     echo "<td>" . $gite['capacite'] . "</td>";
-                    echo "<td><a href='../views/votre-gite.php?id=" . $gite['Id_Gîtes'] ."'>Voir le gîte</a></td>";
-                    echo "<td><a href='../controllers/supprimer_gite.php?id=" . $gite['Id_Gîtes'] ."' onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer ce gîte ?')\">Supprimer</a>";
+                    echo "<td><a href='../views/votre-gite.php?id=" . $gite['Id_Gîtes'] ."'>Voir</a></td>";
+                    echo "<td><a href='../controllers/supprimer_gite.php?id=" . $gite['Id_Gîtes'] .
+                    "' onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer ce gîte ?')\"><i class='bi bi-trash'></i></a>";
                     echo "</tr>";
                 ?>
             <?php endforeach; ?>
@@ -46,5 +45,8 @@ require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header-hot
     </table>
     </div>
     </div>
+    <br><br>
+    <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/footer.php'); ?>
+
 </body>
 </html>

@@ -31,9 +31,8 @@
 // Vérifiez d'abord si les détails de l'article existent
 if(isset($article_details)) {
     ?>
-    <h1>Détails de l'article</h1>
     <div class="container">
-        <h2><?php echo $article_details->getNomArticle(); ?></h2>
+        <h3><?php echo $article_details->getNomArticle(); ?></h3>
         <?php
         if ($article_details->getCategorie() === "produits_saison") { ?>
         <p><strong>Catégorie: </strong>Produits de saison</p>
@@ -60,7 +59,7 @@ if(isset($article_details)) {
         if (!empty($image_paths)) {
             echo "<h3>Images associées:</h3>";
             foreach ($image_paths as $image_path) {
-                echo "<img src='$image_path' alt='Image de l'article'><br><br>";
+                echo "<img class='img-article' src='$image_path' alt='Image de l'article'><br><br>";
             }
         }
         

@@ -12,12 +12,23 @@ select {
     border: none;
 }
 
+#connect {
+    background-image: url(views/img/sunny-day-field.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 @media (min-width:767px) {
     #connexion {
         display: grid;
         grid-template-columns: 15vw 15vw;
         gap: 45%;
         padding-left: 15%;
+        background-size: 100vw;
+        background-image: url(views/img/sunny-day-field.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }
 
@@ -28,5 +39,8 @@ select {
         gap: 20%;
         padding: 10%;
         background-size: 100vw 110vh;
+        background-image: url(views/img/sunny-day-field.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }

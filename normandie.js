@@ -20,10 +20,10 @@ function filterCards() {
 }
 
 // Modifier le texte de la description pour afficher uniquement les premiers caractères
-var descriptionElements = document.getElementsByClassName('description');
+var descriptionElements = document.getElementsByClassName('descriptif');
 for (var i = 0; i < descriptionElements.length; i++) {
     var descriptionText = descriptionElements[i].textContent;
-    var truncatedDescription = descriptionText.substring(0, 50); // Modifier la longueur selon vos besoins
+    var truncatedDescription = descriptionText.substring(0, 150); // Modifier la longueur selon vos besoins
     descriptionElements[i].textContent = truncatedDescription;
 }
 

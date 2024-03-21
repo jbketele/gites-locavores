@@ -48,13 +48,13 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.php">Contact</a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link" href="liste-gite-hote.php">Mes Gîtes</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="liste-articles-hote.php">Mes Articles</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
                             </ul>
                         </div>
