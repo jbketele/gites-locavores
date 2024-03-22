@@ -42,7 +42,7 @@
                                         <li><a class="dropdown-item" href="event.php">Évènements</a></li>
                                         <li><a class="dropdown-item" href="actus.php">Actualités</a></li>
                                         <li><a class="dropdown-item" href="recettes.php">Recettes</a></li>
-                                        <li><a class="dropdown-item" href="produits-saison.php">Prdouits de saison</a>
+                                        <li><a class="dropdown-item" href="produits-saison.php">Produits de saison</a>
                                         </li>
                                         <li><a class="dropdown-item" href="idees.php">Tous</a></li>
                                     </ul>

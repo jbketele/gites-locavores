@@ -68,7 +68,7 @@
                     echo '<img src="' . $article['image_path'] . '" class="card-img-top" alt="...">';
                     echo '<div class="card-body">';
                     echo '<h5 class="card-title">' . $article['nom'] . '</h5>';
-                    echo '<p class="card-text">' . $article['descriptif'] . '</p>';
+                    echo '<p class="card-text descriptif">' . $article['descriptif'] . '</p>';
                     if (isset($article['Id_Article'])) {
                         echo '<a href="article.php?id=' . $article['Id_Article'] . '" class="btn btn-success">En savoir plus</a>';
                     } else {
@@ -94,6 +94,7 @@
     <!--FOOTER-->
     <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/footer.php'); ?>
 
+    <script src="../article.js"></script>
 
 
 </body>
