@@ -23,7 +23,7 @@
 <body>
 <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
 <div class="row">
-<div class="d-flex justify-content-around" id="connexion">
+<div class="d-flex justify-content-around" id="connect">
     <div>
         <h3 class="mt-3" style="padding: 0">Ajouter un gîte</h3>
             <div class="mt-5">

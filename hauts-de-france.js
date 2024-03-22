@@ -53,10 +53,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 var marker1 = L.marker([50.8051308, 2.6016682]).addTo(map);
-marker1.bindPopup("<b>La Cabane du Terroir</b><br>Michel Van De Bruck");
+marker1.bindPopup("<b>La Cabane du Terroir</b><br>M. Van De Bruck");
 
 
 var marker2 = L.marker([50.5139552, 1.6386252]).addTo(map);
-marker2.bindPopup("<b>Le Refuge des Dunes</b><br>D. Van De Bruck");
+marker2.bindPopup("<b>Le Refuge des Dunes</b><br>E. Leclerc");
 var marker3 = L.marker([49.7407935, 2.1511753]).addTo(map);
-marker3.bindPopup("<b>La Maison des Quais</b><br>Céline Dubois");
+marker3.bindPopup("<b>La Maison des Quais</b><br>C. Dubois");

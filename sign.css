@@ -24,6 +24,7 @@ select {
         display: grid;
         grid-template-columns: 15vw 15vw;
         gap: 45%;
+        padding-left: 15%;
         background-size: 100vw;
         background-image: url(views/img/sunny-day-field.jpg);
         background-position: center;

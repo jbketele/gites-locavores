@@ -45,11 +45,11 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-var marker1 = L.marker([49.6179384, 0.7538866]).addTo(map);
-marker1.bindPopup("<b>La Ferme de M. Seguin</b><br>Éric Dupont");
+var marker1 = L.marker([49.0598651, -1.0250661]).addTo(map);
+marker1.bindPopup("<b>Le Cottage du Bocage</b><br>David Le Garrec");
 
 
-var marker2 = L.marker([49.0598651, -1.0250661]).addTo(map);
-marker2.bindPopup("<b>GAEC des Marais</b><br>D. Le Garrec");
+var marker2 = L.marker([49.49552536010742, 0.1280045062303543]).addTo(map);
+marker2.bindPopup("<b>Le Havre Tranquille</b><br>M. Dupond");
 var marker3 = L.marker([49.3455531, 0.3427251]).addTo(map);
-marker3.bindPopup("<b>SCEA de la Sablière</b><br>Jean Leclerc");
+marker3.bindPopup("<b>La Maison du Verger</b><br>Julie Girard");

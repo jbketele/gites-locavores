@@ -25,7 +25,7 @@
 <body>
     
     <!--NAVBAR-->
-    <?php
+    <?php session_start();
     require '../controllers/article.php';    
     require '../header-footer/header.php';
     ?>

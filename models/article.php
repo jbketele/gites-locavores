@@ -183,40 +183,41 @@ class Article {
         }
     }
 
-    public static function getArticleById($article_id) {
+    public static function getArticleById($articleId) {
         // Connexion à la base de données
         $connexion = Database::getInstance();
     
         try {
-            // Requête SQL pour sélectionner les détails de l'article par son ID
-            $query = "SELECT A.*, IA.image_path 
-            FROM Article A 
-            JOIN image_article IA ON A.Id_Article = IA.Id_Article 
-            WHERE A.Id_Article = :article_id";            
+            // Requête SQL pour récupérer les données de l'article en fonction de son ID
+            $query = "SELECT A.*, U.Nom, U.Prénom
+            FROM Article A
+            LEFT JOIN Utilisateur U ON A.Id_Utilisateur = U.Id_Utilisateur
+            WHERE A.Id_Article = :article_id";
             $statement = $connexion->prepare($query);
-            $statement->bindParam(':article_id', $article_id);
+            $statement->bindParam(':article_id', $articleId);
             $statement->execute();
     
-            // Récupérer les détails de l'article
-            $article_data = $statement->fetch(PDO::FETCH_ASSOC);
+            // Récupérer les données de l'article
+            $article = $statement->fetch(PDO::FETCH_ASSOC);
     
-            // Créer une instance de la classe Article et la retourner
-            $article = new Article();
-            $article->setCategorie($article_data['categorie']);
-            $article->setNomArticle($article_data['nom']);
-            $article->setDescriptif($article_data['descriptif']);
-            $article->setLieu($article_data['Lieu']);
-            $article->setIngredients($article_data['Ingrédients']);
-            $article->setNbPersonnes($article_data['Nb_personnes']);
-            $article->setImagePaths($article_data['image_path']);
-             
-            return $article; // Retourner les détails de l'article
+            // Récupérer les chemins d'image associés à l'article
+            $queryImages = "SELECT image_path FROM image_article WHERE Id_Article = :article_id";
+            $statementImages = $connexion->prepare($queryImages);
+            $statementImages->bindParam(':article_id', $articleId);
+            $statementImages->execute();
+            $images = $statementImages->fetchAll(PDO::FETCH_COLUMN);
+    
+            // Ajouter les chemins d'image au tableau des détails de l'article
+            $article['images'] = $images ?: [];
+    
+            return $article;
         } catch (PDOException $e) {
-            // Gérer les erreurs de base de données
+            // Gestion des erreurs de base de données
             echo "Erreur lors de la récupération de l'article : " . $e->getMessage();
             return false;
         }
     }
+    
         
     public function updateArticle() {
         $connexion = Database::getInstance();

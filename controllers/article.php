@@ -1,46 +1,44 @@
 <?php
-session_start();
-require_once '../models/article.php';
-$userId = Utilisateur::getCurrentUserId();
+require_once '../models/article.php'; // Inclure le modèle d'articles
+require_once '../models/user.php'; // Inclure le modèle d'utilisateur
+require_once '../models/database.php'; // Inclure le modèle de base de données
 
-// Vérifier si l'ID de l'article est présent dans l'URL
-if(isset($_GET['id'])) {
-    // Récupérer l'ID de l'article depuis l'URL
-    $article_id = $_GET['id'];
-
-    // Appeler la méthode pour récupérer les détails de l'article par son ID
-    $article_details = Article::getArticleById($article_id);
-
-    if(!$article_details) {
-        // Gérer le cas où la récupération des détails de l'article a échoué
-        echo "Erreur lors de la récupération des détails de l'article.";
-        exit; // Arrêter l'exécution du script car les détails de l'article sont nécessaires pour la suite du processus
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Vérifier si l'utilisateur est connecté
+    session_start();
+    if (!isset($_SESSION['email'])) {
+        // Si l'utilisateur n'est pas connecté, le rediriger vers la page de connexion
+        header("Location: ../views/connexion.php");
+        exit;
     }
-}
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ajouter_article'])) {
-    // Créer une nouvelle instance de l'objet Article
+    // Récupération des données du formulaire
+    $categorie = $_POST['categorie'];
+    $nom_article = $_POST['nom_article'];
+    $descriptif = $_POST['descriptif'];
+    $lieu = $_POST['lieu'];
+    $ingredients = $_POST['ingredients'];
+    $nb_personnes = $_POST['nb_personnes'];
+
+    // Récupérer l'ID de l'utilisateur connecté
+    $userId = Utilisateur::getCurrentUserId();
+
+    // Création d'un nouvel objet Article et ajout à la base de données
     $article = new Article();
-    $article->setCategorie($_POST['categorie']);
-    $article->setNomArticle($_POST['nom_article']);
-    $article->setDescriptif($_POST['descriptif']);
-    $article->setLieu($_POST['lieu']);
-    $article->setIngredients($_POST['ingredients']);
-    $article->setNbPersonnes($_POST['nb_personnes']);
+    $article->setCategorie($categorie);
+    $article->setNomArticle($nom_article);
+    $article->setDescriptif($descriptif);
+    $article->setLieu($lieu);
+    $article->setIngredients($ingredients);
+    $article->setNbPersonnes($nb_personnes);
     $article->setUserId($userId);
-    $article_id = Article::ajouterArticle($article);
 
-    // Vérifiez si des fichiers ont été téléchargés
-    if (!empty($_FILES['image_path'])) {
-        // Appelez la méthode pour gérer le téléchargement de fichiers
-        Article::uploadImages($article_id, $_FILES['image_path']);
-    }
+    // Ajout de l'article dans la base de données
+    $newArticleId = $article->ajouterArticle($article);
 
-    // Appeler la méthode du modèle pour ajouter l'article
-    if ($article_id) {
-        // Rediriger vers la page de confirmation de l'ajout d'article avec l'ID de l'article ajouté
-        echo "L'article a été ajouté !";
-        header("Location: ../views/article.php?id=$article_id");
+    if ($newArticleId) {
+        // Redirection vers une page de confirmation ou autre
+        header("Location: ../views/article.php?id=$newArticleId");
         exit;
     } else {
         // Gérer le cas où l'ajout de l'article a échoué

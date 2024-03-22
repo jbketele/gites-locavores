@@ -30,7 +30,7 @@
         $region = "Normandie";
     } elseif ($giteDetails['region'] === 'hauts de france') {
         $region = "Hauts de France";
-    }
+    } else $region = $giteDetails['region'];
 
     // Vérifier si le gîte existe
         if ($giteDetails) {
@@ -81,7 +81,7 @@
                 <tbody>
         <?php
         foreach ($reservations as $reservation) {
-            $prixTotalFormate = number_format($reservation['Prix_Total'], 0, ',', ' ');
+            $prixTotalFormate = number_format($reservation['prix_total'], 0, ',', ' ');
         ?>
 
         <tr>
@@ -101,11 +101,11 @@
     ?>
     <br>
 </div>
-    <?php
-    require_once '../header-footer/footer.php';
-    ?>
-        </tbody>
+    </tbody>
    </table>
    </div>
+   <?php
+    require_once '../header-footer/footer.php';
+    ?>
 </body>
 </html>

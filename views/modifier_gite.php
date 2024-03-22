@@ -28,7 +28,7 @@
     // Vérifier si le gîte existe
     if ($giteDetails) {
         ?>
-        <div class="container">
+        <div class="ms-5">
         <form action="../controllers/modifier_gite.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php echo $giteId; ?>"> <!-- Champ caché pour l'ID du gîte -->
             <label for="nom_gite">Nom du Gîte:</label>

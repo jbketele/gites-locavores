@@ -25,14 +25,11 @@
     require_once '../controllers/details_gite.php';
      if (isset($_SESSION['email'])) {
         // L'utilisateur est connecté, affichez le formulaire de réservation
-        require_once '/Applications/MAMP/htdocs/gites_locavores/header-footer/header-connect.php';
-    } else {
-        // L'utilisateur n'est pas connecté, affichez un lien vers la page de connexion
         require_once '/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php';
     }?>
     
 
-    <div class="container">
+    <div class="ms-5">
         <!-- Afficher les détails du gîte -->
         <h2><?php echo $gite['nom_gite']; ?></h2>
         <h3><?php echo $gite['Prénom'] . " " . $gite['Nom']; ?></h3>
@@ -42,7 +39,6 @@
             <?php endforeach; ?>
         </div>
         <br>
-        <p>ID : <?php echo $gite['Id_Gîtes'] ?></p>
         <p>Région : <?php echo $gite['region']; ?></p>
         <p>Localisation : <?php echo $gite['localisation']; ?></p>
         <p>Prix : <?php echo $gite['tarifs']; ?> €</p>
@@ -87,6 +83,10 @@
             </form>
         </div>
     </div>
+
+    <?php
+    require_once '../header-footer/footer.php';
+    ?>
 
     <script>
     // Lorsque le bouton "Réserver" est cliqué

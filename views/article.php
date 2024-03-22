@@ -11,7 +11,7 @@
     <link rel="icon" type="image/x-icon" href="img/logo gites detoure.png">
     <link rel="stylesheet" type="text/css" href="../styles.css"></head>
 <body>
-    <?php
+    <?php session_start();
     require_once '../controllers/article.php';
     
     if (isset($_SESSION['user_id'])) {
@@ -26,17 +26,32 @@
     } else {
         include '../header-footer/header.php';
     }
+
+    // Vérifier si l'ID de l'article est présent dans l'URL
+if(isset($_GET['id'])) {
+    // Récupérer l'ID de l'article depuis l'URL
+    $article_id = $_GET['id'];
+
+    // Appeler la méthode pour récupérer les détails de l'article par son ID
+    $article_details = Article::getArticleById($article_id);
+
+    if(!$article_details) {
+        // Gérer le cas où la récupération des détails de l'article a échoué
+        echo "Erreur lors de la récupération des détails de l'article.";
+        exit; // Arrêter l'exécution du script car les détails de l'article sont nécessaires pour la suite du processus
+    }
+}
     ?>
 <?php
 // Vérifiez d'abord si les détails de l'article existent
 if(isset($article_details)) {
     ?>
     <div class="ms-5">
-        <h3><?php echo $article_details->getNomArticle(); ?></h3>
+        <h3><?php echo $article_details['nom']; ?></h3>
 
         <?php
         // Afficher les images associées à l'article
-        $image_paths = $article_details->getImagePaths();
+        $image_paths = $article_details['images'];
         if (!empty($image_paths)) {
             foreach ($image_paths as $image_path) {
                 echo "<img class='img-article' src='$image_path' alt='Image de l'article'><br><br>";
@@ -45,27 +60,29 @@ if(isset($article_details)) {
         ?>
 
         <?php
-        if ($article_details->getCategorie() === "produits_saison") { ?>
+        if ($article_details['categorie'] === "produits_saison") { ?>
         <p>Catégorie : Produits de saison</p>
 
-        <?php } elseif ($article_details->getCategorie() === "recettes") { ?>
+        <?php } elseif ($article_details['categorie'] === "recettes") { ?>
         <p>Catégorie : Recettes</p>
 
-        <?php } elseif ($article_details->getCategorie() === "actus") { ?>
+        <?php } elseif ($article_details['categorie'] === "actus") { ?>
         <p>Catégorie : Actualités</p>
 
-        <?php } elseif ($article_details->getCategorie() === "evenements") { ?>
+        <?php } elseif ($article_details['categorie'] === "evenements") { ?>
         <p>Catégorie : Évènements</p>
 
-        <?php } else { ?>
-        <p>Catégorie : <?php echo $article_details->getCategorie(); ?></p>
+        <?php } else { 
+            var_dump($article_details);
+            ?>
+        <p>Catégorie : <?php echo $article_details['categorie']; ?></p>
         <?php } ?>
 
-        <p>Descriptif : <?php echo $article_details->getDescriptif(); ?></p>
+        <p>Descriptif : <?php echo $article_details['descriptif']; ?></p>
         <?php
-        if ($article_details->getCategorie() === "evenements" || $article_details->getCategorie() === "actus") { 
-            if ($article_details->getLieu()) {?>
-            <p> Lieu : <?php echo $article_details->getLieu(); ?></p>
+        if ($article_details['categorie'] === "evenements" || $article_details['categorie'] === "actus") { 
+            if ($article_details['Lieu']) {?>
+            <p> Lieu : <?php echo $article_details['Lieu']; ?></p>
             
             <?php 
             }
@@ -73,10 +90,10 @@ if(isset($article_details)) {
             ?>
 
         <?php
-        if ($article_details->getCategorie() === "recettes") {
+        if ($article_details['categorie'] === "recettes") {
         ?>
-        <p>Ingrédients : <?php echo $article_details->getIngredients(); ?></p>
-        <p>Nombre de personnes : <?php echo $article_details->getNbPersonnes(); ?></p>
+        <p>Ingrédients : <?php echo $article_details['Ingrédients']; ?></p>
+        <p>Nombre de personnes : <?php echo $article_details['Nb_personnes']; ?></p>
         <?php } ?>
 
         <a href="../views/modifier_article.php?id=<?php echo $article_id; ?>">Modifier cet article</a>
