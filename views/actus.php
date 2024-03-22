@@ -22,7 +22,8 @@
 </head>
 
 <body>
-<?php require_once '../controllers/article.php';
+<?php session_start();
+require_once '../controllers/article.php';
 require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
 
     <main>
@@ -32,7 +33,7 @@ require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php
             <a href="recettes.php" class="btn btn-warning">Recettes</a>
             <a href="produits-saison.php" class="btn btn-warning">Produits de saison</a>
         </div>
-        <section>
+        <section class="article-blog">
             <div class="row-cols-1 row-cols-md-3 cards-blog">
             
             <?php
@@ -47,7 +48,7 @@ require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php
                     echo '<img src="' . $article['image_path'] . '" class="card-img-top" alt="...">';
                     echo '<div class="card-body">';
                     echo '<h5 class="card-title">' . $article['nom'] . '</h5>';
-                    echo '<p class="card-text">' . $article['descriptif'] . '</p>';
+                    echo '<p class="card-text descriptif">' . $article['descriptif'] . '</p>';
                     if (isset($article['Id_Article'])) {
                         echo '<a href="article.php?id=' . $article['Id_Article'] . '" class="btn btn-success">En savoir plus</a>';
                     } else {
@@ -66,6 +67,7 @@ require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php
     </main>
 
     <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/footer.php'); ?>
+    <script src="../article.js"></script>
 
 </body>
 

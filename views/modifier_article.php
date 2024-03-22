@@ -23,22 +23,22 @@
     <form action="../controllers/modifier_article.php" method="POST">
         <input type="hidden" name="id" value="<?php echo $article_id; ?>">
         <label for="categorie">Catégorie :</label>
-        <input type="text" id="categorie" name="categorie" value="<?php echo $article_details->getCategorie(); ?>"><br>
+        <input type="text" id="categorie" name="categorie" value="<?php echo $article_details['categorie']; ?>"><br>
         <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" value="<?php echo $article_details->getNomArticle(); ?>"><br>
+        <input type="text" id="nom" name="nom" value="<?php echo $article_details['nom']; ?>"><br>
         <label for="descriptif">Descriptif :</label>
-        <textarea id="descriptif" name="descriptif"><?php echo $article_details->getDescriptif(); ?></textarea><br>
+        <textarea id="descriptif" name="descriptif"><?php echo $article_details['descriptif']; ?></textarea><br>
         <label for="lieu">Lieu :</label>
-        <input type="text" id="lieu" name="lieu" value="<?php echo $article_details->getLieu(); ?>"><br>
+        <input type="text" id="lieu" name="lieu" value="<?php echo $article_details['Lieu']; ?>"><br>
         <label for="images">Nouvelles Images :</label>
         <input type="file" id="images" name="images[]" multiple accept="image/*"><br>
 
         <!-- Afficher les champs ingrédients et nombre de personnes seulement si la catégorie est "recettes" -->
-        <?php if ($article_details->getCategorie() === 'recettes') : ?>
+        <?php if ($article_details['categorie'] === 'recettes') : ?>
             <label for="ingredients">Ingrédients :</label>
-            <textarea id="ingredients" name="ingredients"><?php echo $article_details->getIngredients(); ?></textarea><br>
+            <textarea id="ingredients" name="ingredients"><?php echo $article_details['Ingrédients']; ?></textarea><br>
             <label for="nb_personnes">Nombre de personnes :</label>
-            <input type="number" id="nb_personnes" name="nb_personnes" value="<?php echo $article_details->getNbPersonnes(); ?>"><br>
+            <input type="number" id="nb_personnes" name="nb_personnes" value="<?php echo $article_details['Nb_personnes']; ?>"><br>
         <?php endif; ?>
         <input type="submit" name="modifier_article" value="Modifier">
     </form>

@@ -52,7 +52,7 @@
             ?>
 
         <!--CARDS BLOG-->
-        <section>
+        <section class="article-blog">
             <div class="row-cols-1 row-cols-md-3 cards-blog">
             
             <?php

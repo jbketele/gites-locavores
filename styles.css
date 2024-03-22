@@ -158,23 +158,27 @@ p {
   }
 
   .cards-blog {
-    display: grid;
-    grid-template-columns: 3fr 3fr 3fr;
-    grid-auto-rows: 1fr;
-    column-gap: 2rem;
-    row-gap: 2rem;
-    margin: 2.8rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .card-blog {
     position: relative;
-    height: 95%;
     display: flex;
     flex-direction: column;
     border-radius: 1.5rem;
     overflow: hidden;
     background-color: #fff;
-    width: 60%;
+    width: 30%;
+    margin: 0;
+  }
+
+  .article-blog {
+    padding-left: 10rem;
+    padding-right: 10rem;
   }
 
   #icons {
@@ -410,9 +414,6 @@ h3 {
   border-color: black;
   float: right;
 }
-
-
-
 
 .connect {
   margin-top: 2rem;
