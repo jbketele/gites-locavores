@@ -26,9 +26,7 @@
 <body>
     <?php session_start();
     require_once '../controllers/liste-gite.php';
-    if (isset($_SESSION['user_id'])) {
-        require_once '/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php';
-    } 
+    require_once '/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php';
     ?>
     <main>
         <section>
