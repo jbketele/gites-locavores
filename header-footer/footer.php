@@ -54,6 +54,9 @@
                 <div class="container row ms-5 col-md-2">
                     <p><a href="presentation.php">QUI SOMMES-NOUS</a></p>
                     <p><a href="contact.php">CONTACTEZ-NOUS</a></p>
+                    <p><a href="cgv.php">CGV</a></p>
+                    <p><a href="mentions-legales.php">Mentions Légales</a></p>
+
                 </div>
             </div>
 

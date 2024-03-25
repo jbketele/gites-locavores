@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-primary btn-lg mt-5 mb-5" type="submit" name="envoi">Valider</button>
+                            <button class="btn btn-success btn-lg mt-5 mb-5" type="submit" name="envoi">Valider</button>
                         </div>
                     </form>
 
@@ -94,7 +94,7 @@
                                         <label for="floatingInputGrid">Mot de passe</label>
                                     </div>
                                     <div class="form-floating">
-                                        <input type="submit" class="btn" id="floatingInputGrid" value="Se connecter">
+                                        <input type="submit" class="btn btn-success" id="floatingInputGrid" value="Se connecter">
                                     </div>
                                 </div>
                             </div>

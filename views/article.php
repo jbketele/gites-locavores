@@ -94,9 +94,13 @@ if(isset($article_details)) {
         ?>
         <p>Ingrédients : <?php echo $article_details['Ingrédients']; ?></p>
         <p>Nombre de personnes : <?php echo $article_details['Nb_personnes']; ?></p>
-        <?php } ?>
+        <?php } 
 
-        <a href="../views/modifier_article.php?id=<?php echo $article_id; ?>">Modifier cet article</a>
+        if (isset($_SESSION['user_id'])) {
+            echo "<a href='../views/modifier_article.php?id=" . $article_id . "'>Modifier cet article</a>";
+        }
+        ?>
+
     </div>
     <?php
 } else {

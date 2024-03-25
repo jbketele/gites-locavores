@@ -24,8 +24,13 @@
     <?php
     require_once '../controllers/details_gite.php';
      if (isset($_SESSION['email'])) {
-        // L'utilisateur est connecté, affichez le formulaire de réservation
-        require_once '/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php';
+        $user_id = $_SESSION['user_id'];
+        $user_type = Utilisateur::getUserTypeById($user_id);
+        if ($user_type === 'hôte') {
+            include '../header-footer/header-hote.php'; // Inclure le header pour l'hôte
+        } elseif ($user_type === 'visiteur') {
+            include '../header-footer/header-connect.php'; // Inclure le header pour le visiteur connecté
+        }
     }?>
     
 
