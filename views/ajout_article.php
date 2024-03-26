@@ -14,7 +14,9 @@
 </head>
 
 <body>
-<?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header-hote.php'); ?>
+<?php session_start();
+require_once '../controllers/check-admin.php';
+require_once '../header-footer/header-hote.php'; ?>
 <div class="row">
 <div class="d-flex justify-content-around" id="connect">
     <div>

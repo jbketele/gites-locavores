@@ -22,7 +22,19 @@
 </style>
 <body>
 <?php session_start();
-require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php'); ?>
+require_once '../controllers/check-admin.php';
+require_once '../models/user.php';
+     if (isset($_SESSION['email'])) {
+        $user_id = $_SESSION['user_id'];
+        $user_type = Utilisateur::getUserTypeById($user_id);
+        if ($user_type === 'hôte') {
+            include '../header-footer/header-hote.php'; // Inclure le header pour l'hôte
+        } elseif ($user_type === 'visiteur') {
+            include '../header-footer/header-connect.php'; // Inclure le header pour le visiteur connecté
+        }
+    } else {
+        include '../header-footer/header.php';
+    }; ?>
 <div class="row">
 <div class="d-flex justify-content-around" id="connect">
     <div>
@@ -38,10 +50,23 @@ require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php
                         </div>
 
                         <div class="form-floating">
-                            <input class="form-control" type="text" placeholder="region" name="region" required>
-                            <label for="description">Région:</label>
+                            <select name="region" id="user">
+                                <option value="">Région</option>
+                                <option value="Auvergne-Rhônes-Alpes">Auvergne-Rhônes-Alpes</option>
+                                <option value="Bretagne">Bretagne</option>
+                                <option value="Centre-Val de Loire">Centre-Val de Loire</option>
+                                <option value="Corse">Corse</option>
+                                <option value="Grand Est">Grand Est</option>
+                                <option value="Hauts-de-France">Hauts-de-France</option>
+                                <option value="Ile-de-France">Ile-de-France</option>
+                                <option value="Normandie">Normandie</option>
+                                <option value="Nouvelle-Aquitaine">Nouvelle-Aquitaine</option>
+                                <option value="Occitanie">Occitanie</option>
+                                <option value="Pays de la Loire">Pays de la Loire</option>
+                                <option value="Provence-Alpes-Côte d'Azur">Provence-Alpes-Côte d'Azur</option>
+                            </select>
                         </div>
-
+                        <br>
                         <div class="form-floating">
                             <input class="form-control" type="text" placeholder="location" name="localisation" required>                                
                             <label for="location">Localisation:</label>

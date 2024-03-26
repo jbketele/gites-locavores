@@ -30,12 +30,16 @@
         $region = "Normandie";
     } elseif ($giteDetails['region'] === 'hauts de france') {
         $region = "Hauts de France";
-    } else $region = $giteDetails['region'];
+    } elseif ($giteDetails['region'] === 'hauts de france') {
+        $region = "Hauts de France";
+    }elseif ($giteDetails['region'] === 'paca') {
+        $region = "Provence-Alpes-Côte d'Azur";
+    }else $region = $giteDetails['region'];
 
     // Vérifier si le gîte existe
         if ($giteDetails) {
             echo "<div class='ms-5'>";
-            echo "<h2>" . $giteDetails['nom_gite'] . "</h2>";
+            echo "<h2 class='p-0'>" . $giteDetails['nom_gite'] . "</h2>";
             echo "<h4>" . $giteDetails['localisation'] . " - " . $region . "</h4>";
 
             // Afficher les détails du gîte

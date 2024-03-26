@@ -14,13 +14,14 @@
 </head>
 <body>
     <?php session_start();
-require_once '../header-footer/header-connect.php';
-require_once '../models/user.php';
-$userId = $_GET['id'];
-$user = Utilisateur::getUserById($userId);
-// Activer l'affichage des erreurs
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+    require_once '../controllers/check-admin.php';
+    require_once '../header-footer/header-connect.php';
+    require_once '../models/user.php';
+    $userId = $_GET['id'];
+    $user = Utilisateur::getUserById($userId);
+    // Activer l'affichage des erreurs
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
 
     ?>
     <div class="container">

@@ -15,7 +15,8 @@
 
     <?php
     session_start();
-    require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header-hote.php'); 
+    require_once '../controllers/check-admin.php';
+    require_once '../header-footer/header-hote.php'; 
     require_once '../models/ajout_gite.php';
     echo "<h2>Modifier Gîte</h2>";
 

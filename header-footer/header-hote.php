@@ -28,9 +28,20 @@
                                         Nos Gîtes
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="hauts-de-france.php">Hauts de France</a></li>
-                                        <li><a class="dropdown-item" href="normandie.php">Normandie</a></li>
-                                        <li><a class="dropdown-item" href="regions.php">Tous</a></li>
+                                    <li><a class="dropdown-item" href="auvergne.php">Auvergne-Rhônes-Alpes</a></li>
+                                    <li><a class="dropdown-item" href="bourgogne.php">Bourgogne-Franche-Comté</a></li>
+                                    <li><a class="dropdown-item" href="bretagne.php">Bretagne</a></li>
+                                    <li><a class="dropdown-item" href="centre.php">Centre-Val de Loire</a></li>
+                                    <li><a class="dropdown-item" href="corse.php">Corse</a></li>
+                                    <li><a class="dropdown-item" href="grand-est.php">Grand Est</a></li>
+                                    <li><a class="dropdown-item" href="hauts-de-france.php">Hauts de France</a></li>
+                                    <li><a class="dropdown-item" href="ile-de-france.php">Ile de France</a></li>
+                                    <li><a class="dropdown-item" href="normandie.php">Normandie</a></li>
+                                    <li><a class="dropdown-item" href="aquitaine.php">Nouvelle-Aquitaine</a></li>
+                                    <li><a class="dropdown-item" href="occitanie.php">Occitanie</a></li>
+                                    <li><a class="dropdown-item" href="pays-loire.php">Pays de la Loire</a></li>
+                                    <li><a class="dropdown-item" href="paca.php">PACA</a></li>
+                                    <li><a class="dropdown-item" href="regions.php">Tous</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">

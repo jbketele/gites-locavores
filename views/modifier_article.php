@@ -12,8 +12,9 @@
     <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 <body>
-    <?php
-    require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header-hote.php'); 
+    <?php session_start();
+    require_once '../controllers/check-admin.php';
+    require_once '../header-footer/header-hote.php'; 
     require_once '../models/article.php';
     $article_id = $_GET['id'];
     $article_details = Article::getArticleById($article_id);

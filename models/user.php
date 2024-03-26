@@ -185,4 +185,25 @@ class Utilisateur {
         }
     }
     
+    public static function checkHote() {
+        try {
+            // Connexion à la base de données
+            $connexion = Database::getInstance();
+            
+            // Requête SQL pour récupérer le type de l'utilisateur par son ID
+            $query = "SELECT * FROM Utilisateur WHERE type_user = 'hôte'";
+            $statement = $connexion->prepare($query);
+            $statement->execute();
+            
+            // Récupérer le type de l'utilisateur
+            $hosts = $statement->fetchAll(PDO::FETCH_ASSOC);
+            
+            // Vérifier si l'utilisateur est de type hôte
+            return $hosts;
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données
+            echo "Erreur lors de la vérification du type d'utilisateur : " . $e->getMessage();
+            return false;
+        }
+    }
 }
