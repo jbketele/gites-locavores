@@ -31,21 +31,22 @@
         } elseif ($user_type === 'visiteur') {
             include '../header-footer/header-connect.php'; // Inclure le header pour le visiteur connecté
         }
+    } else {
+        include '../header-footer/header.php';
     }?>
     
 
     <div class="ms-5">
         <!-- Afficher les détails du gîte -->
-        <h2><?php echo $gite['nom_gite']; ?></h2>
-        <h3><?php echo $gite['Prénom'] . " " . $gite['Nom']; ?></h3>
+        <h2 class="p-0"><?php echo $gite['nom_gite']; ?></h2>
+        <h3 class="p-0"><?php echo $gite['Prénom'] . " " . $gite['Nom']; ?></h3>
+        <p><?php echo $gite['localisation'] . " - " . $gite['region']; ?></p>
         <div class="gallery">
             <?php foreach ($gite['images'] as $imagePath) : ?>
                 <img src="<?php echo $imagePath; ?>" alt="Image du Gîte">
             <?php endforeach; ?>
         </div>
         <br>
-        <p>Région : <?php echo $gite['region']; ?></p>
-        <p>Localisation : <?php echo $gite['localisation']; ?></p>
         <p>Prix : <?php echo $gite['tarifs']; ?> €</p>
         <p><?php echo $gite['descriptif']; ?></p>   
         <?php

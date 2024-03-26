@@ -71,6 +71,9 @@
         // Afficher un message si le gîte n'existe pas
         echo "Ce gîte n'existe pas.";
     }
+
+    require_once '../header-footer/footer.php';
+
     ?>
 </body>
 </html>
