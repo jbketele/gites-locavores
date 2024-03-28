@@ -40,15 +40,15 @@
         <!-- Afficher les détails du gîte -->
         <h2 class="p-0"><?php echo $gite['nom_gite']; ?></h2>
         <h3 class="p-0"><?php echo $gite['Prénom'] . " " . $gite['Nom']; ?></h3>
-        <p><?php echo $gite['localisation'] . " - " . $gite['region']; ?></p>
+        <h5><?php echo $gite['localisation'] . " - " . $gite['region']; ?></h5>
         <div class="gallery">
             <?php foreach ($gite['images'] as $imagePath) : ?>
                 <img src="<?php echo $imagePath; ?>" alt="Image du Gîte">
             <?php endforeach; ?>
         </div>
         <br>
-        <p>Prix : <?php echo $gite['tarifs']; ?> €</p>
-        <p><?php echo $gite['descriptif']; ?></p>   
+        <p><?php echo $gite['descriptif']; ?></p>
+        <h4>Prix : <?php echo $gite['tarifs']; ?> €/nuit</h4>
         <?php
         // Vérifiez si l'utilisateur est connecté
         if (isset($_SESSION['email'])) {

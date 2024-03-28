@@ -32,7 +32,7 @@
             <div id="connexion">
                 <div>
                     <h3 class="mt-3 p-0">Inscription</h3>
-                    <form action="../controllers/user.php" method="POST">
+                    <form action="../controllers/user.php" method="POST" onsubmit="return validateForm()">
                         <div class="mt-5">
                             <div class="row justify-content-center">
                                 <div>
@@ -65,8 +65,8 @@
                                     </div>
                                     <br>
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="mail"  name="tel">
-                                        <label for="mail">Téléphone</label>
+                                        <input type="tel" class="form-control" id="tel" placeholder="Téléphone" name="tel">
+                                        <label for="tel">Téléphone</label>
                                     </div>
                                 </div>
                             </div>
@@ -108,6 +108,21 @@
 
     <!--FOOTER-->
     <?php include('/Applications/MAMP/htdocs/gites_locavores/header-footer/footer.php'); ?>
+
+    <script>
+function validateForm() {
+    var tel = document.getElementById('tel').value;
+
+    var regex = /^[0-9]{10}$/;
+
+    if (!regex.test(tel)) {
+        alert('Veuillez saisir un numéro de téléphone valide (10 chiffres).');
+        return false; 
+    } else {
+    return true;
+    }
+}
+</script>
 
 
 </body>

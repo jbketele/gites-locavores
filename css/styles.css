@@ -19,7 +19,11 @@
   font-weight: 400;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: 'Titillium Web', sans-serif;
   font-weight: 600;
   /* Utilise la variante semi-gras pour les titres h1 */
@@ -32,25 +36,13 @@ h1 {
 .btn-success,
 label,
 li,
+p,
 ::placeholder,
 input[type="submit"],
 .card-header {
   font-family: 'Titillium Web', sans-serif;
   font-weight: 400;
   /* Utilise la variante régulière pour les paragraphes */
-}
-
-h2,
-h3,
-h4,
-h5 {
-  font-family: 'Titillium Web', sans-serif;
-  font-weight: 600;
-}
-
-p {
-  font-family: 'Titillium Web', sans-serif;
-  font-weight: 200;
 }
 
 .txt-gite {
@@ -249,7 +241,7 @@ p {
 }
 
 main {
-  background-image: url(views/img/fond-nature.png);
+  background-image: url(../views/img/fond-nature.png);
 }
 
 .sous-nav {
@@ -263,12 +255,13 @@ main {
 }
 
 .top {
-  background-image: url(views/img/couv_gl.png);
+  background-image: url(../views/img/couv_gl.png);
   background-size: cover;
 }
 
 .texte-couv {
   font-family: 'Titillium';
+  font-style: italic;
   margin-top: 2rem;
 }
 
@@ -363,6 +356,8 @@ h3 {
 #idea {
   border: none;
   background: none;
+  margin: 0;
+  width: 100%;
 }
 
 .cards-blog {
@@ -465,7 +460,7 @@ input[type="submit"] {
 
 
 #contact {
-  background-image: url(views/img/sunny-day-field.jpg);
+  background-image: url(../views/img/sunny-day-field.jpg);
   background-position: center;
   background-size: 100vw;
   background-repeat: no-repeat;
@@ -499,12 +494,6 @@ footer {
 #gite_card {
   background-color: #198754;
 }
-
-#idea {
-  margin: 0%;
-}
-
-
 
 .map path {
   fill: #198754;

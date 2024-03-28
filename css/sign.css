@@ -13,7 +13,7 @@ select {
 }
 
 #connect {
-    background-image: url(views/img/sunny-day-field.jpg);
+    background-image: url(../views/img/sunny-day-field.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -26,7 +26,7 @@ select {
         gap: 45%;
         padding-left: 15%;
         background-size: 100vw;
-        background-image: url(views/img/sunny-day-field.jpg);
+        background-image: url(../views/img/sunny-day-field.jpg);
         background-position: center;
         background-repeat: no-repeat;
     }
@@ -39,7 +39,7 @@ select {
         gap: 20%;
         padding: 10%;
         background-size: 100vw 110vh;
-        background-image: url(views/img/sunny-day-field.jpg);
+        background-image: url(../views/img/sunny-day-field.jpg);
         background-position: center;
         background-repeat: no-repeat;
     }

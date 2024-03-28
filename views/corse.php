@@ -21,7 +21,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
-    <link rel="stylesheet" type="text/css" href="../hdf.css">
+    <link rel="stylesheet" type="text/css" href="../css/hdf.css">
 </head>
 <body>
     <?php session_start();
@@ -48,7 +48,7 @@
                                         echo "<h4>" . $gite['Prénom'] . " " . $gite['Nom'] . "</h4>";
                                         echo "<p>" . $gite['localisation'] . "</p>";
                                         echo "<p>" . $gite['capacite'] . " personnes</p>";
-                                        echo "<p>" . $gite['tarifs'] . " €</p>";
+                                        echo "<p>" . $gite['tarifs'] . " €/nuit</p>";
                                         echo "<p class='card-text descriptif'>" . $gite['descriptif'] . "</p>";
                                         echo "<div class='d-flex justify-content-end'><a href='details_gite.php?id=" . $gite['Id_Gîtes'] . "' class='text-success btn btn-light'>Lire plus</a></div>";
                                     echo"</div>";

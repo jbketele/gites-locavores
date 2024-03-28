@@ -33,6 +33,7 @@ function addUser() {
     // Ajout de l'utilisateur
     $user->addUser();
 
+    
     // Redirection vers la page de connexion
     header("Location: ../views/connexion.php");
     exit;

@@ -69,7 +69,7 @@ require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php
     </main>
 
     <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/footer.php'); ?>
-    <script src="../article.js"></script>
+    <script src="../js/article.js"></script>
 
 </body>
 
