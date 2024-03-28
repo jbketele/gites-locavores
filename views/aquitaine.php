@@ -41,18 +41,18 @@
                 <div class="container col-md-10 cards">
                 <?php foreach ($gitesNAquitaine as $gite) : 
                         echo "<div class='card mb-3' id='gitesCard'>";
-                                    echo "<div class='card-header'>Producteur</div>";
-                                    echo "<div class='card-body text-white bg-success'>";
-                                        echo "<img src='" . $gite['image_path'] ."'>";
-                                        echo "<h3 class='card-title'>" . $gite['nom_gite'] . "</h3>";
-                                        echo "<h4>" . $gite['Prénom'] . " " . $gite['Nom'] . "</h4>";
-                                        echo "<p>" . $gite['localisation'] . "</p>";
-                                        echo "<p>" . $gite['capacite'] . " personnes</p>";
-                                        echo "<p>" . $gite['tarifs'] . " €/nuit</p>";
-                                        echo "<p class='card-text descriptif'>" . $gite['descriptif'] . "</p>";
-                                        echo "<div class='d-flex justify-content-end'><a href='details_gite.php?id=" . $gite['Id_Gîtes'] . "' class='text-success btn btn-light'>Lire plus</a></div>";
-                                    echo"</div>";
-                        echo "</div>";
+                        echo "<div class='card-header'>Producteur</div>";
+                        echo "<div class='card-body text-white bg-success'>";
+                            echo "<img src='" . $gite['image_path'] ."'>";
+                            echo "<h3 class='card-title'>" . $gite['nom_gite'] . "</h3>";
+                            echo "<h4>" . $gite['Prénom'] . " " . $gite['Nom'] . "</h4>";
+                            echo "<p>" . $gite['localisation'] . "</p>";
+                            echo "<p>" . $gite['capacite'] . " personnes</p>";
+                            echo "<p class='card-text descriptif'>" . $gite['descriptif'] . "</p>";
+                            echo "<h5>" . $gite['tarifs'] . " €/nuit</h5>";                                        
+                            echo "<div class='d-flex justify-content-end'><a href='details_gite.php?id=" . $gite['Id_Gîtes'] . "' class='text-success btn btn-light'>Lire plus</a></div>";
+                        echo"</div>";
+            echo "</div>";
                     endforeach; ?>
                 </div>
             </div>
