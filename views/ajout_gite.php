@@ -53,6 +53,7 @@ require_once '../models/user.php';
                             <select name="region" id="user">
                                 <option value="">Région</option>
                                 <option value="Auvergne-Rhônes-Alpes">Auvergne-Rhônes-Alpes</option>
+                                <option value="Bourgogne-Franche-Comté">Bourgogne-Franche-Comté</option>
                                 <option value="Bretagne">Bretagne</option>
                                 <option value="Centre-Val de Loire">Centre-Val de Loire</option>
                                 <option value="Corse">Corse</option>

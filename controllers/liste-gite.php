@@ -15,6 +15,6 @@ $gitesNAquitaine = Gites::getGitesByRegionImage('Nouvelle-Aquitaine');
 $gitesCorse = Gites::getGitesByRegionImage('Corse');
 $gitesCvdl = Gites::getGitesByRegionImage('Centre-Val de Loire');
 $gitesBfc = Gites::getGitesByRegionImage('Bourgogne-Franche-Comté');
-$gitesAra = Gites::getGitesByRegionImage('Auvergne-Rhône-Alpes');
+$gitesAra = Gites::getGitesByRegionImage('Auvergne-Rhônes-Alpes');
 
 ?>

@@ -62,7 +62,7 @@
     <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/footer.php'); ?>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="../paca.js"></script>
+<script src="../grand-est.js"></script>
 </body>
 </html>
 
