@@ -20,8 +20,8 @@
     <link rel="icon" type="image/x-icon" href="img/logo gites detoure.png">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" type="text/css" href="../styles.css">
-    <link rel="stylesheet" type="text/css" href="../hdf.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/hdf.css">
 </head>
 <body>
     <?php session_start();
@@ -62,7 +62,7 @@
     <?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/footer.php'); ?>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="../auvergne.js"></script>
+<script src="../js/auvergne.js"></script>
 </body>
 </html>
 
