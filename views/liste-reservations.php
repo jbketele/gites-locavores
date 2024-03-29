@@ -32,7 +32,7 @@
         </thead>
         <tbody>
             <?php foreach ($reservations as $reservation): 
-                $prixTotalFormate = number_format($reservation['Prix_Total'], 0, ',', ' ');
+                $prixTotalFormate = number_format($reservation['prix_total'], 0, ',', ' ');
             ?>
                 
                 <tr>
