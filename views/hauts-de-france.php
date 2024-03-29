@@ -42,7 +42,7 @@
                 <?php foreach ($gitesHdf as $gite) : 
                         echo "<div class='card mb-3' id='gitesCard'>";
                         echo "<div class='card-header'>Producteur</div>";
-                        echo "<div class='card-body text-white bg-success'>";
+                        echo "<div class='card-body text-white gite-card'>";
                             echo "<img src='" . $gite['image_path'] ."'>";
                             echo "<h3 class='card-title'>" . $gite['nom_gite'] . "</h3>";
                             echo "<h4>" . $gite['Prénom'] . " " . $gite['Nom'] . "</h4>";

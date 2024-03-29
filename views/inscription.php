@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-success btn-lg mt-5 mb-5" type="submit" name="envoi">Valider</button>
+                            <input class="btn btn-success btn-lg mt-5 mb-5" type="submit" name="envoi" value="Valider">
                         </div>
                     </form>
 

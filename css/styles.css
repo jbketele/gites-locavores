@@ -230,11 +230,6 @@ input[type="submit"],
   flex-wrap: wrap;
 }
 
-
-
-
-
-
 .menu {
   padding-top: 1rem;
   padding-right: 0%;
@@ -332,21 +327,8 @@ h3 {
   justify-content: center;
 }
 
-.carousel-control-prev-icon {
-  background-color: black;
-}
-
-.carousel-control-next-icon {
-  background-color: black;
-}
-
 .portrait {
   margin-left: 40%;
-}
-
-.filter {
-  margin: 0%;
-  background-color: #E08F3E;
 }
 
 #input_q {
@@ -451,13 +433,11 @@ input[type="submit"] {
   display: block;
   margin-top: 10px;
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #45a049;
   color: white;
   border: none;
   cursor: pointer;
 }
-
-
 
 #contact {
   background-image: url(../views/img/sunny-day-field.jpg);
@@ -471,8 +451,6 @@ footer {
   position: relative;
   bottom: 0;
 }
-
-
 
 /* Fin de la Page contact */
 
@@ -491,8 +469,8 @@ footer {
   /* Modifiez la valeur selon vos préférences */
 }
 
-#gite_card {
-  background-color: #198754;
+.gite-card {
+  background-color: #45a049;
 }
 
 .map path {
@@ -502,8 +480,6 @@ footer {
   transition: fill 0.3s;
   margin-right: 20px;
 }
-
-
 
 .map_regions {
   width: 50%;
