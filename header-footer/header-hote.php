@@ -65,6 +65,9 @@
                                     <a class="nav-link" href="liste-articles-hote.php">Mes Articles</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" href="votre-compte.php">Mon Compte</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
                             </ul>

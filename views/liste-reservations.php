@@ -48,5 +48,8 @@
         </tbody>
     </table>
     </div>
+    <?php
+    require_once '../header-footer/footer.php';
+    ?>
 </body>
 </html>

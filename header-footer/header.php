@@ -74,6 +74,9 @@ require_once '../models/user.php';
                                         echo "<li class='nav-item'>
                                                 <a class='nav-link' href='liste-articles-hote.php'>Mes Articles</a>
                                                 </li>";
+                                        echo "<li class='nav-item'>
+                                                <a class='nav-link' href='votre-compte.php'>Mon compte</a>
+                                                </li>";
                                     } elseif ($user_type = 'visiteur') {
                                         echo "<li class='nav-item dropdown'>
                                         <a class='nav-link dropdown-toggle' href='' id='navbarDropdown' role='button' 
