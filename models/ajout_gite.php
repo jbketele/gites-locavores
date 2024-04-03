@@ -332,6 +332,12 @@ class Gites {
             $statementDeleteImages = $connexion->prepare($queryDeleteImages);
             $statementDeleteImages->bindParam(':gite_id', $giteId);
             $statementDeleteImages->execute();
+
+            // Supprimer les réservations associées au gîte
+            $queryDeleteReservations = "DELETE FROM Réservation WHERE Id_Gîtes = :gite_id";
+            $statementDeleteReservations = $connexion->prepare($queryDeleteReservations);
+            $statementDeleteReservations->bindParam(':gite_id', $giteId);
+            $statementDeleteReservations->execute();
     
             // Supprimer le gîte de la base de données
             $queryDeleteGite = "DELETE FROM Gîtes WHERE Id_Gîtes = :gite_id";
