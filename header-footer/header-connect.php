@@ -25,7 +25,7 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                        Nos Gites
+                                        Nos gîtes
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="auvergne.php">Auvergne-Rhônes-Alpes</a></li>
@@ -62,7 +62,7 @@
                                         <a class='nav-link dropdown-toggle' href='' id='navbarDropdown' role='button' 
                                         data-bs-toggle='dropdown' aria-expanded='false'>Mon compte</a>
                                         <ul class='dropdown-menu' araia-labelledby='navbarDropdown'>
-                                        <li><a class='dropdown-item' href='liste-reservations.php'>Mes Réseravtion</a></li>
+                                        <li><a class='dropdown-item' href='liste-reservations.php'>Mes réseravtion</a></li>
                                         <li><a class='dropdown-item' href='votre-compte.php'>Mes infos</a></li>
                                         </ul>
                                 <li class="nav-item">

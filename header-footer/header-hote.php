@@ -59,13 +59,13 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="liste-gite-hote.php">Mes Gîtes</a>
+                                    <a class="nav-link" href="liste-gite-hote.php">Mes gîtes</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="liste-articles-hote.php">Mes Articles</a>
+                                    <a class="nav-link" href="liste-articles-hote.php">Mes articles</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="votre-compte.php">Mon Compte</a>
+                                    <a class="nav-link" href="votre-compte.php">Mon compte</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contact</a>
@@ -74,8 +74,8 @@
                         </div>
 
                     </div>
-                    <div><a href="ajout_gite.php" class="add-gite btn">Ajouter un Gîte</a></div>
-                    <div><a href="ajout_article.php" class="add-gite btn">Ajouter un Article</a></div>
+                    <div><a href="ajout_gite.php" class="add-gite btn">Ajouter un gîte</a></div>
+                    <div><a href="ajout_article.php" class="add-gite btn">Ajouter un article</a></div>
                     <form action="../controllers/logout.php" method="POST">
                         <button type="submit" class="btn sign">Déconnexion</button>
                     </form>

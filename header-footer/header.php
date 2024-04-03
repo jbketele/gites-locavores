@@ -28,7 +28,7 @@ require_once '../models/user.php';
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                        Nos Gites
+                                        Nos gîtes
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="auvergne.php">Auvergne-Rhônes-Alpes</a></li>
@@ -69,10 +69,10 @@ require_once '../models/user.php';
                                     $user_type = Utilisateur::getUserTypeById($user_id);
                                     if ($user_type === 'hôte') {
                                         echo "<li class='nav-item'>
-                                                <a class='nav-link' href='liste-gite-hote.php'>Mes Gîtes</a>
+                                                <a class='nav-link' href='liste-gite-hote.php'>Mes gîtes</a>
                                                 </li>";
                                         echo "<li class='nav-item'>
-                                                <a class='nav-link' href='liste-articles-hote.php'>Mes Articles</a>
+                                                <a class='nav-link' href='liste-articles-hote.php'>Mes articles</a>
                                                 </li>";
                                         echo "<li class='nav-item'>
                                                 <a class='nav-link' href='votre-compte.php'>Mon compte</a>
@@ -82,7 +82,7 @@ require_once '../models/user.php';
                                         <a class='nav-link dropdown-toggle' href='' id='navbarDropdown' role='button' 
                                         data-bs-toggle='dropdown' aria-expanded='false'>Mon compte</a>
                                         <ul class='dropdown-menu' araia-labelledby='navbarDropdown'>
-                                        <li><a class='dropdown-item' href='liste-reservations.php'>Mes Réseravtion</a></li>
+                                        <li><a class='dropdown-item' href='liste-reservations.php'>Mes réseravtion</a></li>
                                         <li><a class='dropdown-item' href='votre-compte.php'>Mes infos</a></li>
                                         </ul>";
                                     }
@@ -102,8 +102,8 @@ require_once '../models/user.php';
                         $user_id = $_SESSION['user_id'];
                         $user_type = Utilisateur::getUserTypeById($user_id);
                         if ($user_type === 'hôte') {
-                            echo "<div><a href='ajout_article.php' class='add-gite btn'>Ajouter un Article</a></div>";
-                            echo "<div><a href='ajout_gite.php' class='add-gite btn'>Ajouter un Gîte</a></div>";
+                            echo "<div><a href='ajout_article.php' class='add-gite btn'>Ajouter un article</a></div>";
+                            echo "<div><a href='ajout_gite.php' class='add-gite btn'>Ajouter un gîte</a></div>";
                             echo "<form action='../controllers/logout.php' method='POST'>
                             <button type='submit' class='sign btn'>Déconnexion</button>";
                         } elseif ($user_type = 'visiteur') {
