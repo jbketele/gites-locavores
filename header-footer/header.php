@@ -4,7 +4,7 @@ require_once '../models/user.php';
 ?>
         <div>
             <div class="logo-titre">
-                <a href="index.php" class="logo"><img src="img/logo_gites_locavores.png" class="container "
+                <a href="index.php" class="logo"><img src="img/logo-gl.png" class="container "
                         alt="logo_gites_locavores"></a>
                 <h1 class="welcome">Bienvenue</h1>
             </div>

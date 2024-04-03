@@ -24,7 +24,7 @@
         <div class="bg-dark text-white">
 
             <div style="margin-left: 2rem; height: 50px;">
-                <a href="index.php"><img src="img/logo gites detoure.png" class="container col-md-2 row logo" alt="logo_gites_locavores"
+                <a href="index.php"><img src="img/logo-gl-sans-titre.png" class="container col-md-2 row logo" alt="logo_gites_locavores"
                     style="width: 150px; float: left;"></a>
             </div>
             <div class="line container row offset-2 col-md-7">
