@@ -315,17 +315,35 @@ class Gites {
         $connexion = Database::getInstance();
     
         try {
-            // Requête SQL pour supprimer le gîte de la base de données
-            $query = "DELETE FROM Gîtes WHERE Id_Gîtes = :id_gite";
-            $statement = $connexion->prepare($query);
-            $statement->bindParam(':id_gite', $giteId);
-            $statement->execute();
+            // Récupérer les chemins des images liées au gîte
+            $queryImages = "SELECT image_path FROM Images WHERE Id_Gîtes = :gite_id";
+            $statementImages = $connexion->prepare($queryImages);
+            $statementImages->bindParam(':gite_id', $giteId);
+            $statementImages->execute();
+            $images = $statementImages->fetchAll(PDO::FETCH_COLUMN);
     
-            return true; // Succès de la suppression
+            // Supprimer les images du système de fichiers
+            foreach ($images as $image) {
+                unlink($image); // Supprimer l'image du système de fichiers
+            }
+    
+            // Supprimer les enregistrements d'images de la base de données
+            $queryDeleteImages = "DELETE FROM Images WHERE Id_Gîtes = :gite_id";
+            $statementDeleteImages = $connexion->prepare($queryDeleteImages);
+            $statementDeleteImages->bindParam(':gite_id', $giteId);
+            $statementDeleteImages->execute();
+    
+            // Supprimer le gîte de la base de données
+            $queryDeleteGite = "DELETE FROM Gîtes WHERE Id_Gîtes = :gite_id";
+            $statementDeleteGite = $connexion->prepare($queryDeleteGite);
+            $statementDeleteGite->bindParam(':gite_id', $giteId);
+            $statementDeleteGite->execute();
+    
+            return true; // Indiquer que la suppression s'est bien passée
         } catch (PDOException $e) {
             // Gérer les erreurs de base de données
-            echo "Erreur lors de la suppression du gîte: " . $e->getMessage();
-            return false; // Échec de la suppression
+            echo "Erreur lors de la suppression du gîte : " . $e->getMessage();
+            return false;
         }
     }
 
