@@ -102,8 +102,8 @@ require_once '../models/user.php';
                         $user_id = $_SESSION['user_id'];
                         $user_type = Utilisateur::getUserTypeById($user_id);
                         if ($user_type === 'hôte') {
-                            echo "<div><a href='ajout_article.php' class='add-gite btn'>Ajouter un article</a></div>";
                             echo "<div><a href='ajout_gite.php' class='add-gite btn'>Ajouter un gîte</a></div>";
+                            echo "<div><a href='ajout_article.php' class='add-gite btn'>Ajouter un article</a></div>";
                             echo "<form action='../controllers/logout.php' method='POST'>
                             <button type='submit' class='sign btn'>Déconnexion</button>";
                         } elseif ($user_type = 'visiteur') {
