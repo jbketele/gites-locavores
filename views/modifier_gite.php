@@ -35,20 +35,7 @@
             <label for="nom_gite">Nom du Gîte:</label>
             <input type="text" id="nom_gite" name="nom_gite" value="<?php echo $giteDetails['nom_gite']; ?>"><br>
 
-            <label>Images actuelles:</label>
-            <div class="gallery">
-                <?php foreach ($giteDetails['images'] as $image): ?>
-                    <img src="<?php echo $image; ?>" alt="Image du gîte">
-                    <br>    
-                    <?php $imageName = basename($image); ?>
-                    <input type="text" value="<?php echo $imageName; ?>" readonly>
-
-                <?php endforeach; ?>
-            </div>
-
-            <label for="images">Nouvelles Images:</label>
-            <input type="file" id="images" name="images[]" multiple accept="image/*"><br>
-
+           
             <label for="region">Région:</label>
             <input type="text" id="region" name="region" value="<?php echo $giteDetails['region']; ?>"><br>
 
@@ -63,6 +50,20 @@
 
             <label for="tarifs">Tarifs:</label>
             <input type="text" id="tarifs" name="tarifs" value="<?php echo $giteDetails['tarifs']; ?>"><br>
+
+            <label>Images actuelles:</label>
+            <div class="gallery">
+                <?php foreach ($giteDetails['images'] as $image): ?>
+                    <img src="<?php echo $image; ?>" alt="Image du gîte">
+                    <br>    
+                    <?php $imageName = basename($image); ?>
+                    <input type="text" value="<?php echo $imageName; ?>" readonly>
+
+                <?php endforeach; ?>
+            </div>
+
+            <label for="images">Nouvelles Images:</label>
+            <input type="file" id="images" name="images[]" multiple accept="image/*"><br>
 
             <input type="submit" value="Enregistrer les modifications">
         </form>
