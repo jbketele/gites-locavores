@@ -25,7 +25,9 @@ require_once '../header-footer/header.php';
     $prixTotal = $_GET['prixTotal'];
 
     $prixTotalFormate = number_format($prixTotal, 0, ',', ' ');
-
+?>
+<div class="container">
+<?php
     // Afficher les détails de la réservation
     echo "<h1>Confirmation de Réservation</h1>";
     echo "<p>Merci pour votre réservation!</p>";
@@ -45,5 +47,8 @@ require_once '../header-footer/header.php';
     echo "Erreur : Les détails de la réservation sont manquants.";
 }
 ?>
+</div>
+<?php require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/footer.php'); ?>
+
 </body>
 </html>

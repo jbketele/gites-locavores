@@ -108,11 +108,28 @@ input[type="submit"],
   }
 
   .map {
+    display: flex;
     width: 100vw;
+    justify-content: center;
   }
 
   .map path:hover {
     fill: #E08F3E;
+  }
+
+  .metropole {
+    width: 75vw;
+  }
+
+  .outre-mer {
+    padding-top: 5vh;
+    display: grid;
+  }
+
+  .guadeloupe,
+  .martinique,
+  .reunion {
+    width: 10vw;
   }
 
   img {
@@ -190,6 +207,26 @@ input[type="submit"],
 
   .map path:hover {
     fill: #E08F3E;
+  }
+
+  .map {
+    display: flex;
+    width: 50vw;
+  }
+
+  .metropole {
+    width: 100vw;
+  }
+
+  .outre-mer {
+    padding-top: 25vh;
+  }
+
+  .guadeloupe,
+  .martinique,
+  .reunion {
+    width: 5vw;
+    margin-top: 1rem;
   }
 
   img {
@@ -472,6 +509,9 @@ footer {
 .gite-card {
   background-color: #198754;
 }
+
+
+
 
 .map path {
   fill: #198754;

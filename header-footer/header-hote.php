@@ -41,6 +41,9 @@
                                     <li><a class="dropdown-item" href="occitanie.php">Occitanie</a></li>
                                     <li><a class="dropdown-item" href="pays-loire.php">Pays de la Loire</a></li>
                                     <li><a class="dropdown-item" href="paca.php">PACA</a></li>
+                                    <li><a class="dropdown-item" href="guadeloupe.php">Guadeloupe</a></li>
+                                    <li><a class="dropdown-item" href="martinique.php">Martinique</a></li>
+                                    <li><a class="dropdown-item" href="reunion.php">Réunion</a></li>
                                     <li><a class="dropdown-item" href="regions.php">Tous</a></li>
                                     </ul>
                                 </li>
