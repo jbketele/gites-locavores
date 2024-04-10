@@ -12,10 +12,10 @@
         <div class="bg-light border-light shadow py-3">
             <div class=" follow">
                 <p class="follow container text-center" style=font-size:2rem;>Suivez-nous :
-                    <i class="bi bi-facebook" style="font-size: 2rem;"></i>
-                    <i class="bi bi-instagram" style="font-size: 2rem;"></i>
-                    <i class="bi bi-youtube" style="font-size: 2rem;"></i>
-                    <i class="bi bi-linkedin" style="font-size: 2rem;"></i>
+                    <a href="https://www.facebook.com" target=blank><i class="bi bi-facebook" style="font-size: 2rem; color: darkblue;"></i></a>
+                    <a href="https://www.instagram.com" target=blank><i class="bi bi-instagram" style="font-size: 2rem; color: blueviolet"></i></a>
+                    <a href="https://www.youtube.com" target=blank><i class="bi bi-youtube" style="font-size: 2rem; color : red"></i></a>
+                    <a href="https://www.linkedin.com" target=blank><i class="bi bi-linkedin" style="font-size: 2rem; color: blue"></i></a>
 
                 </p>
             </div>
@@ -23,9 +23,8 @@
 
         <div class="bg-dark text-white">
 
-            <div style="margin-left: 2rem; height: 50px;">
-                <a href="index.php"><img src="img/logo-gl-sans-titre.png" class="container col-md-2 row logo" alt="logo_gites_locavores"
-                    style="width: 150px; float: left;"></a>
+            <div class="logo-footer">
+                <a href="index.php"><img src="img/logo-gl-sans-titre.png" class="container col-md-2 row logo" alt="logo_gites_locavores"></a>
             </div>
             <div class="line container row offset-2 col-md-7">
                 <hr class="border mt-3 border-white">
@@ -33,10 +32,10 @@
 
 
 
-            <div class="container d-flex flex-wrap row-cols-md-3">
+            <div class="txt-footer container d-flex flex-wrap row-cols-md-3">
                 <div class="container row ms-2 col-md-4">
-                    <p class="text-center"><a href="regions.php">RECHERCHE DE GÎTES</a></p>
-                    <div class="d-flex p-0">
+                    <p class="rech-gites-footer"><a href="regions.php">RECHERCHE DE GÎTES</a></p>
+                    <div class=" p-0 regions-footer">
                         <ul>
                         <li><a  href="auvergne.php">Auvergne-Rhônes-Alpes</a></li>
                         <li><a href="bourgogne.php">Bourgogne-Franche-Comté</a></li>
@@ -56,7 +55,7 @@
                         </ul>
                    </div>
                 </div>
-                <div class="container row ms-5 col-md-2">
+                <div class="container row ms-2 col-md-2">
                     <p><a href="idees.php">INSPIREZ-VOUS</a></p>
                     <ul>
                         <li><a href="event.php">Évènements</a></li>
@@ -65,7 +64,7 @@
                         <li><a href="produits-saison.php">Produits de saison</a></li>
                     </ul>
                 </div>
-                <div class="container row ms-5 col-md-2">
+                <div class="container row ms-2 col-md-2">
                     <p><a href="presentation.php">QUI SOMMES-NOUS</a></p>
                     <p><a href="contact.php">CONTACTEZ-NOUS</a></p>
                     <p><a href="cgv.php">CGV</a></p>

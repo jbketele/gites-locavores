@@ -80,6 +80,33 @@ input[type="submit"],
     overflow-y: auto;
   }
 
+  .logo-footer {
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+  }
+
+  .logo-footer img {
+    width: 70px;
+  }
+
+  .regions-footer {
+    display: none;
+  }
+
+  .rech-gites-footer {
+    width: auto;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .txt-footer {
+    margin-top: 3rem;
+  }
+
   .top {
     height: 35vh;
     background-position: center;
@@ -96,7 +123,8 @@ input[type="submit"],
   }
 
   .line {
-    margin: 0%;
+    margin-left: 0%;
+    margin-top: 1rem;
   }
 
   .follow {
@@ -168,11 +196,6 @@ input[type="submit"],
     width: 9vw;
   }
 
-  .welcome {
-    font-family: 'Titillium Web';
-    font-weight: 600;
-  }
-
   .menu {
     height: 17vh;
   }
@@ -180,6 +203,29 @@ input[type="submit"],
   .dropdown-menu {
     max-height: 200px;
     overflow-y: auto;
+  }
+
+  .logo-footer {
+    margin-left: 2rem;
+    height: 50px;
+  }
+
+  .logo-footer img {
+    width: 150px;
+    float: left;
+  }
+
+  .regions-footer {
+    display: flex;
+  }
+
+  .rech-gites-footer {
+    text-align: center;
+  }
+
+  .txt-footer {
+    margin-left: 7rem;
+    width: auto;
   }
 
   .top {
