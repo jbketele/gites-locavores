@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'Titillium Web';
-  src: url(Titillium_Web/TitilliumWeb-SemiBold.ttf),
-    url(Titillium_Web/TitilliumWeb-Regular.ttf);
+  src: url(../Titillium_Web/TitilliumWeb-SemiBold.ttf),
+    url(../Titillium_Web/TitilliumWeb-Regular.ttf);
 }
 
 @font-face {
   font-family: 'Titillium';
-  src: url(Titillium_Web/TitilliumWeb-Italic.ttf),
+  src: url(../Titillium_Web/TitilliumWeb-Italic.ttf),
 }
 
 .welcome {
