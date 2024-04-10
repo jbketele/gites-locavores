@@ -75,9 +75,9 @@ input[type="submit"],
     width: 25vw;
   }
 
-  .welcome {
-    font-family: 'Titillium Web';
-    font-weight: 400;
+  .dropdown-menu {
+    max-height: 100px;
+    overflow-y: auto;
   }
 
   .top {
@@ -175,6 +175,11 @@ input[type="submit"],
 
   .menu {
     height: 17vh;
+  }
+
+  .dropdown-menu {
+    max-height: 200px;
+    overflow-y: auto;
   }
 
   .top {
