@@ -37,7 +37,7 @@
                             <div class="row justify-content-center">
                                 <div>
                                     <div class="form-floating">
-                                        <select name="type" id="user">
+                                        <select name="type" id="user" required>
                                             <option value="">Type de compte</option>
                                             <option value="visiteur">Visiteur</option>
                                             <option value="hôte">Hôte</option>
@@ -45,22 +45,22 @@
                                     </div>
                                     <br>
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" placeholder="Nom" id="lastname" name="lastname">
+                                        <input type="text" class="form-control" placeholder="Nom" id="lastname" name="lastname" required>
                                         <label for="lastname">Nom</label>
                                     </div>
                                     <br>
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" placeholder="Prénom" id="firstname" name="firstname">
+                                        <input type="text" class="form-control" placeholder="Prénom" id="firstname" name="firstname" required>
                                         <label for="firstname">Prénom</label>
                                     </div>
                                     <br>
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="mail" placeholder="name@example.com" name="email">
+                                        <input type="email" class="form-control" id="mail" placeholder="name@example.com" name="email" required>
                                         <label for="mail">Email</label>
                                     </div>
                                     <br>
                                     <div class="form-floating">
-                                        <input type="password" class="form-control" id="mdp" placeholder="Mot de passe" name="password">
+                                        <input type="password" class="form-control" id="mdp" placeholder="Mot de passe" name="password" required>
                                         <label for="mdp">Mot de passe</label>
                                     </div>
                                     <br>
