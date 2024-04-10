@@ -36,7 +36,7 @@
                         <div class="mt-3">
                             <div class="row justify-content-center">
                                 <div>
-                                    <label class="type-compte" for="user">Type de compte<span class="required">*</span></label>
+                                    <label class="type-compte" for="user">Type de compte</label>
                                     <div class="form-floating">
                                         <select name="type" id="user" required>
                                             <option value="visiteur">Visiteur</option>
