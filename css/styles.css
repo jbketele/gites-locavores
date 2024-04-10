@@ -49,6 +49,12 @@ input[type="submit"],
   width: 75%;
 }
 
+.required {
+  color: red;
+}
+
+
+
 /* Page accueil */
 @media screen {
 
@@ -80,6 +86,11 @@ input[type="submit"],
   .texte-couv {
     letter-spacing: 5px;
     font-size: xx-large;
+  }
+
+  .type-compte {
+    padding: 0.5rem;
+    color: white;
   }
 
   .line {
@@ -164,6 +175,11 @@ input[type="submit"],
   .texte-couv {
     letter-spacing: 30px;
     font-size: xxx-large;
+  }
+
+  .type-compte {
+    padding: 0.5rem;
+    color: black;
   }
 
   .cards-blog {

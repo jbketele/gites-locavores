@@ -33,12 +33,12 @@
                 <div>
                     <h3 class="mt-3 p-0">Inscription</h3>
                     <form action="../controllers/user.php" method="POST" onsubmit="return validateForm()">
-                        <div class="mt-5">
+                        <div class="mt-3">
                             <div class="row justify-content-center">
                                 <div>
+                                    <label class="type-compte" for="user">Type de compte<span class="required">*</span></label>
                                     <div class="form-floating">
                                         <select name="type" id="user" required>
-                                            <option value="">Type de compte</option>
                                             <option value="visiteur">Visiteur</option>
                                             <option value="hôte">Hôte</option>
                                         </select>
@@ -46,31 +46,31 @@
                                     <br>
                                     <div class="form-floating">
                                         <input type="text" class="form-control" placeholder="Nom" id="lastname" name="lastname" required>
-                                        <label for="lastname">Nom</label>
+                                        <label for="lastname">Nom<span class="required">*</span></label>
                                     </div>
                                     <br>
                                     <div class="form-floating">
                                         <input type="text" class="form-control" placeholder="Prénom" id="firstname" name="firstname" required>
-                                        <label for="firstname">Prénom</label>
+                                        <label for="firstname">Prénom<span class="required">*</span></label>
                                     </div>
                                     <br>
                                     <div class="form-floating">
                                         <input type="email" class="form-control" id="mail" placeholder="name@example.com" name="email" required>
-                                        <label for="mail">Email</label>
+                                        <label for="mail">Email<span class="required">*</span></label>
                                     </div>
                                     <br>
                                     <div class="form-floating">
                                         <input type="password" class="form-control" id="mdp" placeholder="Mot de passe" name="password" required>
-                                        <label for="mdp">Mot de passe</label>
+                                        <label for="mdp">Mot de passe<span class="required">*</span></label>
                                     </div>
                                     <br>
                                     <div class="form-floating">
                                         <input type="tel" class="form-control" id="tel" placeholder="Téléphone" name="tel">
-                                        <label for="tel">Téléphone</label>
+                                        <label for="tel">Téléphone<span class="required">*</span></label>
                                     </div>
                                 </div>
                             </div>
-                            <input class="btn btn-success btn-lg mt-5 mb-5" type="submit" name="envoi" value="Valider">
+                            <input class="btn btn-success btn-lg mb-5" type="submit" name="envoi" value="Valider">
                         </div>
                     </form>
 
