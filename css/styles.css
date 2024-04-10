@@ -9,11 +9,6 @@
   src: url(../Titillium_Web/TitilliumWeb-Italic.ttf),
 }
 
-.welcome {
-
-  color: #0b5909;
-}
-
 .nav-item {
   font-family: 'Titillium Web';
   font-weight: 400;
@@ -53,7 +48,10 @@ input[type="submit"],
   color: red;
 }
 
-
+.menu .btn {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 
 /* Page accueil */
 @media screen {
@@ -69,6 +67,10 @@ input[type="submit"],
 
 /*MOBILE*/
 @media (max-width:767px) {
+  .logo-header {
+    width: 9%;
+  }
+
   .logo {
     width: 25vw;
   }
@@ -158,13 +160,21 @@ input[type="submit"],
 
 /*DESKTOP*/
 @media screen and (min-width:767px) {
+  .logo-header {
+    width: 8%;
+  }
+
   .logo {
-    width: 10vw;
+    width: 9vw;
   }
 
   .welcome {
     font-family: 'Titillium Web';
     font-weight: 600;
+  }
+
+  .menu {
+    height: 17vh;
   }
 
   .top {
@@ -283,9 +293,10 @@ input[type="submit"],
   flex-wrap: wrap;
 }
 
-.menu {
-  padding-top: 1rem;
-  padding-right: 0%;
+
+
+.navbar {
+  height: inherit;
 }
 
 main {
@@ -312,7 +323,6 @@ main {
   font-style: italic;
   margin-top: 2rem;
 }
-
 
 .place-products {
   align-items: center;
@@ -415,6 +425,7 @@ h3 {
 
 .list-gites {
   padding-bottom: 3rem;
+  padding-top: 1rem;
 }
 
 .sign {
@@ -452,8 +463,6 @@ h3 {
 .nav2 {
   background-color: darkgray;
 }
-
-
 
 .texte-description {
   padding: 1rem;
@@ -525,9 +534,6 @@ footer {
 .gite-card {
   background-color: #198754;
 }
-
-
-
 
 .map path {
   fill: #198754;

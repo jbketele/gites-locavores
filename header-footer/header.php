@@ -3,15 +3,12 @@
 require_once '../models/user.php';
 ?>
         <div>
-            <div class="logo-titre">
-                <a href="index.php" class="logo"><img src="img/logo-gl.png" class="container "
-                        alt="logo_gites_locavores"></a>
-                <h1 class="welcome">Bienvenue</h1>
-            </div>
-
-            <div class="menu">
-                <nav class="navbar navbar-expand-md navbar-light ps-4 bg-light">
+            <div class="menu p-0">
+             
+                <nav class="navbar navbar-expand-md navbar-light bg-light">
                     <div class="container-fluid">
+                <a href="index.php"  class="logo logo-header"><img src="img/logo-gl-detoure.png" class="container "
+                        alt="logo_gites_locavores"></a>                           
                         <button class="navbar-toggler fixed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                             aria-label="Toggle navigation">
