@@ -18,7 +18,7 @@
     require_once '../models/article.php';
     $article_id = $_GET['id'];
     $article_details = Article::getArticleById($article_id);
-    echo "<h2>Modifier Gîte</h2>";
+    echo "<h2>Modifier Article</h2>";
     ?>
     <div class="ms-5">
     <form action="../controllers/modifier_article.php" method="POST">

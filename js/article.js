@@ -4,7 +4,7 @@ function truncateDescription() {
     var screenWidth = window.innerWidth;
 
     // Définir la longueur maximale de la description en fonction de la largeur de l'écran
-    var maxCharacters = screenWidth < 768 ? 50 : 300;
+    var maxCharacters = screenWidth < 768 ? 50 : 200;
 
     for (var i = 0; i < descriptionElements.length; i++) {
         var descriptionText = descriptionElements[i].textContent;
