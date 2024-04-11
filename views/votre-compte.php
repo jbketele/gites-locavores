@@ -30,5 +30,6 @@
         <!-- Ajoutez d'autres champs d'information du compte au besoin -->
     </div>
     </div>
+    <?php require_once '../header-footer/footer.php' ?>
 </body>
 </html>
