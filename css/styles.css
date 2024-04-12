@@ -9,6 +9,10 @@
   src: url(../Titillium_Web/TitilliumWeb-Italic.ttf),
 }
 
+header {
+  width: 100vw;
+}
+
 .nav-item {
   font-family: 'Titillium Web';
   font-weight: 400;

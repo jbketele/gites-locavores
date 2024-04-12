@@ -33,6 +33,7 @@ require_once '../models/user.php';
                                         Nos gîtes
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="regions.php">Tous</a></li>
                                     <li><a class="dropdown-item" href="auvergne.php">Auvergne-Rhônes-Alpes</a></li>
                                     <li><a class="dropdown-item" href="bourgogne.php">Bourgogne-Franche-Comté</a></li>
                                     <li><a class="dropdown-item" href="bretagne.php">Bretagne</a></li>
@@ -49,7 +50,6 @@ require_once '../models/user.php';
                                     <li><a class="dropdown-item" href="guadeloupe.php">Guadeloupe</a></li>
                                     <li><a class="dropdown-item" href="martinique.php">Martinique</a></li>
                                     <li><a class="dropdown-item" href="reunion.php">Réunion</a></li>
-                                    <li><a class="dropdown-item" href="regions.php">Tous</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
