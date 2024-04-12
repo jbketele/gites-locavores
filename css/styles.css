@@ -773,3 +773,11 @@ td {
 footer a {
   color: white;
 }
+
+.valeurs {
+  width: 10%;
+}
+
+.txt-valeur {
+  text-align: justify;
+}

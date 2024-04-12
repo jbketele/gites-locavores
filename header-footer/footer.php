@@ -66,7 +66,8 @@
                 </div>
                 <div class="container row ms-2 col-md-2">
                     <p><a href="presentation.php">QUI SOMMES-NOUS</a></p>
-                    <p><a href="contact.php">CONTACTEZ-NOUS</a></p>
+                    <p><a href="valeurs.php">Nos valeurs</a></p>
+                    <p><a href="contact.php">Contact</a></p>
                     <p><a href="cgv.php">CGV</a></p>
                     <p><a href="mentions-legales.php">Mentions Légales</a></p>
 

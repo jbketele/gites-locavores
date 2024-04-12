@@ -19,8 +19,13 @@ require_once '../models/user.php';
                                 <li class="nav-item">
                                     <a class="nav-link active" href="index.php">Accueil</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="presentation.php">Présentation</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" role="button" 
+                                        data-bs-toggle="dropdown" aria-expanded="false" href="">Présentation</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="presentation.php">Qui sommes-nous ?</a></li>
+                                        <li><a class="dropdown-item" href="valeurs.php">Nos valeurs</a></li>
+                                        </ul>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
