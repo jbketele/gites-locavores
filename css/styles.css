@@ -136,6 +136,22 @@ input[type="submit"],
     margin: 0%;
   }
 
+  .pres {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .txt-pres {
+    margin-top: 1rem;
+  }
+
+  .txt-pres p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
   .cards {
     padding: 0%;
   }
@@ -232,6 +248,15 @@ input[type="submit"],
     width: auto;
   }
 
+  .pres {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  .txt-pres p {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
 
   .top {
     height: 50vh;

@@ -28,15 +28,15 @@ require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php
 
     <br>
     <section style="background-image:url(img/fond-nature.png) ;">
-        <div class="container d-flex">
+        <div class="pres d-flex">
 
-            <img style="margin-right: 3vh;" src="img/vertical-shot-kommern-open-air-museum-mechernich-germany.jpg"
+            <img src="img/vertical-shot-kommern-open-air-museum-mechernich-germany.jpg"
                 alt="">
 
-            <div style="background-color: white;">
-                <h2 class="text-center">QUI SOMMES-NOUS</h2>
+            <div class="txt-pres" style="background-color: white;">
+                <h2 class="text-center p-0">QUI SOMMES-NOUS</h2>
                 <br>
-                <p style= "margin-left : 5rem; margin-right: 10rem"><strong>Gîtes Locavores</strong> est une plateforme de location de gîtes ruraux de producteur locaux.
+                <p><strong>Gîtes Locavores</strong> est une plateforme de location de gîtes ruraux de producteur locaux.
                 Vous pouvez trouver votre prochaine destination de vacances à travers les différentes régions françaises.
                 <br>Pour chaque gîte, vous pourrez découvrir les différentes productions locales et les différentes spécialités de vos hôtes. 
                 Il sera donc précisé les différents lieux de vente pour acheter ces produits.

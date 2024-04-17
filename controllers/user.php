@@ -59,11 +59,10 @@ function login() {
     } else {
         // Authentification échouée
         // Affichage d'un message d'erreur
-        echo "Identifiants incorrects";
     }
 
     // Affichage du formulaire de connexion
-    include '../views/connexion.php';
+    header("Location: ../views/connexion.php");
 }
 
 
