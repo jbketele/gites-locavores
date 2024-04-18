@@ -46,7 +46,7 @@ function truncateDescription() {
 window.addEventListener('DOMContentLoaded', truncateDescription);
 window.addEventListener('resize', truncateDescription);
 
-var map = L.map('map').setView([50.1024606, 2.7247515], 7.5); // Amiens, France
+var map = L.map('map').setView([50.1024606, 2.7247515], 7.5);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -58,5 +58,5 @@ marker1.bindPopup("<b>La Cabane du Terroir</b><br>M. Van De Bruck");
 
 var marker2 = L.marker([50.5139552, 1.6386252]).addTo(map);
 marker2.bindPopup("<b>Le Refuge des Dunes</b><br>E. Leclerc");
-var marker3 = L.marker([49.7407935, 2.1511753]).addTo(map);
-marker3.bindPopup("<b>La Maison des Quais</b><br>C. Dubois");
+var marker3 = L.marker([49.8941708, 2.2956951]).addTo(map);
+marker3.bindPopup("<b>La Maison des Hortillonnages</b><br>C. Lambert");

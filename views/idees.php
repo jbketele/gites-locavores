@@ -28,7 +28,7 @@
 
     <main>
         <section>
-            <div class="row row-cols-1 row-cols-md-2 g-2 mx-5 mt-0" id="ideas">
+            <div class="row row-cols-1 row-cols-md-2 g-2" id="ideas">
                 <div class="col d-flex">
                     <div class="card" id="idea">
                         <a class="d-flex justify-content-center" href="event.php"><img src="img/calendar_591567.png"

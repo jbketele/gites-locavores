@@ -47,7 +47,7 @@
             <?php endforeach; ?>
         </div>
         <br>
-        <p><?php echo $gite['descriptif']; ?></p>
+        <p class="txt-details"><?php echo $gite['descriptif']; ?></p>
         <h4>Prix : <?php echo $gite['tarifs']; ?> €/nuit</h4>
         <?php
         // Vérifiez si l'utilisateur est connecté

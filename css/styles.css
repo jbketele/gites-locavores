@@ -178,6 +178,10 @@ input[type="submit"],
     fill: #E08F3E;
   }
 
+  .regions {
+    background-color: white;
+  }
+
   .metropole {
     width: 75vw;
   }
@@ -203,7 +207,14 @@ input[type="submit"],
 
   #ideas {
     background-color: white;
+    margin: 0;
   }
+
+  .menu-article {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
 }
 
 /*DESKTOP*/
@@ -338,6 +349,15 @@ input[type="submit"],
 
   img {
     width: 20%;
+  }
+
+  .menu-article {
+    justify-content: space-evenly;
+  }
+
+  #ideas {
+    margin-right: 3rem;
+    margin-left: 3rem;
   }
 }
 
@@ -809,4 +829,8 @@ footer a {
 
 .txt-valeur {
   text-align: justify;
+}
+
+.txt-details {
+  margin-right: 3rem;
 }

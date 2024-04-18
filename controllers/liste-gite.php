@@ -4,7 +4,7 @@ require_once '../models/ajout_gite.php';
 // Récupérer toutes les régions depuis la base de données
 $regions = Gites::getAllRegions();
 $gitesNormandie = Gites::getGitesByRegionImage('Normandie');
-$gitesHdf = Gites::getGitesByRegionImage('Hauts de France');
+$gitesHdf = Gites::getGitesByRegionImage('Hauts-de-France');
 $gitesPaca = Gites::getGitesByRegionImage("Provence-Alpes-Côte d'Azur");
 $gitesBretagne = Gites::getGitesByRegionImage('Bretagne');
 $gitesIdf = Gites::getGitesByRegionImage('Île-de-France');

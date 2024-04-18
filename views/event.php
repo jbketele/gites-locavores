@@ -28,7 +28,7 @@ require_once '../controllers/article.php';
 require_once('/Applications/MAMP/htdocs/gites_locavores/header-footer/header.php');
  ?>
     <main>
-        <div class="d-flex justify-content-evenly pt-3">
+        <div class="d-flex menu-article pt-3">
             <a href="event.php" class="btn btn-warning">Évènements</a>
             <a href="actus.php" class="btn btn-warning">Actualités</a>
             <a href="recettes.php" class="btn btn-warning">Recettes</a>
