@@ -13,6 +13,10 @@ header {
   width: 100vw;
 }
 
+.navbar-collapse {
+  width: max-content;
+}
+
 .nav-item {
   font-family: 'Titillium Web';
   font-weight: 400;

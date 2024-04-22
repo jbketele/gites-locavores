@@ -6,7 +6,7 @@ require_once '../models/user.php';
             <div class="menu p-0">
              
                 <nav class="navbar navbar-expand-md navbar-light bg-light">
-                    <div class="container-fluid">
+                    <div class="container-fluid p-0">
                 <a href="index.php"  class="logo logo-header"><img src="img/logo-gl-detoure.png" class="container "
                         alt="logo_gites_locavores"></a>                           
                         <button class="navbar-toggler fixed" type="button" data-bs-toggle="collapse"
@@ -110,7 +110,7 @@ require_once '../models/user.php';
                             echo "<div><a href='ajout_gite.php' class='add-gite btn'>Ajouter un gîte</a></div>";
                             echo "<div><a href='ajout_article.php' class='add-gite btn'>Ajouter un article</a></div>";
                             echo "<form action='../controllers/logout.php' method='POST'>
-                            <button type='submit' class='sign btn'>Déconnexion</button>";
+                            <button type='submit' class='sign btn me-0'>Déconnexion</button>";
                         } elseif ($user_type = 'visiteur') {
                             echo "<div><a href='regions.php' class='sign btn'>Réserver</a></div>";
                             echo "<form action='../controllers/logout.php' method='POST'>
@@ -127,4 +127,4 @@ require_once '../models/user.php';
             </div>
 
         </div>
-</header>   
+</header>
